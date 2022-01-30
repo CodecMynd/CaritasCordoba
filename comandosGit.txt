@@ -1,7 +1,28 @@
+*********************************
+*   crear y subir repositorio   *
+*********************************
 echo "# CaritasCordoba" >> README.md
-git init
+git init ->solo una ves para crear tu archivo .git
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/CodecMynd/CaritasCordoba.git
+git remote add origin https://github.com/CodecMynd/CaritasCordoba.git -> guardar nombre de cada commit
 git push -u origin main
+
+*****************************
+*    Subir actualizacion    *
+*****************************
+comando para subir
+crear commit para poder subir nueva actualizcion
+git push origin master
+
+***********************************
+*    Bajar actualizacion de git   *
+***********************************
+main (de la rama master)
+
+git fetch --all
+git reset --hard origin/master 
+***** fusionar con tu local  *****
+git checkout your_branch_name_here
+git reset --hard origin/your_branch_name_here
