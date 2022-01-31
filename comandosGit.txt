@@ -20,9 +20,39 @@ git push origin master
 *    Bajar actualizacion de git   *
 ***********************************
 main (de la rama master)
+git pull origin main
 
 git fetch --all
 git reset --hard origin/master 
 ***** fusionar con tu local  *****
 git checkout your_branch_name_here
 git reset --hard origin/your_branch_name_here
+
+
+*********************
+*   Borrar commit   *
+*********************
+ver en que rama estamos 
+git branch
+
+
+.
+***********************************
+*  Crear rama y cambiarse a ella  *
+***********************************
+git branch nombre_rama (creando rama, uriel)
+git branch (ver todas las ramas la actual esta en *)
+
+--cambiar de rama--
+git cheackout uriel
+
+--crear rama y moverse a ella--
+git checkout -b uriel
+
+--subir ramas remoto--
+git push origin rama (uriel)
+
+--al cambiarte de rama uriel al subir cambios--
+git push origin uriel
+
+

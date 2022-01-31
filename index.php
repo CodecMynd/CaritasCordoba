@@ -44,7 +44,7 @@
     <!-- Preloader start -->
     <div class="preloader">
         <img src="src/img/preloader/preloader.gif" alt="">
-    </div>
+    </div> 
     <div id="particles-js"></div>
 
     <header>
@@ -82,10 +82,8 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
-
                             <li class="nav-item ">
                                 <a class="nav-link" href="index.php" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Inicio
@@ -218,189 +216,223 @@
     <!-- reseña -->
     <section class="section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center">
-                    <h5 class="section-title-sm" data-aos="fade-down" data-aos-duration="1500">Breve reseña</h5>
-                    <h2 class="section-title section-title-border" data-aos="fade-right" data-aos-duration="1500">Cáritas Córdoba A.C.</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h4 class="section-title-md" data-aos="fade-right" data-aos-duration="1500">Breve reseña</h4>
+                        <h3 class="section-title section-title-border-half" data-aos="fade-left" data-aos-duration="1000"> Cáritas de Córdoba</h3>
+                        <div class="about-item">
+                            <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
+                                <li class="font-secondary text-color mb-10" data-aos="fade-down" data-aos-duration="1000">
+                                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>
+                                    <h5>
+                                        La obra de Cáritas de Córdoba fue iniciada por el Pbro. Francisco Javier Rodríguez Sainz, junto con algunos sacerdotes y laicos. Una vez constituida legalmente como A.C. el 14 de enero de 1998 queda como presidente de la institución el Pbro. Eliseo Martínez Andrade y como vicepresidente al Pbro. Hugo Rayón Escobar...
+                                    </h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary mb-md-50 mt-4">Contactanos</a>
+                    </div>
                 </div>
-                <div class="col-lg-8 col-sm-6 mb-5">
-                    <div class="hero-content">
-                        <div class="card text-center">
-                            <!-- <h4 class="card-title pt-3">Business Consulting</h4> -->
-                            <div class="card-img-wrapper" data-aos="zoom-in" data-aos-duration="1500">
-                                <img class="card-img-top rounded-0" src="src/img/inicio/caritasReseña/reseña.jpg" alt="Reseña caritas">
+                <div class="col-lg-6">
+                    <div class="about-slider" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                        <img class="img-fluid" src="src/img/inicio/caritasReseña/reseña-1.jpg" alt="about-image">
+                        <img class="img-fluid" src="src/img/inicio/caritasReseña/reseña-2.jpg" alt="about-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barralateral redes sociales -->
+ 
+    <!-- /Barralateral redes sociales -->
+
+    <!-- Testimoniales -->
+    <section class="section bg-gray" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title section-title-border-gray">Video testimonios</h2>
+                </div>
+            </div>
+            <!-- work slider -->
+            <div class="row work-slider">
+                <div class="col-lg-3 px-0">
+                    <div class="work-slider-image">
+                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-3 px-0">
+                    <div class="work-slider-image">
+                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-3 px-0">
+                    <div class="work-slider-image">
+                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-3 px-0">
+                    <div class="work-slider-image">
+                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-secondary" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="py-50 border-bottom" style="border-color: #454547 !important">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-5 mb-md-0 text-center text-md-left">
+                            <!-- logo -->
+                            <img class="mb-30" src="src/img/logo/logoCaritasBlanco.png" alt="logo">
+                            <p class="text-white mb-30">Somos un organismo de la Iglesia Católica en la diócesis de Córdoba que anima, coordina y contribuye a la construcción de la cultura de la vida sin distinción de credo.</p>
+                        </div>
+                    </div>
+                    <!-- footer links -->
+                    <div class="col-md-4">
+                        <h4 class="text-white mb-4">Servicios</h4>
+                        <div class="row">
+                            <div class="col-md-6 col-6">
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="#">Escucha de casos</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">Luchamos contra el cáncer</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Farmacia</a>
+                                    </li>
+                                    <li>
+                                        <a href="service.html">Consultas médicas</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Consultas psicológicas</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="card-body p-0">
-                                <i class="square-icon translateY-33 rounded far fa-clock"></i>
-                                <p class="card-text mx-20 mb-10" data-aos="zoom-in"> La obra de Cáritas de Córdoba fue iniciada por el Pbro. Francisco Javier Rodríguez Sainz, junto con algunos sacerdotes y laicos. Una vez constituida legalmente como A.C. el 14 de enero de 1998 queda como presidente de la institución el Pbro. Eliseo Martínez Andrade y como vicepresidente al Pbro. Hugo Rayón Escobar...
-                                </p>
-                                <a href="" class="btn btn-secondary translateY-25" data-aos="fade-left" data-aos-duration="1500">Leer más</a>
+                            <!-- footer links -->
+                            <div class="col-md-6 col-6">
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="#">Despensa a ancianos</a>
+                                    </li>
+                                    <li>
+                                        <a href="about-2.html">Despensa a familias</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">Bzar de ropa</a>
+                                    </li>
+                                    <li>
+                                        <a href="service-2.html">Emergencias</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Comedor</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Servicios varios</a>
+                                    </li>
+                                </ul>
                             </div>
+                            <div class="container justify-content-center">
+                                <div class="col-md-12">
+                                    <!-- social icon -->
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon-outline" href="#">
+                                                <i class="ti-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon-outline" href="#">
+                                                <i class="ti-twitter-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon-outline" href="#">
+                                                <i class="ti-vimeo-alt"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon-outline" href="#">
+                                                <i class="ti-linkedin"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- subscribe form -->
+                    <div class="col-lg-4">
+                        <div class="mt-5 mt-lg-0 text-center text-md-left">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15099.20314660243!2d-96.9336104!3d18.8959169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xab36c82ef2ef11d0!2sAA%20-%20Alcoholicos%20An%C3%B3nimos%20Grupo%20Nueva%20Vida!5e0!3m2!1ses-419!2smx!4v1643616040830!5m2!1ses-419!2smx" width="450" height="325" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="section bg-gray" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
-            <div class="container-fluid">
+        <!-- copyright -->
+        <div class="pt-4 pb-3 position-relative">
+            <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center">
-                        <!-- <h5 class="section-title-sm">Our Works</h5> -->
-                        <h2 class="section-title section-title-border-gray">Testimoniales</h2>
+                    <div class="col-lg-6 col-md-5">
+                        <p class="text-white text-center text-md-left">
+                            <span class="text-primary">Cáritas de Córdoba</span> &copy; 2022 Derechos reservados
+                        </p>
                     </div>
-                </div>
-                <!-- work slider -->
-                <div class="row work-slider">
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-1.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-1.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-2.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-2.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-3.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-3.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-4.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-4.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-1.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-1.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-2.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-2.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-3.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-3.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-4.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-4.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-1.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-1.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-2.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-2.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-3.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-3.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 px-0">
-                        <div class="work-slider-image">
-                            <img class="img-fluid w-100" src="images/works/work-4.jpg" alt="work-image">
-                            <div class="image-overlay">
-                                <a class="popup-image" data-effect="mfp-zoom-in" href="images/works/work-4.jpg">
-                                    <i class="ti-search"></i>
-                                </a>
-                                <a class="h4" href="project-single.html">Cras Sed Elit Sit Amet.</a>
-                                <p>by Admin</p>
-                            </div>
-                        </div>
+                    <div class="col-lg-6 col-md-7">
+                        <ul class="list-inline text-center text-md-right">
+                            <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
+                                <a class="font-secondary text-white" href="#">Poléticas de privacidad</a>
+                            </li>
+                            <li class="list-inline-item ml-lg-3 my-lg-0 ml-2 my-2 ml-0">
+                                <a class="font-secondary text-white" href="#">Términos &amp; Condiciones</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    </section>
-
-    <!-- /descripcion -->
+            <!-- back to top -->
+            <button class="back-to-top">
+                <i class="ti-angle-up"></i>
+            </button>
+        </div>
+    </footer>
+    <!-- /footer -->
+    <!-- GetButton.io widget -->
+    <script type="text/javascript">
+        (function() {
+            var options = {
+                whatsapp: "2282882976", // WhatsApp number
+                email: "caritas20cordoba@gmail.com", // Email
+                call_to_action: "Envíanos un mensaje", // Call to action
+                button_color: "#FD2015", // Color of button
+                position: "left", // Position may be 'right' or 'left'
+                order: "whatsapp,email", // Order of buttons
+                pre_filled_message: "Hola somos Cáritas Córdoba en que podemos servirte?", // WhatsApp pre-filled message
+            };
+            var proto = document.location.protocol,
+                host = "getbutton.io",
+                url = proto + "//static." + host;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function() {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- /GetButton.io widget -->
 
     <!-- jQuery -->
     <script src="plugins/jQuery/jquery.min.js"></script>
@@ -426,7 +458,8 @@
     <!-- js particles -->
     <script src="plugins/particles/particles.js"></script>
     <script src="plugins/particles/app.js"></script>
-
 </body>
 
 </html>
+<!-- codigo para mostrar miniatura de video y no recargar la memoria de peticiones ejemplo -->
+<!-- <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>

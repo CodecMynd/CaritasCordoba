@@ -12,7 +12,7 @@ VERSION:	1.0.0
 [TABLE OF CONTENTS]
 
 1. BASE
-
+    1.0 colors
     1.1. Typography
     1.2. Common Styles
         1.2.1 Page Title
@@ -174,7 +174,16 @@ VERSION:	1.0.0
     25.3 subcription
     25.4 copyright
     25.5 back to top
+
 -------------------------------------------------------------------*/
+
+
+/* 1.0 variables colors  */
+
+:root {
+    --main-bg-color-gray: #303032;
+    --main-bg-color-red: #CA3F42;
+}
 
 
 /* 1.1 typography */
@@ -271,7 +280,7 @@ h6,
 }
 
 .btn-primary {
-    background: #e84444;
+    background: #FD2015;
     color: #fff;
 }
 
@@ -420,7 +429,7 @@ button {
 }
 
 .section {
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 @media (max-width: 575px) {
@@ -2867,4 +2876,76 @@ ul.tag-list li a:hover {
 
 .back-to-top:focus {
     outline: 0;
+}
+
+
+/* ---------------------
+Red social
+--------------------- */
+
+.social {
+    position: fixed;
+    /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+    left: 0;
+    /* Establecemos la barra en la izquierda */
+    top: 200px;
+    /* Bajamos la barra 200px de arriba a abajo */
+    z-index: 2000;
+    /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+.social ul {
+    list-style: none;
+}
+
+.social ul li a {
+    display: inline-block;
+    color: #fff;
+    background: #000;
+    padding: 10px 15px;
+    text-decoration: none;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    /* Establecemos una transición a todas las propiedades */
+}
+
+.social ul li .icon-facebook {
+    background: #3b5998;
+}
+
+
+/* Establecemos los colores de cada red social, aprovechando su class */
+
+.social ul li .icon-twitter {
+    background: #00abf0;
+}
+
+.social ul li .icon-googleplus {
+    background: #d95232;
+}
+
+.social ul li .icon-pinterest {
+    background: #ae181f;
+}
+
+.social ul li .icon-mail {
+    background: #666666;
+}
+
+.social ul li a:hover {
+    background: #000;
+    /* Cambiamos el fondo cuando el usuario pase el mouse */
+    padding: 10px 30px;
+    /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+}
+
+position: fixed;
+left: 0;
+top: 200px;
+z-index: 2000;
+
+}
+.social ul {
+    list-style: none;
 }
