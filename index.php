@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
     <!-- Fantawesome icon -->
     <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+    <!-- icoMoon -->
+    <link rel="stylesheet" href="plugins/icoMoon/font.css">
     <!-- animate -->
     <link rel="stylesheet" href="plugins/animate/animate.css">
     <!-- Aos -->
@@ -44,13 +46,13 @@
     <!-- Preloader start -->
     <div class="preloader">
         <img src="src/img/preloader/preloader.gif" alt="">
-    </div> 
+    </div>
     <div id="particles-js"></div>
 
     <header>
         <!-- navegacion -->
         <!-- top header -->
-        <div class="top-header">
+        <!-- <div class="top-header">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -71,11 +73,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- nav bar -->
         <div class="navigation">
             <div class="container">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg">
                     <a class="navbar-brand" href="index.php">
                         <img src="src/img/logo/logoCaritasNavbar.png" alt="logo Caritas Cordoba A.C.">
                     </a>
@@ -94,11 +96,11 @@
                                     Nosotros
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="">Historia</a>
-                                    <a class="dropdown-item" href="">Misión</a>
-                                    <a class="dropdown-item" href="">Visión</a>
-                                    <a class="dropdown-item" href="">Valores</a>
-                                    <a class="dropdown-item" href="">Directorio</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#historia">Historia</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php">Misión</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php">Visión</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php">Valores</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php">Directorio</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -220,7 +222,7 @@
                 <div class="col-lg-6">
                     <div class="about-content">
                         <h4 class="section-title-md" data-aos="fade-right" data-aos-duration="1500">Breve reseña</h4>
-                        <h3 class="section-title section-title-border-half" data-aos="fade-left" data-aos-duration="1000"> Cáritas de Córdoba</h3>
+                        <h3 class="section-title section-title-border-half" data-aos="fade-left" data-aos-duration="1500"> Cáritas de Córdoba</h3>
                         <div class="about-item">
                             <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
                                 <li class="font-secondary text-color mb-10" data-aos="fade-down" data-aos-duration="1000">
@@ -231,7 +233,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="#" class="btn btn-primary mb-md-50 mt-4">Contactanos</a>
+                        <a href="#" class="btn btn-primary mb-md-50 mt-4" data-aos="zoom-in" data-aos-duration="1500">Contactanos</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -244,16 +246,12 @@
         </div>
     </section>
 
-    <!-- Barralateral redes sociales -->
- 
-    <!-- /Barralateral redes sociales -->
-
     <!-- Testimoniales -->
     <section class="section bg-gray" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="section-title section-title-border-gray">Video testimonios</h2>
+                    <h2 class="section-title section-title-border-gray">Video testimoniales</h2>
                 </div>
             </div>
             <!-- work slider -->
@@ -281,6 +279,65 @@
             </div>
         </div>
     </section>
+
+    <!-- Donaciones section -->
+    <section class="about section-sm overlay" style="background-image: url(src/img/inicio/donaciones/donaciones.jpg);" data-aos="fade-out" data-aos-duration="1500">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 ml-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="rounded p-sm-5 px-3 py-5 bg-secondary">
+                        <h3 class="section-title section-title-border-half text-white">Necesitamos de tu apoyo</h3>
+                        <p class="text-white mb-40">Formas de ayuda:</p>
+                        <ul class="d-inline-block pl-0 mr-5">
+                            <li class="font-secondary mb-10 text-white">
+                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Donar en línea
+                            </li>
+                            <li class="font-secondary mb-10 text-white">
+                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Depósito bancario
+                            </li>
+                            <li class="font-secondary mb-10 text-white">
+                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Voluntarios
+                            </li>
+                            <li class="font-secondary mb-10 text-white">
+                                <i class="text-primary mr-2 ti-arrow-circle-right"></i>Donativo en especie
+                            </li>
+                        </ul>
+                        <blockquote class="blockquote">
+                            <p class="text-white mb-40">
+                                "La gente exitosa está siempre buscando oportunidades para ayudar a otros. La gente poco exitosa están siempre preguntando. ¿Qué hay para mí?"
+                                <br>
+                                <small><em>Brian Tracy.</em></small>
+                            </p>
+                        </blockquote>
+                        <a href="service.html" class="btn btn-primary mt-4">Apoyar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Donaciones section -->
+
+    <!-- benefactores empresas logo slider -->
+    <section class=" py-4">
+        <div class="container">
+            <div class="col-12 text-center">
+                <h4 class="section-title section-title-border-gray">Nuestros benefactores</h4>
+            </div>
+            <div class="client-logo-slider align-self-center">
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-1.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-2.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-3.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-4.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-5.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-1.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-2.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-3.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-4.png" alt="Benefactor-logo"></a>
+                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-5.png" alt="Benefactor-logo"></a>
+            </div>
+        </div>
+    </section>
+    <!-- /benefactores empresas logo slider -->
 
     <!-- footer -->
     <footer class="bg-secondary" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
@@ -340,39 +397,29 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="container justify-content-center">
-                                <div class="col-md-12">
-                                    <!-- social icon -->
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon-outline" href="#">
-                                                <i class="ti-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon-outline" href="#">
-                                                <i class="ti-twitter-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon-outline" href="#">
-                                                <i class="ti-vimeo-alt"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon-outline" href="#">
-                                                <i class="ti-linkedin"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <!-- subscribe form -->
-                    <div class="col-lg-4">
-                        <div class="mt-5 mt-lg-0 text-center text-md-left">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15099.20314660243!2d-96.9336104!3d18.8959169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xab36c82ef2ef11d0!2sAA%20-%20Alcoholicos%20An%C3%B3nimos%20Grupo%20Nueva%20Vida!5e0!3m2!1ses-419!2smx!4v1643616040830!5m2!1ses-419!2smx" width="450" height="325" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <!-- Maps -->
+                    <div class="col-md-4">
+                    <h4 class="text-white mb-4">Contactos</h4>
+                            <div class="col-md-8">
+                                <!-- social icon -->
+                                <ul class="footer-links">
+                                    <li>
+                                        <a href="callto:2282882976">Celular: 228 288 2976</a>
+                                    </li>
+                                    <li>
+                                        <a href="callto:2717178279"> Oficina: 271 717 8279</a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:benefactordecaritasobis@yahoo.com.mx">benefactordecaritasobis@yahoo.com.mx</a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:caritas20cordoba@gmail.com">caritas20cordoba@gmail.com</a>
+                                    </li>
+                                </ul>
+                            </div><div class="mt-5 mt-lg-0 text-center text-md-left">
+                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15099.20314660243!2d-96.9336104!3d18.8959169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xab36c82ef2ef11d0!2sAA%20-%20Alcoholicos%20An%C3%B3nimos%20Grupo%20Nueva%20Vida!5e0!3m2!1ses-419!2smx!4v1643616040830!5m2!1ses-419!2smx" width="450" height="325" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
                         </div>
                     </div>
                 </div>
@@ -382,15 +429,15 @@
         <div class="pt-4 pb-3 position-relative">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-5">
+                    <div class="col-md-4 offset-md-2">
                         <p class="text-white text-center text-md-left">
                             <span class="text-primary">Cáritas de Córdoba</span> &copy; 2022 Derechos reservados
                         </p>
                     </div>
-                    <div class="col-lg-6 col-md-7">
-                        <ul class="list-inline text-center text-md-right">
+                    <div class="col-md-5 col-sm-6">
+                        <ul class="list-inline text-right text-md-right">
                             <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                                <a class="font-secondary text-white" href="#">Poléticas de privacidad</a>
+                                <a class="font-secondary text-white" href="#">Políticas de privacidad</a>
                             </li>
                             <li class="list-inline-item ml-lg-3 my-lg-0 ml-2 my-2 ml-0">
                                 <a class="font-secondary text-white" href="#">Términos &amp; Condiciones</a>
@@ -406,6 +453,16 @@
         </div>
     </footer>
     <!-- /footer -->
+
+    <!-- Barralateral redes sociales -->
+    <div class="social-bar">
+        <a href="https://www.facebook.com/DevCode.la" class="iconMoon icon-facebook" target="_blank"></a>
+        <a href="https://twitter.com/DevCodela" class="iconMoon icon-twitter" target="_blank"></a>
+        <a href="https://www.youtube.com/c/devcodela" class="iconMoon icon-youtube" target="_blank"></a>
+        <a href="https://www.instagram.com/devcodela/" class="iconMoon icon-instagram" target="_blank"></a>
+    </div>
+    <!-- /Barralateral redes sociales -->
+
     <!-- GetButton.io widget -->
     <script type="text/javascript">
         (function() {
@@ -458,8 +515,12 @@
     <!-- js particles -->
     <script src="plugins/particles/particles.js"></script>
     <script src="plugins/particles/app.js"></script>
+    <!-- scrollTop al cargar pagina posicion top(0)-->
+    <script>
+        $(window).on('beforeunload', function() {
+            $(window).scrollTop(0);
+        });
+    </script>
 </body>
 
 </html>
-<!-- codigo para mostrar miniatura de video y no recargar la memoria de peticiones ejemplo -->
-<!-- <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
