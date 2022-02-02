@@ -15,7 +15,8 @@
     <!-- Titulo de la pagina -->
     <title>Cáritas Córdoba A.C.</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="src/img/logo/logoCaritas.png" type="image/x-icon">
+    <link rel="shortcut icon" href="src/img/logo/faviconlogoCaritas.ico" type="image/x-icon">
+    <link rel="icon" href="src/img/logo/faviconlogoCaritas.ico" type="image/x-icon">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
     <!-- magnific popup -->
@@ -51,29 +52,6 @@
 
     <header>
         <!-- navegacion -->
-        <!-- top header -->
-        <!-- <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <ul class="list-inline text-lg-right text-center">
-                            <li class="list-inline-item">
-                                <i class="fas fa-mobile-alt text-white"></i>
-                                <a href="callto:2282882976">Celular
-                                    <span class="ml-2"> 228 288 2976</span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <i class="fas fa-phone text-white"></i>
-                                <a href="callto:2717178279"> Oficina:
-                                    <span class="ml-2"> 271 717 8279 </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <!-- nav bar -->
         <div class="navigation">
             <div class="container">
@@ -97,9 +75,11 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="pages/view/nosotros.php#historia">Historia</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Misión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Visión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Valores</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Identidad</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Objetivos</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Misión</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Visión</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Valores</a>
                                     <a class="dropdown-item" href="pages/view/nosotros.php">Directorio</a>
                                 </div>
                             </li>
@@ -153,7 +133,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 1</h4>
+                 2                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 1</h4>
                                 <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">Titulo 1</h1>
                                 <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     <br> incididunt ut labore et dolore magna aliqua.
@@ -225,11 +205,9 @@
                         <h3 class="section-title section-title-border-half" data-aos="fade-left" data-aos-duration="1500"> Cáritas de Córdoba</h3>
                         <div class="about-item">
                             <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                <li class="font-secondary text-color mb-10" data-aos="fade-down" data-aos-duration="1000">
+                                <li class="font-secondary text-color mb-10 lead" data-aos="fade-down" data-aos-duration="1000">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
-                                    <h5>
-                                        La obra de Cáritas de Córdoba fue iniciada por el Pbro. Francisco Javier Rodríguez Sainz, junto con algunos sacerdotes y laicos. Una vez constituida legalmente como A.C. el 14 de enero de 1998 queda como presidente de la institución el Pbro. Eliseo Martínez Andrade y como vicepresidente al Pbro. Hugo Rayón Escobar...
-                                    </h5>
+                                    La obra de Cáritas de Córdoba fue iniciada por el Pbro. Francisco Javier Rodríguez Sainz, junto con algunos sacerdotes y laicos. Una vez constituida legalmente como A.C. el 14 de enero de 1998 queda como presidente de la institución el Pbro. Eliseo Martínez Andrade y como vicepresidente al Pbro. Hugo Rayón Escobar...
                                 </li>
                             </ul>
                         </div>
@@ -304,7 +282,7 @@
                         </ul>
                         <blockquote class="blockquote">
                             <p class="text-white mb-40">
-                                "La gente exitosa está siempre buscando oportunidades para ayudar a otros. La gente poco exitosa están siempre preguntando. ¿Qué hay para mí?"
+                                "La gente exitosa está siempre buscando oportunidades para ayudar a otros. La gente poco exitosa, están siempre preguntando. ¿Qué hay para mí?"
                                 <br>
                                 <small><em>Brian Tracy.</em></small>
                             </p>
@@ -345,10 +323,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="mb-5 mb-md-0 text-center text-md-left">
+                        <div class="mb-5 mb-md-0 text-center text-md-center">
                             <!-- logo -->
-                            <img class="mb-30" src="src/img/logo/logoCaritasBlanco.png" alt="logo">
-                            <p class="text-white mb-30">Somos un organismo de la Iglesia Católica en la diócesis de Córdoba que anima, coordina y contribuye a la construcción de la cultura de la vida sin distinción de credo.</p>
+                            <img class="mb-30 text-center" src="src/img/logo/logoCaritasBlanco.png" width="50%" alt="logo">
+                            <p class="text-white text-justify mb-30">Somos un organismo de la Iglesia Católica en la diócesis de Córdoba que anima, coordina y contribuye a la construcción de la cultura de la vida sin distinción de credo.</p>
                         </div>
                     </div>
                     <!-- footer links -->
@@ -399,26 +377,26 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Maps -->
+                    <!-- contactos -->
                     <div class="col-md-4">
-                    <h4 class="text-white mb-4">Contactos</h4>
-                            <div class="col-md-8">
-                                <!-- social icon -->
-                                <ul class="footer-links">
-                                    <li>
-                                        <a href="callto:2282882976">Celular: 228 288 2976</a>
-                                    </li>
-                                    <li>
-                                        <a href="callto:2717178279"> Oficina: 271 717 8279</a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:benefactordecaritasobis@yahoo.com.mx">benefactordecaritasobis@yahoo.com.mx</a>
-                                    </li>
-                                    <li>
-                                        <a href="mailto:caritas20cordoba@gmail.com">caritas20cordoba@gmail.com</a>
-                                    </li>
-                                </ul>
-                            </div><div class="mt-5 mt-lg-0 text-center text-md-left">
+                        <h4 class="text-white mb-4">Contactos</h4>
+                        <div class="col-md-8">
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="callto:2282882976">Celular: 228 288 2976</a>
+                                </li>
+                                <li>
+                                    <a href="callto:2717178279"> Oficina: 271 717 8279</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:benefactordecaritasobis@yahoo.com.mx">benefactordecaritasobis@yahoo.com.mx</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:caritas20cordoba@gmail.com">caritas20cordoba@gmail.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-5 mt-lg-0 text-center text-md-left">
                             <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15099.20314660243!2d-96.9336104!3d18.8959169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xab36c82ef2ef11d0!2sAA%20-%20Alcoholicos%20An%C3%B3nimos%20Grupo%20Nueva%20Vida!5e0!3m2!1ses-419!2smx!4v1643616040830!5m2!1ses-419!2smx" width="450" height="325" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
                         </div>
                     </div>
@@ -428,21 +406,26 @@
         <!-- copyright -->
         <div class="pt-4 pb-3 position-relative">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 offset-md-2">
-                        <p class="text-white text-center text-md-left">
-                            <span class="text-primary">Cáritas de Córdoba</span> &copy; 2022 Derechos reservados
-                        </p>
-                    </div>
-                    <div class="col-md-5 col-sm-6">
-                        <ul class="list-inline text-right text-md-right">
-                            <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
-                                <a class="font-secondary text-white" href="#">Políticas de privacidad</a>
-                            </li>
-                            <li class="list-inline-item ml-lg-3 my-lg-0 ml-2 my-2 ml-0">
-                                <a class="font-secondary text-white" href="#">Términos &amp; Condiciones</a>
-                            </li>
-                        </ul>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 d-flex flex-row-reverse">
+                            <p class="text-white text-center text-md-left">
+                                <span class="text-primary">Cáritas de Córdoba</span> &copy; 2022 Derechos reservados
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-sm-6 d-flex flex-row-reverse">
+                            <ul class="list-inline text-right text-md-right">
+                                <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
+                                    <a class="font-secondary text-white" href="#">Políticas de privacidad</a>
+                                </li>
+                                <li class="list-inline-item ml-lg-3 my-lg-0 ml-2 my-2 ml-0">
+                                    <a class="font-secondary text-white" href="#">Términos &amp; Condiciones</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-1 text-md-center">
+                            <a class="text-white" href="pages/view/login.php"><i class="text-white fas fa-user-cog"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -516,11 +499,11 @@
     <script src="plugins/particles/particles.js"></script>
     <script src="plugins/particles/app.js"></script>
     <!-- scrollTop al cargar pagina posicion top(0)-->
-    <script>
+    <!-- <script>
         $(window).on('beforeunload', function() {
             $(window).scrollTop(0);
         });
-    </script>
+    </script> -->
 </body>
 
 </html>
