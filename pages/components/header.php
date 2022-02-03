@@ -27,10 +27,12 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="nosotros.php#historia">Historia</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Misión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Visión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Valores</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Directorio</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Identidad</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Objetivos</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Misión</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Visión</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Valores</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#directorio">Directorio</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">

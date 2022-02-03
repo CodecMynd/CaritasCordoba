@@ -16,10 +16,7 @@
     /* preloader, particles & header */
     include '../components/header.php';
     ?>
-    <!-- nosotros -->
-    <!-- <video src="../../src/video/videoCaritas.mp4" type="video/mp4" autoplay loop muted></video> -->
-
-    <!-- banner -->
+      <!-- banner -->
     <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
         <div class="container">
             <div class="row">
@@ -64,7 +61,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="about-slider">
+                    <div class="about-slider align-items-center">
                         <img src="../../src/img/nosotros/historia.jpg" alt="Historia Cáritas-1" class="img-fluid">
                         <img src="../../src/img/nosotros/historia.jpg" alt="Historia Cáritas-1" class="img-fluid">
                     </div>
@@ -131,7 +128,7 @@
             </div>
             <div class="col-12">
                 <div class="row justify-content-center" style="padding-bottom:30px">
-                    <a href="#" class="btn btn-primary">Contactanos</a>
+                    <a href="contacto.php" class="btn btn-primary">Contactanos</a>
                 </div>
             </div>
         </div>
@@ -145,7 +142,7 @@
                 <div class="col-12 text-center">
                     <h2 class="section-title section-title-border">Filosofía organizacional</h2>
                 </div>
-                <div class="col-md-8 offset-md-2 align-self-center pl-0" style="background: #303032;">
+                <div class="col-md-8 offset-md-2 align-self-center pl-0 darkBack">
                     <div class="testimonial-slider p-5">
                         <!-- slider mision -->
                         <div class="outline-0">
@@ -218,11 +215,247 @@
             </div>
         </div>
     </section>
-    <br><br>
     <!-- /filosofia organizacional -->
 
+    <!-- directorio -->
+    <section class="section" id="directorio">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <h5 class="section-title-sm">Cáritas de Córdoba - directorio</h5>
+                    <h2 class="section-title section-title-border">Nuestro equipo de expertos</h2>
+                </div>
+                <div class="col-12">
+                    <!-- body directorio -->
+                    <div id="accordionGral">
+                        <div class="card border-0 mb-4">
+                            <div class="card-header bg-secondary border p-0">
+                                <a class="card-link h5 d-block text-white text-center mb-0 py-10 px-4" data-toggle="collapse" href="#collapseGral">
+                                    <i class="ti-minus text-primary mr-2"></i> Desplegar
+                                </a>
+                            </div>
+                            <div id="collapseGral" class="collapse" data-parent="#accordionGral">
+                                <div class="row">
 
-    <!-- /nosotros -->
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card text-center p-2">
+                                            <img class="card-img-top rounded" src="../../src/img/personal/team-1.jpg" alt="img personal">
+                                            <div class="card-body pb-0">
+                                                <h4 class="card-title h4 font-primary text-dark">Nombres Paterno Materno</h4>
+                                                <h6 class="text-color">Psicologo</h6>
+                                                <div class="col-lg-12">
+                                                    <div id="accordion2" class="mb-md-50 text-center">
+                                                        <div class="card border-0 mb-4">
+                                                            <div class="card-header bg-secondary border p-0">
+                                                                <a class="card-link d-block text-white mb-0 py-10 px-4" data-toggle="collapse" href="#collapse1">
+                                                                    <i class="ti-minus text-primary mr-2"></i> Mi aporte a Cáritas
+                                                                </a>
+                                                            </div>
+                                                            <div id="collapse1" class="collapse" data-parent="#accordion2">
+                                                                <div class="card-body font-secondary text-color pl-0 pb-0">
+                                                                    <p class="card-text border-bottom pb-2 text-justify">
+                                                                        Descripción breve de sus actividades... Lorem ipsum dolor amet consectur adipsicing elit sed eiusm tempor
+                                                                    </p>
+                                                                    <div class="text-md-left" style="left: 0;">
+                                                                        <ul class="list-inline">
+                                                                            <li>
+                                                                                <a class="text-secondary" href="callto:"><i class="fas fa-phone"></i> 7123456
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="text-secondary" href="mailto:"><i class="far fa-envelope"></i>
+                                                                                    email@gmail.com
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Social -->
+                                                            <ul class="list-inline">
+                                                                <hr>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-facebook-f"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-twitter"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-whatsapp"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-instagram"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <div class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-tiktok"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card text-center p-2">
+                                            <img class="card-img-top rounded" src="../../src/img/personal/team-1.jpg" alt="img personal">
+                                            <div class="card-body pb-0">
+                                                <h4 class="card-title h4 font-primary text-dark">Nombres Paterno Materno</h4>
+                                                <h6 class="text-color">Psicologo</h6>
+                                                <div class="col-lg-12">
+                                                    <div id="accordion" class="mb-md-50 text-center">
+                                                        <div class="card border-0 mb-4">
+                                                            <div class="card-header bg-secondary border p-0">
+                                                                <a class="card-link d-block text-white mb-0 py-10 px-4" data-toggle="collapse" href="#collapse2">
+                                                                    <i class="ti-minus text-primary mr-2"></i> Mi aporte a Cáritas
+                                                                </a>
+                                                            </div>
+                                                            <div id="collapse2" class="collapse" data-parent="#accordion">
+                                                                <div class="card-body font-secondary text-color pl-0 pb-0">
+                                                                    <p class="card-text border-bottom pb-2 text-justify">
+                                                                        Descripción breve de sus actividades... Lorem ipsum dolor amet consectur adipsicing elit sed eiusm tempor
+                                                                    </p>
+                                                                    <div class="text-md-left" style="left: 0;">
+                                                                        <ul class="list-inline">
+                                                                            <li>
+                                                                                <a class="text-secondary" href="callto:"><i class="fas fa-phone"></i> 7123456
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="text-secondary" href="mailto:"><i class="far fa-envelope"></i>
+                                                                                    email@gmail.com
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Social -->
+                                                            <ul class="list-inline">
+                                                                <hr>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-facebook-f"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-twitter"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-whatsapp"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-instagram"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <div class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-tiktok"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card text-center p-2">
+                                            <img class="card-img-top rounded" src="../../src/img/personal/team-1.jpg" alt="img personal">
+                                            <div class="card-body pb-0">
+                                                <h4 class="card-title h4 font-primary text-dark">Nombres Paterno Materno</h4>
+                                                <h6 class="text-color">Psicologo</h6>
+                                                <div class="col-lg-12">
+                                                    <div id="accordion3" class="mb-md-50 text-center">
+                                                        <div class="card border-0 mb-4">
+                                                            <div class="card-header bg-secondary border p-0">
+                                                                <a class="card-link d-block text-white mb-0 py-10 px-4" data-toggle="collapse" href="#collapse3">
+                                                                    <i class="ti-minus text-primary mr-2"></i> Mi aporte a Cáritas
+                                                                </a>
+                                                            </div>
+                                                            <div id="collapse3" class="collapse" data-parent="#accordion3">
+                                                                <div class="card-body font-secondary text-color pl-0 pb-0">
+                                                                    <p class="card-text border-bottom pb-2 text-justify">
+                                                                        Descripción breve de sus actividades... Lorem ipsum dolor amet consectur adipsicing elit sed eiusm tempor
+                                                                    </p>
+                                                                    <div class="text-md-left" style="left: 0;">
+                                                                        <ul class="list-inline">
+                                                                            <li>
+                                                                                <a class="text-secondary" href="callto:"><i class="fas fa-phone"></i> 7123456
+                                                                                </a>
+                                                                            </li>
+                                                                            <li>
+                                                                                <a class="text-secondary" href="mailto:"><i class="far fa-envelope"></i>
+                                                                                    email@gmail.com
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Social -->
+                                                            <ul class="list-inline">
+                                                                <hr>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-facebook-f"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-twitter"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-whatsapp"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-instagram"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <div class="list-inline-item">
+                                                                    <a href="#" class="text-color d-inline-block py-1 px-2 px-xl-2">
+                                                                        <i class="fab fa-tiktok"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /directorio -->
+
+
+    <!-- components -->
     <?php
     /* seccion btn apoyar */
     include '../components/btnApoyar.php';

@@ -183,6 +183,7 @@ VERSION:	1.0.0
 :root {
     --main-bg-color-gray: #303032;
     --main-bg-color-red: #CA3F42;
+    --graySection: #F5F5F5;
 }
 
 
@@ -2934,4 +2935,9 @@ Barralateral redes sociales
     padding-left: 3rem;
     border-radius: 0 1rem 1rem 0;
     box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.42);
+}
+
+.darkBack {
+    background: #303032;
+    border-radius: 25px
 }

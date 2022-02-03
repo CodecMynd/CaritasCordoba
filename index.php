@@ -45,9 +45,9 @@
 
 <body>
     <!-- Preloader start -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <img src="src/img/preloader/preloader.gif" alt="">
-    </div>
+    </div> -->
     <div id="particles-js"></div>
 
     <header>
@@ -80,7 +80,7 @@
                                     <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Misión</a>
                                     <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Visión</a>
                                     <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Valores</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php">Directorio</a>
+                                    <a class="dropdown-item" href="pages/view/nosotros.php#directorio">Directorio</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -133,7 +133,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="hero-content">
-                 2                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 1</h4>
+                               <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 1</h4>
                                 <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">Titulo 1</h1>
                                 <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     <br> incididunt ut labore et dolore magna aliqua.
@@ -149,7 +149,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".1">Subtitulo 1</h4>
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".1">Subtitulo </h4>
                                 <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".5">Titulo 2</h1>
                                 <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     <br> incididunt ut labore et dolore magna aliqua.
@@ -262,7 +262,7 @@
     <section class="about section-sm overlay" style="background-image: url(src/img/inicio/donaciones/donaciones.jpg);" data-aos="fade-out" data-aos-duration="1500">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6 ml-auto" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="col-lg-6 col-md-12 col-sm-12 ml-auto" data-aos="zoom-in" data-aos-duration="1500">
                     <div class="rounded p-sm-5 px-3 py-5 bg-secondary">
                         <h3 class="section-title section-title-border-half text-white">Necesitamos de tu apoyo</h3>
                         <p class="text-white mb-40">Formas de ayuda:</p>
