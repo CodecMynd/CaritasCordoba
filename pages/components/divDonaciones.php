@@ -27,7 +27,7 @@
                             <small><em>Brian Tracy.</em></small>
                         </p>
                     </blockquote>
-                    <a href="service.html" class="btn btn-primary mt-4">Apoyar</a>
+                    <a href="" class="btn btn-primary mt-4"><i class="fas fa-heart"></i> Donaciones</a>
                 </div>
             </div>
         </div>

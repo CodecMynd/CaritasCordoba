@@ -52,10 +52,22 @@
 
     <header>
         <!-- navegacion -->
+        <!-- top header -->
+        <div class="top-header fixed-top ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-10">
+                    </div>
+                    <div class="col-2">
+                            <a href="#" class="btn btn-primary mb-md-50 mt-40" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- nav bar -->
         <div class="navigation">
             <div class="container">
-                <nav class="navbar navbar-expand-lg">
+                <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="navbar-brand" href="index.php">
                         <img src="src/img/logo/logoCaritasNavbar.png" alt="logo Caritas Cordoba A.C.">
                     </a>
@@ -116,7 +128,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contacto</a>
+                                <a class="nav-link" href="pages/view/contacto.php">Contacto</a>
                             </li>
                         </ul>
                     </div>
@@ -133,7 +145,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="hero-content">
-                               <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 1</h4>
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 1</h4>
                                 <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">Titulo 1</h1>
                                 <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     <br> incididunt ut labore et dolore magna aliqua.
@@ -205,19 +217,19 @@
                         <h3 class="section-title section-title-border-half" data-aos="fade-left" data-aos-duration="1500"> Cáritas de Córdoba</h3>
                         <div class="about-item">
                             <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                <li class="font-secondary text-color mb-10 lead" data-aos="fade-down" data-aos-duration="1000">
+                                <li class="font-secondary text-color text-justify mb-10 lead" data-aos="fade-down" data-aos-duration="1000">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     La obra de Cáritas de Córdoba fue iniciada por el Pbro. Francisco Javier Rodríguez Sainz, junto con algunos sacerdotes y laicos. Una vez constituida legalmente como A.C. el 14 de enero de 1998 queda como presidente de la institución el Pbro. Eliseo Martínez Andrade y como vicepresidente al Pbro. Hugo Rayón Escobar...
                                 </li>
                             </ul>
                         </div>
-                        <a href="#" class="btn btn-primary mb-md-50 mt-4" data-aos="zoom-in" data-aos-duration="1500">Contactanos</a>
+                        <a href="pages/view/contacto.php" class="btn btn-primary mb-md-50 mt-4" data-aos="zoom-in" data-aos-duration="1500">Contactanos</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-slider" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
-                        <img class="img-fluid" src="src/img/inicio/caritasReseña/reseña-1.jpg" alt="about-image">
-                        <img class="img-fluid" src="src/img/inicio/caritasReseña/reseña-2.jpg" alt="about-image">
+                        <img class="img-fluid" src="src/img/inicio/caritasResenia/resenia-1.jpg" alt="about-image">
+                        <img class="img-fluid" src="src/img/inicio/caritasResenia/resenia-2.jpg" alt="about-image">
                     </div>
                 </div>
             </div>
@@ -287,7 +299,7 @@
                                 <small><em>Brian Tracy.</em></small>
                             </p>
                         </blockquote>
-                        <a href="service.html" class="btn btn-primary mt-4">Apoyar</a>
+                        <a href="" class="btn btn-primary mt-4"><i class="fas fa-heart"></i> Donaciones</a>
                     </div>
                 </div>
             </div>
@@ -394,10 +406,10 @@
                                 <li>
                                     <a href="mailto:caritas20cordoba@gmail.com">caritas20cordoba@gmail.com</a>
                                 </li>
+                                <li>
+                                    <a href="">Calle 1, núm. 407 entre av. 4 y 6. Col. Centro C.P. 94500, Córdoba, Ver</a>
+                                </li>
                             </ul>
-                        </div>
-                        <div class="mt-5 mt-lg-0 text-center text-md-left">
-                            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15099.20314660243!2d-96.9336104!3d18.8959169!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xab36c82ef2ef11d0!2sAA%20-%20Alcoholicos%20An%C3%B3nimos%20Grupo%20Nueva%20Vida!5e0!3m2!1ses-419!2smx!4v1643616040830!5m2!1ses-419!2smx" width="450" height="325" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
                         </div>
                     </div>
                 </div>
@@ -413,7 +425,7 @@
                                 <span class="text-primary">Cáritas de Córdoba</span> &copy; 2022 Derechos reservados
                             </p>
                         </div>
-                        <div class="col-md-5 col-sm-6 d-flex flex-row-reverse">
+                        <div class="col-md-5 col-sm-12 d-flex flex-row-reverse">
                             <ul class="list-inline text-right text-md-right">
                                 <li class="list-inline-item mx-lg-3 my-lg-0 mx-2 my-2">
                                     <a class="font-secondary text-white" href="#">Políticas de privacidad</a>
@@ -484,9 +496,6 @@
     <script src="plugins/slick/slick.min.js"></script>
     <!-- filter fotos-->
     <script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-    <script src="plugins/google-map/gmap.js"></script>
     <!-- Syo Timer temporizador -->
     <script src="plugins/syotimer/jquery.syotimer.js"></script>
     <!-- aos efectos scroll en div se recorre de un lado a otro-->

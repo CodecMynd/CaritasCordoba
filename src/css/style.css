@@ -985,6 +985,7 @@ button {
 }
 
 .navigation .navbar {
+    margin-top: 50px;
     padding: 0;
     background: #fff !important;
     position: relative;
@@ -1008,7 +1009,7 @@ button {
         height: unset;
         width: unset;
         box-shadow: none;
-        top: 24px;
+        top: px;
         background: none;
     }
     .navigation .navbar-brand img {

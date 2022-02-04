@@ -44,15 +44,15 @@
                         <h3 class="section-title section-title-border-half">Historia</h3>
                         <div>
                             <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                <li class="font-secondary mb-10 text-dark lead">
+                                <li class="font-secondary mb-10 text-dark text-justify lead">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     La obra de Cáritas de Córdoba fue iniciada por el Pbro. Francisco Javier Rodríguez Sainz, junto con algunos sacerdotes y laicos. <b>Una vez constituida como A.C. el 14 de enero de 1998</b> queda como presidente de la institución el Pbro. Eliseo Martínez Andrade y como vicepresidente al Pbro. Hugo Rayón Escobar.
                                 </li>
-                                <li class="font-secondary mb-10 text-dark lead">
+                                <li class="font-secondary mb-10 text-dark text-justify lead">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     Actualmente, la coordinación de los trabajos que se realizan en Cáritas diocesana está a cargo del Pbro. Fidel Marinero Perote, religiosas Misioneras de Santa Teresita y un grupo de voluntarios.
                                 </li>
-                                <li class="font-secondary mb-10 text-dark lead">
+                                <li class="font-secondary mb-10 text-dark text-justify lead">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     Es una institución de la Iglesia Católica, que no actúa en nombre propio, sino en nombre de la Iglesia. Fue creada para promover y llevar a cabo la asistencia a los más vulnerables y enfermos, sin distinción de raza, cultura, religión, etc. Cáritas se hace presente ahí donde el ser humano sufre, donde existen problemas personales y sociales como caridad organizada de la Iglesia.
                                 </li>
@@ -80,11 +80,11 @@
                         <h3 class="section-title section-title-border-half text-white">Identidad</h3>
                         <div>
                             <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                <li class="font-secondary mb-10 text-white">
+                                <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     Es un organismo de la iglesia católica en la diócesis de Córdoba que anima, coordina y contribuye a la construcción de la cultura de la vida sin distinción de credo.
                                 </li>
-                                <li class="font-secondary mb-10 text-white">
+                                <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     Cáritas es el amor de la madre Iglesia especialmente por los pobres que sufren y padecen necesidades, siendo cercana y mostrando la ternura de Dios” e invita a todas las personas a experimentar el gozo de compartir sus bienes.
                                 </li>
@@ -97,7 +97,7 @@
                         <h3 class="section-title section-title-border-half text-white">Objetivo especifivo</h3>
                         <div>
                             <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                <li class="font-secondary mb-10 text-white">
+                                <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>Es prestar su aporte, desde la comunicación cristiana de bienes, al crecimiento del reino de Dios, el cual se realiza mediante las obras de caridad, de justicia y de verdad evangélicas
                                 </li>
                             </ul>
@@ -109,15 +109,15 @@
                         <h3 class="section-title section-title-border-half text-white">Objetivos generales</h3>
                         <div>
                             <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                <li class="font-secondary mb-10 text-white">
+                                <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     Servir de enlace entre las personas e instituciones que tengan posibilidades de ayudara los más necesitados.
                                 </li>
-                                <li class="font-secondary mb-10 text-white">
+                                <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     Propagar el espíritu de caridad y solidaridad en la comunidad.
                                 </li>
-                                <li class="font-secondary mb-10 text-white">
+                                <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                     Fomentar y promover la creación de instituciones o respaldar organismos ya existentes que auxilien en la solución de problemas individuales o comunitarios.
                                 </li>
@@ -150,7 +150,7 @@
                                 <h3 class="section-title section-title-border-half text-white">Misión</h3>
                                 <div>
                                     <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                        <li class="font-secondary mb-10 text-white">
+                                        <li class="font-secondary mb-10 text-white text-justify">
                                             <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                             Ofrecer a las personas una atención integral con calidad y calidez mediante los servicios de asistencia promoción y concientización enfoca en personas en situación vulnerable.
                                         </li>
@@ -164,7 +164,7 @@
                                 <h3 class="section-title section-title-border-half text-white">Visión</h3>
                                 <div>
                                     <ul class="pl-0 d-inline-block float-sm-left mr-sm-5">
-                                        <li class="font-secondary mb-10 text-white">
+                                        <li class="font-secondary mb-10 text-white text-justify">
                                             <i class="text-primary mr-2 ti-arrow-circle-right"></i>
                                             Consolidarse a nivel diocesano, como unainstitución altamente confiabe, organizada y dispuesta al servicio a favor de personas en situación de pobreza.
                                         </li>
@@ -458,7 +458,7 @@
     <!-- components -->
     <?php
     /* seccion btn apoyar */
-    include '../components/btnApoyar.php';
+    include '../components/divDonaciones.php';
     /* slider benefactores */
     include '../components/benefactores.php';
     /* footer */

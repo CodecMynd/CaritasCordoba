@@ -3,11 +3,22 @@
     </div>
     <div id="particles-js"></div>
  <header>
-        <!-- navegacion -->
+      <!-- top header -->
+      <div class="top-header fixed-top ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-10">
+                    </div>
+                    <div class="col-2">
+                            <a href="#" class="btn btn-primary mb-md-50 mt-40" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- nav bar -->
         <div class="navigation">
             <div class="container">
-                <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="index.php">
                         <img src="../../src/img/logo/logoCaritasNavbar.png" alt="logo Caritas Cordoba A.C.">
                     </a>
@@ -27,12 +38,12 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="nosotros.php#historia">Historia</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Identidad</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Objetivos</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Misión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Visión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Valores</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#directorio">Directorio</a>
+                                    <a class="dropdown-item" href="nosotros.php#identidad">Identidad</a>
+                                    <a class="dropdown-item" href="nosotros.php#identidad">Objetivos</a>
+                                    <a class="dropdown-item" href="nosotros.php#filosOrganiza">Misión</a>
+                                    <a class="dropdown-item" href="nosotros.php#filosOrganiza">Visión</a>
+                                    <a class="dropdown-item" href="nosotros.php#filosOrganiza">Valores</a>
+                                    <a class="dropdown-item" href="nosotros.php#directorio">Directorio</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -68,7 +79,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contacto</a>
+                                <a class="nav-link" href="contacto.php">Contacto</a>
                             </li>
                         </ul>
                     </div>
