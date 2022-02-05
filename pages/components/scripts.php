@@ -45,10 +45,10 @@
 <script src="../../plugins/particles/particles.js"></script>
 <script src="../../plugins/particles/app.js"></script>
 <!-- scrollTop al cargar pagina posicion top(0)-->
-<script>
+<!-- <script>
     $(window).on('beforeunload', function() {
         $(window).scrollTop(0);
     });
-</script>
+</script> -->
 <!-- Main Script -->
 <script src="../../src/js/script.js"></script>

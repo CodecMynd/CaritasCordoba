@@ -460,7 +460,7 @@
     /* seccion btn apoyar */
     include '../components/divDonaciones.php';
     /* slider benefactores */
-    include '../components/benefactores.php';
+    // include '../components/benefactores.php';
     /* footer */
     include '../components/footer.php';
     /* social bar */

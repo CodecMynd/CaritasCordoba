@@ -59,7 +59,7 @@
                     <div class="col-10">
                     </div>
                     <div class="col-2">
-                            <a href="#" class="btn btn-primary mb-md-50 mt-40" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                        <a href="#" class="btn btn-primary mb-md-50 mt-40" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                     </div>
                 </div>
             </div>
@@ -100,17 +100,17 @@
                                     Servicios
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="">Escucha de casos</a>
-                                    <a class="dropdown-item" href="">Luchamos contra el Cáncer</a>
-                                    <a class="dropdown-item" href="">Farmacia</a>
-                                    <a class="dropdown-item" href="">Consultas médicas</a>
-                                    <a class="dropdown-item" href="">Consultas psicológicas</a>
-                                    <a class="dropdown-item" href="">Despensas a ancianos</a>
-                                    <a class="dropdown-item" href="">Despensas a familias</a>
-                                    <a class="dropdown-item" href="">Bazar de ropa</a>
-                                    <a class="dropdown-item" href="">Emergencias</a>
-                                    <a class="dropdown-item" href="">Comedor</a>
-                                    <a class="dropdown-item" href="">Servicios varios</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#escuchaCasos">Escucha de casos</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#luchaCancer">Luchamos contra el Cáncer</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#farmacia">Farmacia</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#consultasMedicas">Consultas médicas</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#consultasPsicologicas">Consultas psicológicas</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#despensasAdultosMayores">Despensas a ancianos</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#despensaFamilias">Despensas a familias</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#bazarRopa">Bazar de ropa</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#emergencias">Emergencias</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#comedorPobres">Comedor</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#serviciosVarios">Servicios varios</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -223,7 +223,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="pages/view/contacto.php" class="btn btn-primary mb-md-50 mt-4" data-aos="zoom-in" data-aos-duration="1500">Contactanos</a>
+                        <a href="pages/view/nosotros.php#historia" class="btn btn-primary mb-md-50 mt-4" data-aos="zoom-in" data-aos-duration="1500">Leer más...</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -374,7 +374,7 @@
                                         <a href="about-2.html">Despensa a familias</a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">Bzar de ropa</a>
+                                        <a href="contact.html">Bazar de ropa</a>
                                     </li>
                                     <li>
                                         <a href="service-2.html">Emergencias</a>
@@ -411,6 +411,9 @@
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <a href="" class="btn btn-primary"><i class="fas fa-heart"></i> Donaciones</a>
                     </div>
                 </div>
             </div>

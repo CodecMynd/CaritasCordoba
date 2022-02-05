@@ -2942,3 +2942,35 @@ Barralateral redes sociales
     background: #303032;
     border-radius: 25px
 }
+
+
+/* services cards  */
+
+#card-services {
+    -webkit-box-shadow: -10px -6px 15px -4px rgba(0, 0, 0, 0.72);
+    box-shadow: -10px -6px 15px -4px rgba(0, 0, 0, 0.72);
+}
+
+#card-services .card-img-wrapper {
+    height: 200px;
+    width: auto;
+}
+
+#card-services .card-img-top {
+    height: 200px;
+}
+
+#card-services .card-body {
+    height: 100px;
+}
+
+#card-services .card-footer {
+    background-color: #303032;
+}
+
+#card-services .card-header {
+    background-color: #303032;
+    color: #ffffff;
+    border-radius: 0;
+    font-size: 20px;
+}
