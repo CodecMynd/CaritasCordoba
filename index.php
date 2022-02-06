@@ -59,7 +59,7 @@
                     <div class="col-10">
                     </div>
                     <div class="col-2">
-                        <a href="#" class="btn btn-primary mb-md-50 mt-40" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                        <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                     </div>
                 </div>
             </div>
@@ -100,17 +100,17 @@
                                     Servicios
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="pages/view/servicios.php#escuchaCasos">Escucha de casos</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#luchaCancer">Luchamos contra el Cáncer</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#farmacia">Farmacia</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#consultasMedicas">Consultas médicas</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#consultasPsicologicas">Consultas psicológicas</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#despensasAdultosMayores">Despensas a ancianos</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#despensaFamilias">Despensas a familias</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#bazarRopa">Bazar de ropa</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#emergencias">Emergencias</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#comedorPobres">Comedor</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#serviciosVarios">Servicios varios</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Escucha de casos</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Luchamos contra el Cáncer</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Farmacia</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas médicas</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas psicológicas</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Despensas a ancianos</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Despensas a familias</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Bazar de ropa</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Emergencias</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Comedor</a>
+                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Servicios varios</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -248,28 +248,33 @@
             <div class="row work-slider">
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                        <iframe src="https://www.youtube.com/embed/G8Gd2SrwK44&autoplay=1" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/G8Gd2SrwK44?autoplay=1><img src=https://img.youtube.com/vi/G8Gd2SrwK44/hqdefault.jpg alt=''><span>▶</span></a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title=""></iframe>
+                    <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
+                    </div>
+                </div>
+                  <div class="col-lg-3 px-0">
+                    <div class="work-slider-image">
+                    <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Donaciones section -->
     <section class="about section-sm overlay" style="background-image: url(src/img/inicio/donaciones/donaciones.jpg);" data-aos="fade-out" data-aos-duration="1500">
         <div class="container-fluid">
@@ -299,7 +304,7 @@
                                 <small><em>Brian Tracy.</em></small>
                             </p>
                         </blockquote>
-                        <a href="" class="btn btn-primary mt-4"><i class="fas fa-heart"></i> Donaciones</a>
+                        <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                     </div>
                 </div>
             </div>
@@ -413,7 +418,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 text-center">
-                        <a href="" class="btn btn-primary"><i class="fas fa-heart"></i> Donaciones</a>
+                    <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                     </div>
                 </div>
             </div>
@@ -445,7 +450,7 @@
                 </div>
             </div>
             <!-- back to top -->
-            <button class="back-to-top">
+            <button class="back-to-top parpadea">
                 <i class="ti-angle-up"></i>
             </button>
         </div>
@@ -516,6 +521,7 @@
             $(window).scrollTop(0);
         });
     </script> -->
+
 </body>
 
 </html>

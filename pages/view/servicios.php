@@ -34,7 +34,7 @@
     </section>
 
     <!-- seccion servicios -->
-    <section class="section">
+    <section class="section" id="seccionServicios1">
         <div class="container">
             <div class="row justify-content-center">
                 <!-- service Escucha de casos -->
@@ -91,6 +91,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container" id="seccionServicios2">
+            <div class="row justify-content-center">
                 <!-- service Consultas médicas -->
                 <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="consultasMedicas">
                     <div class="card text-center" id="card-services">
@@ -148,6 +153,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container" id="seccionServicios3">
+            <div class="row justify-content-center">
                 <!-- service Despensa a familias -->
                 <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="despensaFamilias">
                     <div class="card text-center" id="card-services">
@@ -205,6 +215,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="container" id="seccionServicios4">
+            <div class="row justify-content-center">
                 <!-- service Comedor de pobres -->
                 <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="comedorPobres">
                     <div class="card text-center" id="card-services">

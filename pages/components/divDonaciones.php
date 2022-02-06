@@ -27,7 +27,7 @@
                             <small><em>Brian Tracy.</em></small>
                         </p>
                     </blockquote>
-                    <a href="" class="btn btn-primary mt-4"><i class="fas fa-heart"></i> Donaciones</a>
+                    <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                 </div>
             </div>
         </div>

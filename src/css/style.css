@@ -180,7 +180,7 @@ VERSION:	1.0.0
 
 /* 1.0 variables colors  */
 
-:root {
+ :root {
     --main-bg-color-gray: #303032;
     --main-bg-color-red: #CA3F42;
     --graySection: #F5F5F5;
@@ -342,12 +342,12 @@ body {
     overflow-x: hidden;
 }
 
-::-moz-selection {
+ ::-moz-selection {
     background: #ee7171;
     color: #fff;
 }
 
-::selection {
+ ::selection {
     background: #ee7171;
     color: #fff;
 }
@@ -1431,10 +1431,13 @@ button {
 	swipwe slider
 --------------------------------------------------------------*/
 
-.swiper {
-    /* slider dots */
-    /* slider arrows */
+
+/*.swiper {
+        slider dots 
+
+slider arrows
 }
+*/
 
 .swiper-slider {
     width: 100%;
@@ -1605,6 +1608,67 @@ button {
 
 
 /* promo video section end */
+
+
+/*videos de yotube embeb start*/
+
+.youtube-player {
+    position: relative;
+    padding-bottom: 56.23%;
+    /* Usa 75% para vídeos 4:3 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 5px;
+}
+
+.youtube-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: transparent;
+}
+
+.youtube-player img {
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    -webkit-transition: .4s all;
+    -moz-transition: .4s all;
+    transition: .4s all;
+}
+
+.youtube-player img:hover {
+    -webkit-filter: brightness(75%);
+}
+
+.youtube-player .play {
+    height: 72px;
+    width: 72px;
+    left: 50%;
+    top: 50%;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    background: url("//i.imgur.com/TxzC70f.png") no-repeat;
+    cursor: pointer;
+}
+
+
+/*videos de yotube embeb end*/
 
 
 /* 8. testimonial section start */
@@ -1960,22 +2024,21 @@ img.arrow-bottom {
 }
 
 
-/* service single end */
-
-
-/* 15. work section */
-
-.work {
-    /* 15.1 work slider */
-}
-
-.work-slider {
-    /* 15.2 slick dots */
-}
-
-.work-slider-image {
-    position: relative;
-}
+/* service single end 
+    
+    .work {
+        15.1 work slider
+    }
+    
+    .work-slider {
+        15.2 slick dots
+    }
+    
+    .work-slider-image {
+        position: relative;
+    }
+    
+    */
 
 .work-slider-image .image-overlay {
     position: absolute;
@@ -2088,12 +2151,16 @@ img.arrow-bottom {
 }
 
 
-/* 19. project section */
+/* 19. project section 
 
 .project {
-    /* 19.1 project menu */
-    /* 19.2 project item */
+    
+
+19.1 project menu 
+
+19.2 project item 
 }
+*/
 
 .project-menu ul li {
     padding: 5px 20px;
@@ -2858,11 +2925,11 @@ ul.tag-list li a:hover {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    color: #fff;
-    background: #303032;
+    color: #303032;
+    background: #fff;
     top: -25px;
     right: 10px;
-    border: 1px solid #454547;
+    border: 2px solid #454547;
     text-align: center;
     display: block;
     transition: 0.2s ease;
@@ -2973,4 +3040,54 @@ Barralateral redes sociales
     color: #ffffff;
     border-radius: 0;
     font-size: 20px;
+}
+
+
+/* Parpadeante */
+
+.parpadea {
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: parpadeo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
 }
