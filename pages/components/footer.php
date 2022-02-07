@@ -16,19 +16,19 @@
                         <div class="col-md-6 col-6">
                             <ul class="footer-links">
                                 <li>
-                                    <a href="#">Escucha de casos</a>
+                                    <a href="../view/escuchaCasos.php">Escucha de casos</a>
                                 </li>
                                 <li>
-                                    <a href="about.html">Luchamos contra el cáncer</a>
+                                    <a href="../view/contraCancer.php">Luchamos contra el cáncer</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Farmacia</a>
+                                    <a href="../view/farmacia.php">Farmacia</a>
                                 </li>
                                 <li>
-                                    <a href="service.html">Consultas médicas</a>
+                                    <a href="../view/consultasMedicas.php">Consultas médicas</a>
                                 </li>
                                 <li>
-                                    <a href="#">Consultas psicológicas</a>
+                                    <a href="../view/consultasPsicologicas.php">Consultas psicológicas</a>
                                 </li>
                             </ul>
                         </div>
@@ -36,22 +36,21 @@
                         <div class="col-md-6 col-6">
                             <ul class="footer-links">
                                 <li>
-                                    <a href="#">Despensa a ancianos</a>
+                                    <a href="../view/despensaAncianos.php">Despensa a ancianos</a>
+                                </li>
+                                <li><a href="../view/despensaFamilias.php">Despensa a familias</a>
                                 </li>
                                 <li>
-                                    <a href="about-2.html">Despensa a familias</a>
+                                    <a href="../view/bazarRopa.php">Bazar de ropa</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Bazar de ropa</a>
+                                    <a href="../view/emergencias.php">Emergencias</a>
                                 </li>
                                 <li>
-                                    <a href="service-2.html">Emergencias</a>
+                                    <a href="../view/comedor.php">Comedor</a>
                                 </li>
                                 <li>
-                                    <a href="#">Comedor</a>
-                                </li>
-                                <li>
-                                    <a href="#">Servicios varios</a>
+                                    <a href="../view/serviciosVarios.php">Servicios varios</a>
                                 </li>
                             </ul>
                         </div>
@@ -81,7 +80,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 text-center">
-                    <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                    <a href="../view/donar.php" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                 </div>                 
             </div>
         </div>
@@ -112,9 +111,5 @@
                 </div>
             </div>
         </div>
-        <!-- back to top -->
-        <button class="back-to-top parpadea">
-            <i class="ti-angle-up"></i>
-        </button>>
     </div>
 </footer>

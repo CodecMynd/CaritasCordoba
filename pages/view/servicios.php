@@ -50,7 +50,7 @@
                             <p class="card-text mx-2 mb-0 text-justify">A partir de la escucha atenta, se detectan las necesidades de las personas y se puede idear y proponer un plan de atención...</p>
                         </div>
                         <div class="card-footer">
-                            <a href="escuchaCasos.php" id="generales" class="btn btn-primary">Leer más</a>
+                            <a href="escuchaCasos.php" id="generales" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                                 Estancia para personas que están en tratamiento de Cáncer...</p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="contraCancer.php" class="btn btn-primary"><i class="fab fa-readme"></i>  Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="farmacia.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="consultasMedicas.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="consultasPsicologicas.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                             <p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="despensaAncianos.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="despensaFamilias.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="bazarRopa.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +211,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="emergencias.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -235,7 +235,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="comedor.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                             </p>
                         </div>
                         <div class="card-footer">
-                            <a href="service-single.html" class="btn btn-primary">Leer más</a>
+                            <a href="serviciosVarios.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
                         </div>
                     </div>
                 </div>

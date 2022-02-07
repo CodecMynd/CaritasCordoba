@@ -16,7 +16,7 @@
     /* preloader, particles & header */
     include '../components/header.php';
     ?>
-      <!-- banner -->
+    <!-- banner -->
     <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
         <div class="container">
             <div class="row">
@@ -35,7 +35,7 @@
     <!-- /banner -->
 
     <!-- historia -->
-    <section class="section" id="historia">
+    <section class="section" id="historia" data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-in-sine">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -65,6 +65,10 @@
                         <img src="../../src/img/nosotros/historia.jpg" alt="Historia Cáritas-1" class="img-fluid">
                         <img src="../../src/img/nosotros/historia.jpg" alt="Historia Cáritas-1" class="img-fluid">
                     </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <a href="donar.php" class="btn btn-primary parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                    <a href="contacto.php" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-at"></i> Contáctanos</a>
                 </div>
             </div>
         </div>
@@ -101,6 +105,9 @@
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>Es prestar su aporte, desde la comunicación cristiana de bienes, al crecimiento del reino de Dios, el cual se realiza mediante las obras de caridad, de justicia y de verdad evangélicas
                                 </li>
                             </ul>
+                            <div class="row justify-content-center" style="padding: 70px 0 20px 0;">
+                                <a href="contacto.php" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-at"></i> Contáctanos</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,11 +131,6 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row justify-content-center" style="padding-bottom:30px">
-                    <a href="contacto.php" class="btn btn-primary">Contactanos</a>
                 </div>
             </div>
         </div>

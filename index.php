@@ -54,16 +54,22 @@
         <!-- navegacion -->
         <!-- top header -->
         <div class="top-header fixed-top ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-10">
-                    </div>
-                    <div class="col-2">
-                        <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <!-- back to top -->
+                    <button class="back-to-top parpadea" title="Subir">
+                        <i class="ti-angle-up"></i>
+                    </button>
+                </div>
+                <div class="col-8">
+                </div>
+                <div class="col-2">
+                    <a href="pages/view/donar.php" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                 </div>
             </div>
         </div>
+    </div>
         <!-- nav bar -->
         <div class="navigation">
             <div class="container">
@@ -223,7 +229,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a href="pages/view/nosotros.php#historia" class="btn btn-primary mb-md-50 mt-4" data-aos="zoom-in" data-aos-duration="1500">Leer más...</a>
+                        <a href="pages/view/nosotros.php#historia" class="btn btn-primary mb-md-50 mt-4" data-aos="zoom-in" data-aos-duration="1500"><i class="fab fa-readme"></i> Leer más...</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -248,33 +254,33 @@
             <div class="row work-slider">
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                    <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
+                        <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                    <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
+                        <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                    <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
+                        <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                    <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
+                        <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
                     </div>
                 </div>
-                  <div class="col-lg-3 px-0">
+                <div class="col-lg-3 px-0">
                     <div class="work-slider-image">
-                    <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
+                        <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Donaciones section -->
     <section class="about section-sm overlay" style="background-image: url(src/img/inicio/donaciones/donaciones.jpg);" data-aos="fade-out" data-aos-duration="1500">
         <div class="container-fluid">
@@ -304,7 +310,8 @@
                                 <small><em>Brian Tracy.</em></small>
                             </p>
                         </blockquote>
-                        <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                        <a href="pages/view/donar.php" class="btn btn-primary parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                        <a href="pages/view/contacto.php" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-at"></i> Contáctanos</a>
                     </div>
                 </div>
             </div>
@@ -353,19 +360,19 @@
                             <div class="col-md-6 col-6">
                                 <ul class="footer-links">
                                     <li>
-                                        <a href="#">Escucha de casos</a>
+                                        <a href="pages/view/escuchaCasos.php">Escucha de casos</a>
                                     </li>
                                     <li>
-                                        <a href="about.html">Luchamos contra el cáncer</a>
+                                        <a href="pages/view/contraCancer.php">Luchamos contra el cáncer</a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">Farmacia</a>
+                                        <a href="pages/view/farmacia.php">Farmacia</a>
                                     </li>
                                     <li>
-                                        <a href="service.html">Consultas médicas</a>
+                                        <a href="pages/view/consultasMedicas.php">Consultas médicas</a>
                                     </li>
                                     <li>
-                                        <a href="#">Consultas psicológicas</a>
+                                        <a href="pages/view/consultasPsicologicas.php">Consultas psicológicas</a>
                                     </li>
                                 </ul>
                             </div>
@@ -373,22 +380,22 @@
                             <div class="col-md-6 col-6">
                                 <ul class="footer-links">
                                     <li>
-                                        <a href="#">Despensa a ancianos</a>
+                                        <a href="pages/view/despensaAncianos.php">Despensa a ancianos</a>
                                     </li>
                                     <li>
-                                        <a href="about-2.html">Despensa a familias</a>
+                                        <a href="pages/view/despensaFamilias.php">Despensa a familias</a>
                                     </li>
                                     <li>
-                                        <a href="contact.html">Bazar de ropa</a>
+                                        <a href="pages/view/bazarRopa.php">Bazar de ropa</a>
                                     </li>
                                     <li>
-                                        <a href="service-2.html">Emergencias</a>
+                                        <a href="pages/view/emergencias.php">Emergencias</a>
                                     </li>
                                     <li>
-                                        <a href="#">Comedor</a>
+                                        <a href="pages/view/comedor.php">Comedor</a>
                                     </li>
                                     <li>
-                                        <a href="#">Servicios varios</a>
+                                        <a href="pages/view/serviciosVarios.php">Servicios varios</a>
                                     </li>
                                 </ul>
                             </div>
@@ -418,8 +425,8 @@
                         </div>
                     </div>
                     <div class="col-md-12 text-center">
-                    <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
-                    </div>
+                        <a href="pages/view/donar.php" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                    </div><i class="fas fa-at"></i>
                 </div>
             </div>
         </div>
@@ -449,10 +456,6 @@
                     </div>
                 </div>
             </div>
-            <!-- back to top -->
-            <button class="back-to-top parpadea">
-                <i class="ti-angle-up"></i>
-            </button>
         </div>
     </footer>
     <!-- /footer -->

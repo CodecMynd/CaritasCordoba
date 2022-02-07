@@ -7,10 +7,16 @@
     <div class="top-header fixed-top ">
         <div class="container">
             <div class="row">
-                <div class="col-10">
+                <div class="col-2">
+                    <!-- back to top -->
+                    <button class="back-to-top parpadea" title="Subir">
+                        <i class="ti-angle-up"></i>
+                    </button>
+                </div>
+                <div class="col-8">
                 </div>
                 <div class="col-2">
-                    <a href="#" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                    <a href="../view/donar.php" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
                 </div>
             </div>
         </div>
