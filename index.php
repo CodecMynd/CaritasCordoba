@@ -124,12 +124,12 @@
                                     Quiero ayudar
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="">Donar</a>
-                                    <a class="dropdown-item" href="">Voluntarios</a>
+                                    <a class="dropdown-item" href="pages/view/donar.php#donar">Donar</a>
+                                    <a class="dropdown-item" href="pages/view/donar.php#voluntarios">Voluntarios</a>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" href="pages/view/reportes.php">
                                     Reportes
                                 </a>
                             </li>
@@ -142,6 +142,7 @@
             </div>
         </div>
     </header><!-- /navigation -->
+    
 
     <section>
         <!-- carousell -->

@@ -75,12 +75,12 @@
                                 Quiero ayudar
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Donar</a>
-                                <a class="dropdown-item" href="">Voluntarios</a>
+                                <a class="dropdown-item" href="donar.php#donar">Donar</a>
+                                <a class="dropdown-item" href="donar.php#voluntarios">Voluntarios</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link" href="reportes.php">
                                 Reportes
                             </a>
                         </li>

@@ -2996,3 +2996,15 @@ Barralateral redes sociales
                 display: inline;
                 color: #CA3F42;
             }
+            /* img centrada verti y horizontal */
+            
+            .imgCenterDiv {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .cardDonar {
+                -webkit-box-shadow: -10px -6px 15px -4px rgba(0, 0, 0, 0.72);
+                box-shadow: -10px -6px 15px -4px rgba(0, 0, 0, 0.72);
+            }
