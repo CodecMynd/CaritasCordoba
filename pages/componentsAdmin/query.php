@@ -17,8 +17,12 @@ while ($row = mysqli_fetch_array($query)) {
     $aPaterno = $row['aPaterno'];
     $aMaterno = $row['aMaterno'];
     $usuario = $row['usuario'];
+    $email = $row['email'];
+    $tel = $row['tel'];
     $passUser = $row['pass'];
     $admin = $row['admin'];
+    $super = $row['super'];
+    $tel = $row['tel'];
 
 
     $nomComp = $nombres . ' ' . $aPaterno . ' ' . $aMaterno;

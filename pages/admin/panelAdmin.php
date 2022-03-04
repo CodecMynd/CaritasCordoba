@@ -1,5 +1,5 @@
 <?php
-require '../componentsAdmin/head.php';
+require '../componentsAdmin/head-main.php';
 ?>
 <title>Panel <?php if ($admin == 1) {
                     echo 'Admin';
@@ -113,7 +113,7 @@ require '../componentsAdmin/head.php';
         ?>
     </div>
     <?php
-    require '../componentsAdmin/script.php';
+    require '../componentsAdmin/scripts-main.php';
     ?>
 </body>
 

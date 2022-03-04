@@ -49,21 +49,18 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle ">1.0 Menú</a>
+                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-dark">Catálogos</a>
                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                        <li><a href="#" class="dropdown-item">1.1 item </a></li>
-                        <li><a href="#" class="dropdown-item">1.2 item </a></li>
-                        <li><a href="#" class="dropdown-item">1.3 item </a></li>
-                        <li><a href="#" class="dropdown-item">1.4 item </a></li>
+                        <li><a href="../admin/crudUsuarios.php" class="dropdown-item">Usuarios </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle disabled">2.0 Menú</a>
+                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle ">Imagenes</a>
                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                        <li><a href="#" class="dropdown-item">2.1 item </a></li>
-                        <li><a href="#" class="dropdown-item">2.2 item </a></li>
-                        <li><a href="#" class="dropdown-item">2.3 item </a></li>
-                        <li><a href="#" class="dropdown-item">2.4 item </a></li>
+                        <li><a href="../admin/crudImagenes.php" class="dropdown-item">Pagina Inicio</a></li>
+                        <li><a href="#" class="dropdown-item">1.2 item </a></li>
+                        <li><a href="#" class="dropdown-item">1.3 item </a></li>
+                        <li><a href="#" class="dropdown-item">1.4 item </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

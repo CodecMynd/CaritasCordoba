@@ -54,22 +54,22 @@
         <!-- navegacion -->
         <!-- top header -->
         <div class="top-header fixed-top ">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
-                    <!-- back to top -->
-                    <button class="back-to-top parpadea" title="Subir">
-                        <i class="ti-angle-up"></i>
-                    </button>
-                </div>
-                <div class="col-8">
-                </div>
-                <div class="col-2">
-                    <a href="pages/view/donar.php" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <!-- back to top -->
+                        <button class="back-to-top parpadea" title="Subir">
+                            <i class="ti-angle-up"></i>
+                        </button>
+                    </div>
+                    <div class="col-8">
+                    </div>
+                    <div class="col-2">
+                        <a href="pages/view/donar.php" class="btn btn-primary mb-md-50 mt-40 parpadea" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-heart"></i> Donaciones</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
         <!-- nav bar -->
         <div class="navigation">
             <div class="container">
@@ -92,13 +92,15 @@
                                     Nosotros
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#historia">Historia</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Identidad</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#identidad">Objetivos</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Misión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Visión</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Valores</a>
-                                    <a class="dropdown-item" href="pages/view/nosotros.php#directorio">Directorio</a>
+                                    <ul style="columns: 2;">
+                                        <li><a class="dropdown-item" href="pages/view/nosotros.php#historia">Historia</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/nosotros.php#identidad">Identidad</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/nosotros.php#identidad">Objetivos</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Misión</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Visión</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/nosotros.php#filosOrganiza">Valores</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/nosotros.php#directorio">Directorio</a></li>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -106,17 +108,19 @@
                                     Servicios
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Escucha de casos</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Luchamos contra el Cáncer</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Farmacia</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas médicas</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas psicológicas</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Despensas a ancianos</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Despensas a familias</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Bazar de ropa</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Emergencias</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Comedor</a>
-                                    <a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Servicios varios</a>
+                                    <ul style="columns:2;">
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Escucha de casos</a</li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Luchamos contra el Cáncer</</li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Farmacia</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas médicas</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas psicológicas</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Despensas a ancianos</a</li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Despensas a familias</a</li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Bazar de ropa</a</li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Emergencias</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Comedor</a></li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Servicios varios</a></li>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
@@ -142,7 +146,7 @@
             </div>
         </div>
     </header><!-- /navigation -->
-    
+
 
     <section>
         <!-- carousell -->
