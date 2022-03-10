@@ -132,16 +132,6 @@
         display: none;
     }
 
-    /* Boton tipo usuario */
-    /* .tipo-usuario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 5%;
-    margin-top: 10px;
-    height: 25%;
-    width: auto;
-} */
 </style>
 <script>
     $('#btnUpdatePassUser').click(function() {
@@ -154,7 +144,7 @@
                 $('#respuestaUpdatePassUser').html(res)
             })
     });
-    //Ocultar boton por 5 minutos para evitar el doble submit
+    //Ocultar boton por 5 minutos para evitar el doble submit-----
     $("#btnUpdatePassUser").on('click', function() {
         $("#btnUpdatePassUser").css('visibility', 'hidden');
         $("#btnCerrarModal").css('visibility', 'hidden');
@@ -170,6 +160,7 @@
         });
     });
 
+    // Mostrar ocultar contraseña -------------------------------
     function mostrarPassword() {
         var cambio = document.getElementById("password");
         if (cambio.type == "password") {
@@ -186,9 +177,8 @@
             $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
         });
     });
-</script>
-<script>
-    //  iniciar inputMask 
+
+    //  iniciar inputMask ---------------------------------------
     $(document).ready(function() {
         $(":input").inputmask();
     });

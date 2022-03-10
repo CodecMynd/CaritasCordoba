@@ -55,9 +55,9 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle ">Imagenes</a>
+                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-dark">Imagenes</a>
                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                        <li><a href="../admin/crudImagenes.php" class="dropdown-item">Pagina Inicio</a></li>
+                        <li><a href="../admin/crudImgInicio.php" class="dropdown-item">Módulo Página Inicio</a></li>
                         <li><a href="#" class="dropdown-item">1.2 item </a></li>
                         <li><a href="#" class="dropdown-item">1.3 item </a></li>
                         <li><a href="#" class="dropdown-item">1.4 item </a></li>

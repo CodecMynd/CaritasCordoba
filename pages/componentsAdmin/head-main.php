@@ -8,7 +8,7 @@ require 'query.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Sistema Caritas Cordoba | Control Interno">
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="copyright" content="">
@@ -21,16 +21,14 @@ require 'query.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/1522572059.js" crossorigin="anonymous"></script>
-    <!-- Ionicons -->
-    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
     <!-- Theme style -->
-    <link rel="stylesheet" href="../srcAdmin/css/custom.min.css">
+    <link rel="stylesheet" href="../src/css/custom.min.css">
     <!-- Bootstrap toggle -->
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <!-- Toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <!-- ribbon -->
-    <link rel="stylesheet" href="../srcAdmin/css/ribbon.css">
+    <link rel="stylesheet" href="../src/css/ribbon.css">
 
     <!-- tooltip -->
     <script>

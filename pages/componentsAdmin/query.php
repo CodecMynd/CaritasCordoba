@@ -27,3 +27,30 @@ while ($row = mysqli_fetch_array($query)) {
 
     $nomComp = $nombres . ' ' . $aPaterno . ' ' . $aMaterno;
 }
+// query Permisos ------------------------------------------------------------------------------------------
+$query = mysqli_query($conexion, "SELECT * FROM permisos WHERE id_usuario = $id");
+while ($row = mysqli_fetch_array($query)) {
+    $verTablaUsuario = $row['verTablaUsuario'];
+    $editarUsu = $row['editarUsu'];
+    $asignarCon = $row['asignarCon'];
+    $eliminarUsu = $row['eliminarUsu'];
+    $asignarPer = $row['asignarPer'];
+    $nuevoUsu = $row['nuevoUsu'];
+    $verTablaImgInicio = $row['verTablaImgInicio'];
+    $nuevoImgInicio = $row['nuevoImgInicio'];
+    $editarImgInicio = $row['editarImgInicio'];
+    $eliImgInicio = $row['eliImgInicio'];
+}
+
+
+
+
+// Mostar Modal al recargar pagína en panelAdmin ------------------------------------------------------------------------------------------
+if ($passUser === 'SIN_PASSWORD') {
+    echo '<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".sin_contraseña").modal("toggle")
+    });
+</script>';
+}

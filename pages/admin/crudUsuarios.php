@@ -1,7 +1,7 @@
 <?php
 require '../componentsAdmin/head-main.php';
 ?>
-<title>Panel Usuarios | <?php echo $nomComp ?></title>
+<title>Tabla Usuarios | <?php echo $nomComp ?></title>
 
 </head>
 
@@ -18,8 +18,11 @@ require '../componentsAdmin/head-main.php';
                         <div class="col-sm-6">
                             <h1 class="m-0">Tabla Usuarios</h1>
                         </div>
-                        <div class="col-sm-6 ">
-                            <h5 class="float-right">Mi Usuario: <strong><?php echo $nomComp ?></strong></h5>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="../admin/panelAdmin.php"><i class="fa-solid fa-house-user"></i> Home</a></li>
+                                <li class="breadcrumb-item active"><i class="fa-solid fa-user-plus"></i> Registrar Usuario</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
@@ -33,44 +36,41 @@ require '../componentsAdmin/head-main.php';
                                 <div class="card-header">
                                     <h3 class="card-title">Usuarios dados de alta en el sistema</h3>
                                     <div class="card-tools">
-                                        <!-- <?php if ($super == 1) { ?>
-                                            <a type="button" class="btn btn-secondary" href="../adds/formAddUsuario.php" data-toggle="tooltip" data-placement="left" title="1.1.5 Nuevo Usuario">
-                                                <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp; Nuevo Usuario</a>
+                                        <?php if ($super == 1) { ?>
+                                            <a type="button" class="btn btn-secondary" href="../adds/formAddUsuario.php" data-toggle="tooltip" data-placement="left" title="Registrar Usuario">
+                                                <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp; Registrar Usuario</a>
                                         <?php } else if ($nuevoUsu == 1) { ?>
-                                            <a type="button" class="btn btn-secondary" href="../adds/formAddUsuario.php" data-toggle="tooltip" data-placement="left" title="1.1.5 Nuevo Usuario">
-                                                <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp; Nuevo Usuario</a>
+                                            <a type="button" class="btn btn-secondary" href="../adds/formAddUsuario.php" data-toggle="tooltip" data-placement="left" title="Registrar Usuario">
+                                                <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp; Registrar Usuario</a>
                                         <?php } else { ?>
-                                            <a type="button" class="btn btn-outline-danger" id="nuevoUsu" data-toggle="tooltip" data-placement="left" title="1.1.5 Nuevo Usuario">
-                                                <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp; Nuevo Usuario</a>
-                                        <?php } ?> -->
-
-                                        <a type="button" class="btn btn-secondary" href="../adds/formAddUsuario.php" data-toggle="tooltip" data-placement="left" title="Registrar Nuevo Usuario">
-                                            <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp; Registrar Usuario</a>
+                                            <a type="button" class="btn btn-outline-danger" id="nuevoUsu" data-toggle="tooltip" data-placement="left" title="Registrar Usuario">
+                                                <i class="fa-solid fa-user-plus"></i>&nbsp;&nbsp; Registrar Usuario</a>
+                                        <?php } ?> 
                                         <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Actualizar página"><i class="fa-solid fa-arrows-rotate"></i></a>
                                     </div>
                                 </div>
                                 <!-- consulta sql -->
                                 <?php
                                 $cont = 0;
-                                // if ($super == 1) {
-                                //     $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
-                                // } else if ($verTablaUsuario == 1) {
-                                //     $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
-                                // } else {
-                                //     $query = "SELECT super FROM usuarios WHERE super = 10";
-                                // }
-                                $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
+                                 if ($super == 1) {
+                                     $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
+                                 } else if ($verTablaUsuario == 1) {
+                                     $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
+                                 } else {
+                                     $query = "SELECT super FROM usuarios WHERE super = 10";
+                                 }
+                          
                                 $resultado = mysqli_query($conexion, $query);
                                 ?>
                                 <div class="card-body">
-                                    <!-- <?php if ($super == 1) {
+                                    <?php if ($super == 1) {
                                     } else if ($verTablaUsuario == 0) { ?>
                                         <div class="ribbon ribbon-top-left"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-top-right"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-bottom-left"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-bottom-right"><span>Sin permiso</span></div>
-                                    <?php  } ?> -->
-                                    <table id="tableCrudUsuarios" class="table table-sm table-bordered table-striped">
+                                    <?php  } ?> 
+                                    <table id="tablePermisos" class="table table-sm table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -177,7 +177,7 @@ require '../componentsAdmin/head-main.php';
                                                     </td>
                                                 </tr>
                                             <?php
-                                                // require '../components/modal-eliminarUsuario.php';
+                                                require '../componentsAdmin/modal-eliminarUsuario.php';
                                             }
                                             desconectar();
                                             ?>
@@ -211,7 +211,7 @@ require '../componentsAdmin/head-main.php';
     require '../componentsAdmin/scripts-dataTables.php';
     ?>
     <!-- avisos -->
-    <script src="../../src/js/toastr.js"></script>
+    <script src="../src/js/toastr.js"></script>
 
 </body>
 

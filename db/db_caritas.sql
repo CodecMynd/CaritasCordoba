@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-02-2022 a las 01:24:36
+-- Tiempo de generación: 10-03-2022 a las 19:13:00
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -24,102 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `benefactores`
+-- Estructura de tabla para la tabla `imagenes`
 --
 
-CREATE TABLE `benefactores` (
-  `id_benefactores` int(11) NOT NULL,
-  `nomBenef` varchar(30) DEFAULT NULL,
-  `tipoPersona` varchar(30) DEFAULT NULL,
-  `rfc` varchar(30) DEFAULT NULL,
-  `activo` varchar(30) DEFAULT NULL,
-  `id_donaExpecie` char(1) DEFAULT NULL,
-  `id_donaEconom` char(1) DEFAULT NULL,
-  `usuario` char(2) DEFAULT NULL,
-  `fecha_reg` datetime DEFAULT NULL,
-  `id_servicio` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `beneficiarios`
---
-
-CREATE TABLE `beneficiarios` (
-  `id_beneficiario` int(11) NOT NULL,
-  `nomBen` varchar(30) NOT NULL,
-  `apePatBenef` varchar(20) NOT NULL,
-  `apeMatBenef` varchar(20) NOT NULL,
-  `curp` varchar(18) NOT NULL,
-  `identOficial` varchar(0) NOT NULL,
-  `edad` char(2) NOT NULL,
-  `estadoCivil` varchar(11) NOT NULL,
-  `fecha_rag` datetime DEFAULT NULL,
-  `direccion` varchar(45) NOT NULL,
-  `usuario` char(1) DEFAULT NULL,
-  `id_servicio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+CREATE TABLE `imagenes` (
+  `id_imagen` int(11) NOT NULL,
+  `file` varchar(200) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `ruta` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `titulo` varchar(20) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `subtitulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `modulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `fecha_creacion` datetime NOT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_capC` int(11) DEFAULT NULL,
+  `id_capM` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
--- Estructura de tabla para la tabla `carrusel`
+-- Volcado de datos para la tabla `imagenes`
 --
 
-CREATE TABLE `carrusel` (
-  `id_carrusel` int(11) NOT NULL,
-  `nombresCarr` varchar(25) NOT NULL,
-  `cantImages` char(2) NOT NULL,
-  `id_perm` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `donaeconom`
---
-
-CREATE TABLE `donaeconom` (
-  `id_donaEcom` int(11) NOT NULL,
-  `tipoDonacion` varchar(22) DEFAULT NULL,
-  `cantidad` int(11) DEFAULT NULL,
-  `usuario` char(2) DEFAULT NULL,
-  `fecha_reg` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `donaespecie`
---
-
-CREATE TABLE `donaespecie` (
-  `id_donaEspecia` int(11) NOT NULL,
-  `articulo` varchar(20) DEFAULT NULL,
-  `tipo` int(20) DEFAULT NULL,
-  `cantidad` int(11) DEFAULT NULL,
-  `usuario` char(2) DEFAULT NULL,
-  `fecha_reg` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `empleados`
---
-
-CREATE TABLE `empleados` (
-  `id_empleado` int(11) NOT NULL,
-  `nomEmp` varchar(30) NOT NULL,
-  `apePatEmp` varchar(20) NOT NULL,
-  `apeMatEmp` varchar(20) NOT NULL,
-  `puesto` varchar(30) NOT NULL,
-  `tel` varchar(14) NOT NULL,
-  `email` varchar(35) NOT NULL,
-  `usuario` char(1) NOT NULL,
-  `fecha_reg` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `imagenes` (`id_imagen`, `file`, `ruta`, `titulo`, `subtitulo`, `descripcion`, `modulo`, `fecha_creacion`, `fecha_mod`, `id_capC`, `id_capM`) VALUES
+(8, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'feacaca', 'cadc', 'csac', '', '2022-03-10 00:44:58', '2022-03-10 01:46:43', 1, 1),
+(12, 'eat-sleep-code-repeat-er-1280x1024.jpg', '../src/img/inicio/eat-sleep-code-repeat-er-1280x1024.jpg', 'caf', 'scS', 'ASCASD', 'carrusel1', '2022-03-10 01:06:11', NULL, 1, NULL),
+(13, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'Hola', 'cadc', 'csac', '', '2022-03-10 01:40:07', NULL, 1, NULL),
+(14, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'Hola', 'cadc', 'csac', '', '2022-03-10 01:40:07', NULL, 1, NULL),
+(17, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'feasDSD', 'cadadADc', 'csacdad', 'carrusel1', '2022-03-10 01:43:13', NULL, 1, NULL),
+(18, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'feasDSD', 'cadadADc', 'csacdad', 'carrusel1', '2022-03-10 01:43:14', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -128,36 +60,27 @@ CREATE TABLE `empleados` (
 --
 
 CREATE TABLE `permisos` (
-  `id_permisos` int(11) NOT NULL,
-  `permiso` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `reportes`
---
-
-CREATE TABLE `reportes` (
-  `id_reporte` int(11) NOT NULL,
-  `descripcion` text NOT NULL,
-  `ruta` text NOT NULL,
-  `fecha` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
+  `id_permiso` int(11) NOT NULL,
+  `verTablaUsuario` char(1) CHARACTER SET utf8 NOT NULL DEFAULT '0',
+  `editarUsu` char(1) CHARACTER SET utf8 NOT NULL DEFAULT '0',
+  `asignarCon` char(1) CHARACTER SET utf8 NOT NULL DEFAULT '0',
+  `eliminarUsu` char(1) CHARACTER SET utf8 NOT NULL DEFAULT '0',
+  `asignarPer` char(1) CHARACTER SET utf8 NOT NULL DEFAULT '0',
+  `nuevoUsu` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `verTablaImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `nuevoImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `editarImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `eliImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
--- Estructura de tabla para la tabla `servicios`
+-- Volcado de datos para la tabla `permisos`
 --
 
-CREATE TABLE `servicios` (
-  `id_servicio` int(11) NOT NULL,
-  `nombre` varchar(30) NOT NULL,
-  `descripcion` text NOT NULL,
-  `usuario` char(1) NOT NULL,
-  `fecha_reg` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `permisos` (`id_permiso`, `verTablaUsuario`, `editarUsu`, `asignarCon`, `eliminarUsu`, `asignarPer`, `nuevoUsu`, `verTablaImgInicio`, `nuevoImgInicio`, `editarImgInicio`, `eliImgInicio`, `id_usuario`) VALUES
+(1, '1', '1', '1', '1', '1', '1', '0', '0', '0', '0', 1),
+(2, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 2);
 
 -- --------------------------------------------------------
 
@@ -172,105 +95,40 @@ CREATE TABLE `usuarios` (
   `aMaterno` varchar(20) NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `pass` varchar(12) NOT NULL,
-  `admin` tinyint(1) NOT NULL
+  `email` varchar(40) NOT NULL,
+  `tel` varchar(14) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT 0,
+  `super` tinyint(1) NOT NULL DEFAULT 0,
+  `estatus` varchar(7) NOT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `fecha_mod` datetime DEFAULT NULL,
+  `id_captC` int(11) DEFAULT NULL,
+  `id_captM` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombres`, `aPaterno`, `aMaterno`, `usuario`, `pass`, `admin`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin', 'admin', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `videos`
---
-
-CREATE TABLE `videos` (
-  `id_video` int(11) NOT NULL,
-  `enlace` varchar(45) DEFAULT NULL,
-  `fecha_reg` datetime DEFAULT NULL,
-  `usuario` char(1) DEFAULT NULL,
-  `descripcion` text DEFAULT NULL,
-  `id_servicio` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `voluntarios`
---
-
-CREATE TABLE `voluntarios` (
-  `id_voluntario` int(11) NOT NULL,
-  `nombreVol` varchar(30) NOT NULL,
-  `aPatVolun` varchar(20) NOT NULL,
-  `aMatVolun` varchar(20) NOT NULL,
-  `activo` text NOT NULL,
-  `usuario` char(1) NOT NULL,
-  `fecha_reg` datetime DEFAULT NULL,
-  `id_servicio` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `usuarios` (`id_usuario`, `nombres`, `aPaterno`, `aMaterno`, `usuario`, `pass`, `email`, `tel`, `admin`, `super`, `estatus`, `fecha_creacion`, `fecha_mod`, `id_captC`, `id_captM`) VALUES
+(1, 'admin', 'admin', 'admin', 'admin', 'admin', 'hola', '', 1, 1, '', NULL, NULL, NULL, NULL),
+(2, 'Erika', 'Rosas ', 'Fernandez', 'kika', 'erikaR', 'a@a.a', '(000) 000-0000', 0, 0, 'offline', '2022-03-04 22:19:07', '2022-03-04 23:07:22', 1, 1);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `benefactores`
+-- Indices de la tabla `imagenes`
 --
-ALTER TABLE `benefactores`
-  ADD PRIMARY KEY (`id_benefactores`);
-
---
--- Indices de la tabla `beneficiarios`
---
-ALTER TABLE `beneficiarios`
-  ADD PRIMARY KEY (`id_beneficiario`);
-
---
--- Indices de la tabla `carrusel`
---
-ALTER TABLE `carrusel`
-  ADD PRIMARY KEY (`id_carrusel`);
-
---
--- Indices de la tabla `donaeconom`
---
-ALTER TABLE `donaeconom`
-  ADD PRIMARY KEY (`id_donaEcom`);
-
---
--- Indices de la tabla `donaespecie`
---
-ALTER TABLE `donaespecie`
-  ADD PRIMARY KEY (`id_donaEspecia`);
-
---
--- Indices de la tabla `empleados`
---
-ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`id_empleado`);
+ALTER TABLE `imagenes`
+  ADD PRIMARY KEY (`id_imagen`);
 
 --
 -- Indices de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  ADD PRIMARY KEY (`id_permisos`);
-
---
--- Indices de la tabla `reportes`
---
-ALTER TABLE `reportes`
-  ADD PRIMARY KEY (`id_reporte`);
-
---
--- Indices de la tabla `servicios`
---
-ALTER TABLE `servicios`
-  ADD PRIMARY KEY (`id_servicio`);
+  ADD PRIMARY KEY (`id_permiso`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -279,92 +137,26 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Indices de la tabla `videos`
---
-ALTER TABLE `videos`
-  ADD PRIMARY KEY (`id_video`);
-
---
--- Indices de la tabla `voluntarios`
---
-ALTER TABLE `voluntarios`
-  ADD PRIMARY KEY (`id_voluntario`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `benefactores`
+-- AUTO_INCREMENT de la tabla `imagenes`
 --
-ALTER TABLE `benefactores`
-  MODIFY `id_benefactores` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `beneficiarios`
---
-ALTER TABLE `beneficiarios`
-  MODIFY `id_beneficiario` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `carrusel`
---
-ALTER TABLE `carrusel`
-  MODIFY `id_carrusel` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `donaeconom`
---
-ALTER TABLE `donaeconom`
-  MODIFY `id_donaEcom` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `donaespecie`
---
-ALTER TABLE `donaespecie`
-  MODIFY `id_donaEspecia` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `empleados`
---
-ALTER TABLE `empleados`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `imagenes`
+  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id_permisos` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `reportes`
---
-ALTER TABLE `reportes`
-  MODIFY `id_reporte` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `servicios`
---
-ALTER TABLE `servicios`
-  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de la tabla `videos`
---
-ALTER TABLE `videos`
-  MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `voluntarios`
---
-ALTER TABLE `voluntarios`
-  MODIFY `id_voluntario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
