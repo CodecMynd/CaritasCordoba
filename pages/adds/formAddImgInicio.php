@@ -36,7 +36,7 @@ require '../componentsAdmin/head-main.php';
                                 <div class="card-header border-nav">
                                     <h3 class="card-title">*Todos los campos son obligatorios</h3>
                                 </div>
-                                <form id="formUpdateImgInicio" enctype="multipart/form-data">
+                                <form id="formAddImgInicio" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="row justify-content-center">
                                             <div class="col-md-5 col-sm-12 my-1 form-group">
@@ -120,7 +120,7 @@ require '../componentsAdmin/head-main.php';
                                             <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Actualizar página"><i class="fa-solid fa-arrows-rotate"></i></a>
                                             <br>
                                             <div class="col-md-12 col-sm-12 align-self-center mt-2">
-                                                <div id="respuestaUpdateImgInicio"></div>
+                                                <div id="respuestaNuevoImgInicio"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -140,5 +140,33 @@ require '../componentsAdmin/head-main.php';
     require '../componentsAdmin/scripts-main.php';
     ?>
 </body>
-<script src="../src/js/ajax.js"></script>
+<script>
+    // Capturar formulario Modulo Inicio
+$("form").on("submit", function (e) {
+    e.preventDefault();
+    var datos = $(this).serializeArray();
+    var imagen = new FormData($("#formAddImgInicio")[0]);
+
+    $.each(datos, function (key, input) {
+        imagen.append(input.name, input.value);
+    });
+    $.ajax({
+            type: 'post',
+            url: '../adds/addImgInicio.php',
+            data: imagen,
+            contentType: false,
+            processData: false,
+            success: function (response) {
+                if (response != 0) {
+                    $('#formAddImgInicio')[0].reset();
+                } else {
+                    $("#fracaso").delay(500).fadeIn("slow");
+                }
+            }
+        })
+        .done(function (res) {
+            $('#respuestaNuevoImgInicio').html(res)
+        })
+});
+</script>
 </html>

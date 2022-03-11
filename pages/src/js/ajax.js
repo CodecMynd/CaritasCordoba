@@ -190,33 +190,7 @@ $("#btnUpdatePermisoUsuario").on('click', function () {
 -
 -
 */
-// Capturar formulario Modulo Inicio
-$("form").on("submit", function (e) {
-    e.preventDefault();
-    var datos = $(this).serializeArray();
-    var imagen = new FormData($("#formAddImgInicio")[0]);
 
-    $.each(datos, function (key, input) {
-        imagen.append(input.name, input.value);
-    });
-    $.ajax({
-            type: 'post',
-            url: '../adds/addImgInicio.php',
-            data: imagen,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                if (response != 0) {
-                    $('#formAddImgInicio')[0].reset();
-                } else {
-                    $("#fracaso").delay(500).fadeIn("slow");
-                }
-            }
-        })
-        .done(function (res) {
-            $('#respuestaNuevoImgInicio').html(res)
-        })
-});
 
 /*
 -

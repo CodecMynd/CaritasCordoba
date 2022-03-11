@@ -132,10 +132,10 @@ require '../componentsAdmin/head-dataTables.php'
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Imagen Módulo inicio">
                                                                                 <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target=".eliminarImgInico<?php echo $row['id_imagen'] ?>"><i class="fas fa-trash-alt"></i>
+                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_imagen'] ?>"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
                                                                                 <?php  } else if ($eliImgInicio   == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target=".eliminarImgInico<?php echo $row['id_imagen'] ?>"><i class="fas fa-trash-alt"></i>
+                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_imagen'] ?>"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="eliImgInicio"><i class="fas fa-trash-alt"></i>
@@ -148,8 +148,8 @@ require '../componentsAdmin/head-dataTables.php'
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <?php 
-                                                     require '../componentsAdmin/modal-eliminarImgInicio.php';
+                                                    <?php
+                                                    require '../componentsAdmin/modal-eliminarImgInicio.php';
                                                     ?>
                                                 </tr>
                                             <?php
@@ -191,26 +191,25 @@ require '../componentsAdmin/head-dataTables.php'
 <!-- Ajax Jquery -->
 <script src="../src/js/ajax.js"></script>
 <script>
-        // Eliminar Imagen Módulo Inicio --------------------------------------------
-        $(document).ready(function() {
-            $('#btnEliminarImgInicio').click(function() {
-                $.ajax({
-                        url: '../delete/deleteImgInicio.php',
-                        type: 'POST',
-                        data: $('#formEliminarImgInicio').serialize(),
-                    })
-                    .done(function(res) {
-                        $('#respuesta').html(res)
-                    })
-            });
+    $('.btnBorrarImgInicio').click(function(e) {
+        e.preventDefault();
+        if (confirm("¿Estás seguro de eliminar esta Imagen? Una vez borrado ya no se podrá recuperar la información.")) {
+            var id = $(this).attr("id_imagen");
 
-        });
-                //Ocultar boton por 5 minutos para evitar el doble submit
-                $("#btnEliminarImgInicio").on('click', function() {
-            $("#btnEliminarImgInicio").css('visibility', 'hidden');
-            setTimeout(function() {
-                $("#btnEliminarImgInicio").css('visibility', 'visible');
-            }, 300000);
-        });
+            var dataString = 'id=' + id;
+            url = "../delete/deleteImgInicio.php";
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: dataString,
+                success: function(data) {
+                    window.location.href = "crudImgInicio.php";
+                    $('#respuesta').html(data);
+                }
+            });
+        }
+        return false;
+    });
 </script>
+
 </html>

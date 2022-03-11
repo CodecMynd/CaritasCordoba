@@ -1,9 +1,9 @@
-<div class="modal fade eliminarImgInico<?php echo $row['id_imagen'] ?>" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal fade" id="eliminarImgInico<?php echo $row['id_imagen'] ?>" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">
-                    ¿Realmente deseas eliminar imagen:?
+                    ¿Realmente deseas eliminar imagen?
                 </h5>
             </div>
             <div class="modal-body text-center">
@@ -12,12 +12,8 @@
                 </strong>
             </div>
             <div class="modal-footer">
-                <form id="formEliminarImgInicio">
-                    <input type="hidden" name="file" id="file" value="<?php echo $row['file'] ?>">
-                    <input type="hidden" name="id_imagen" id="id_imagen" value="<?php echo $row['id_imagen']; ?>">
-                    <buttom type="submit"  id="btnEliminarImgInicio" class="btn btn-secondary btn-block" ><i class="fa-solid fa-ban"></i> Eliminar</buttom>
-                    <a data-dismiss="modal" class="btn btn-secondary btn-block" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="fa-solid fa-xmark"></i> Salir</a>
-                </form>
+                <buttom type="submit" data-dismiss="modal" id_imagen="<?php echo $row['id_imagen']; ?>" class="btn btn-secondary btn-block btnBorrarImgInicio" data-toggle="tooltip" data-placement="bottom" title="Estas de acuerdo en eliminar "><i class="fa-solid fa-ban"></i> Eliminar</buttom>
+                <a data-dismiss="modal" class="btn btn-secondary btn-block" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="fa-solid fa-xmark"></i> Salir</a>
             </div>
             <div class="pie">
                 <h5>Eliminar Imagen Módulo Inicio</h5>
