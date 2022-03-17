@@ -39,6 +39,18 @@ require '../componentsAdmin/head-main.php';
                                 <form id="formAddImgInicio" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="row justify-content-center">
+                                            <div class="col-md-3 col-sm-12 form-group">
+                                                <div class="input-group">
+                                                    <label for="color" class="pl-5">*Módulo</label>
+                                                    <select name="modulo" id="modulo" class="form-control" data-toggle="tooltip" data-placement="bottom" title="Selecciona un Color de la lista" style="width: 100%;" onchange="myFunction()">
+                                                        <option selected disabled>Selecciona</option>
+                                                        <option value="carrusel1">Carrusel Principal</option>
+                                                        <option value="carrusel2">Carrusel Secundario</option>
+                                                        <option value="carrusel3">Carrusel Videos</option>
+                                                        <option value="carrusel4">Carrusel Benefactores</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                             <div class="col-md-5 col-sm-12 my-1 form-group">
                                                 <div class="input-group form-floating mb-3">
                                                     <div class="input-group-prepend">
@@ -55,17 +67,6 @@ require '../componentsAdmin/head-main.php';
                                                     </div>
                                                     <input name="subtitulo" id="subtitulo" type="text" class="form-control" placeholder="subtitulo " required maxlength="30" data-toggle="tooltip" data-placement="bottom" title="Max. 30 caracteres">
                                                     <label for="floatingInput" class="pl-5">*Subtitulo</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-sm-12 my-1 form-group">
-                                                <div class="input-group">
-                                                    <label for="color" class="pl-5">*Módulo</label>
-                                                    <select name="modulo" id="modulo" class="form-control" data-toggle="tooltip" data-placement="bottom" title="Selecciona un Color de la lista" style="width: 100%;">
-                                                        <option selected disabled>Selecciona</option>
-                                                        <option value="carrusel1">Carrusel Principal</option>
-                                                        <option value="carrusel2">Carrusel Secundario</option>
-                                                        <option value="carrusel3">Carrusel Benefactores</option>
-                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12 my-1">
@@ -130,43 +131,61 @@ require '../componentsAdmin/head-main.php';
                     </div>
                 </div>
             </section>
+            <button></button>
         </div>
         <?php
         require '../componentsAdmin/footer.php';
         ?>
     </div>
+
     <?php
     // Scripts principal
     require '../componentsAdmin/scripts-main.php';
+    require '../componentsAdmin/modal-ayudaCarrusel.php';
     ?>
-</body>
-<script>
-    // Capturar formulario Modulo Inicio
-$("form").on("submit", function (e) {
-    e.preventDefault();
-    var datos = $(this).serializeArray();
-    var imagen = new FormData($("#formAddImgInicio")[0]);
+    <script>
+        function myFunction() {
+            var option_value = document.getElementById("modulo").value;
+            if (option_value == "carrusel1") {
+                //  alert("Hai !");
+                $("#modal-carrusel1").modal();
 
-    $.each(datos, function (key, input) {
-        imagen.append(input.name, input.value);
-    });
-    $.ajax({
-            type: 'post',
-            url: '../adds/addImgInicio.php',
-            data: imagen,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                if (response != 0) {
-                    $('#formAddImgInicio')[0].reset();
-                } else {
-                    $("#fracaso").delay(500).fadeIn("slow");
-                }
+            } else if (option_value == "carrusel2") {
+                $("#modal-carrusel2").modal();
+            }else if (option_value == "carrusel3") {
+                $("#modal-carrusel3").modal();
+            }else if (option_value == "carrusel4") {
+                $("#modal-carrusel4").modal();
             }
-        })
-        .done(function (res) {
-            $('#respuestaNuevoImgInicio').html(res)
-        })
-});
-</script>
+        }
+        // Capturar formulario Modulo Inicio
+        $("form").on("submit", function(e) {
+            e.preventDefault();
+            var datos = $(this).serializeArray();
+            var imagen = new FormData($("#formAddImgInicio")[0]);
+
+            $.each(datos, function(key, input) {
+                imagen.append(input.name, input.value);
+            });
+            $.ajax({
+                    type: 'post',
+                    url: '../adds/addImgInicio.php',
+                    data: imagen,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        if (response != 0) {
+                            $('#formAddImgInicio')[0].reset();
+                        } else {
+                            $("#fracaso").delay(500).fadeIn("slow");
+                        }
+                    }
+                })
+                .done(function(res) {
+                    $('#respuestaNuevoImgInicio').html(res)
+                })
+        });
+    </script>
+</body>
+
 </html>

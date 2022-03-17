@@ -1,3 +1,15 @@
+<?php
+require 'config/functions.php';
+conectar();
+
+// query Imagen Carrusel Principal carrusel1
+$query = "SELECT * FROM imagenes WHERE modulo = 'carrusel1' LIMIT 4";
+$resultadoCarrusel1 = mysqli_query($conexion, $query);
+
+// query Imagen Carrusel Principal carrusel2
+$query = "SELECT * FROM imagenes WHERE modulo = 'carrusel2' LIMIT 4";
+$resultadoCarrusel2 = mysqli_query($conexion, $query);
+?>
 <!doctype html>
 <html lang="es">
 
@@ -5,8 +17,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="
-    ">
+    <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="Christian Ricardo Jimenes Rosas">
     <meta name="copyright" content="Caritas Cordoba A.C.">
@@ -51,8 +62,6 @@
     <div id="particles-js"></div>
 
     <header>
-        <!-- navegacion -->
-        <!-- top header -->
         <div class="top-header fixed-top ">
             <div class="container">
                 <div class="row">
@@ -109,14 +118,14 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     <ul style="columns:2;">
-                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Escucha de casos</a</li>
-                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Luchamos contra el Cáncer</</li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Escucha de casos</a< /li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Luchamos contra el Cáncer</< /li>
                                         <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios1">Farmacia</a></li>
                                         <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas médicas</a></li>
                                         <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Consultas psicológicas</a></li>
-                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Despensas a ancianos</a</li>
-                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Despensas a familias</a</li>
-                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Bazar de ropa</a</li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios2">Despensas a ancianos</a< /li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Despensas a familias</a< /li>
+                                        <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Bazar de ropa</a< /li>
                                         <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios3">Emergencias</a></li>
                                         <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Comedor</a></li>
                                         <li><a class="dropdown-item" href="pages/view/servicios.php#seccionServicios4">Servicios varios</a></li>
@@ -146,77 +155,30 @@
             </div>
         </div>
     </header><!-- /navigation -->
-
-
     <section>
         <!-- carousell -->
+
         <div class="hero-slider position-relative">
-            <div class="hero-slider-item py-160" style="background-image: url(src/img/banner/banner-1.jpg);" data-icon="fas fa-info-circle" data-text="Nombre 1-slider">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 1</h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">Titulo 1</h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="#" class="btn btn-outline text-uppercase">Mas detalles</a>
+            <?php while ($rowC1 = $resultadoCarrusel1->fetch_assoc()) { ?>
+                <div class="hero-slider-item py-160" style="background-image: url(src/img/imgModuloInicio/<?php echo $rowC1['file'] ?>);" data-icon="fas fa-info-circle" data-text="<?php echo $rowC1['titulo'] ?>">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="hero-content">
+                                    <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1"><?php echo $rowC1['subtitulo'] ?></h4>
+                                    <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5"><?php echo $rowC1['titulo'] ?></h1>
+                                    <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9"><?php echo $rowC1['descripcion'] ?>
+                                    </p>
+                                    <!-- <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="#" class="btn btn-outline text-uppercase">Mas detalles</a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="hero-slider-item py-160" style="background-image: url(src/img/banner/banner-2.jpg);" data-icon="fas fa-info-circle" data-text="Nombre 2-slider">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".1">Subtitulo </h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".5">Titulo 2</h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="#" class="btn btn-outline text-uppercase">Mas detalles</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160" style="background-image: url(src/img/banner/banner-3.jpg);" data-icon="fas fa-info-circle" data-text="Nombre 3-slider">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">Subtitulo 3</h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">Titulo 3</h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="#" class="btn btn-outline text-uppercase">Mas detalles</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160" style="background-image: url(src/img/banner/banner-4.jpg);" data-icon="fas fa-info-circle" data-text="Nombre 4-slider">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".1">Subtitulo 4</h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".5">Titulo 4</h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".9">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="#" class="btn btn-outline text-uppercase">Mas detalles</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
         </div>
-    </section><!-- /carousell -->
+    </section>
+    <!-- /carousell -->
 
     <!-- reseña -->
     <section class="section">
@@ -239,8 +201,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-slider" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
-                        <img class="img-fluid" src="src/img/inicio/caritasResenia/resenia-1.jpg" alt="about-image">
-                        <img class="img-fluid" src="src/img/inicio/caritasResenia/resenia-2.jpg" alt="about-image">
+                    <?php while ($rowC2 = $resultadoCarrusel2->fetch_assoc()) { ?>
+                        <img class="img-fluid" src="src/img/imgModuloInicio/<?php echo $rowC2['file'] ?>" alt="about-image">
+                        <?php }?>
                     </div>
                 </div>
             </div>

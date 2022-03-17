@@ -11,21 +11,27 @@ $id = $_SESSION['id_usuario'];
 
 $titulo =  $_POST['titulo'];
 $subtitulo =  $_POST['subtitulo'];
-$modulo =  $_POST['modulo'];
+$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : 0;
 $descripcion =  $_POST['descripcion'];
 
+if ($modulo == '') {
+    echo "<div class='alert alert-danger' role='role'>
+    <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
+    </div>";
+    exit;
+}
 
 if (($_FILES["ruta"]["type"] == "image/pjpeg")
     || ($_FILES["ruta"]["type"] == "image/jpeg")
     || ($_FILES["ruta"]["type"] == "image/png")
     || ($_FILES["ruta"]["type"] == "image/gif")
 ) {
-    if (move_uploaded_file($_FILES["ruta"]["tmp_name"], "../src/img/inicio/" . $_FILES['ruta']['name'])) {
+    if (move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloInicio/" . $_FILES['ruta']['name'])) {
         //more code here...
         //  echo '../src/img/inicio/'.$_FILES['ruta']['name'];
 
         $file = $_FILES['ruta']['name'];
-        $directorio = '../src/img/inicio';
+        $directorio = 'src/img/banner';
         $ruta = $directorio . "/" . $file;
 
         $query = "INSERT INTO imagenes(file, ruta, titulo, subtitulo, descripcion, modulo, fecha_creacion, id_capC) VALUES ('$file', '$ruta', '$titulo', '$subtitulo', '$descripcion', '$modulo', '$date', $id)";

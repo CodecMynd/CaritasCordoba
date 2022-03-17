@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-03-2022 a las 19:13:00
+-- Tiempo de generación: 17-03-2022 a las 03:47:07
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.1
 
@@ -46,12 +46,13 @@ CREATE TABLE `imagenes` (
 --
 
 INSERT INTO `imagenes` (`id_imagen`, `file`, `ruta`, `titulo`, `subtitulo`, `descripcion`, `modulo`, `fecha_creacion`, `fecha_mod`, `id_capC`, `id_capM`) VALUES
-(8, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'feacaca', 'cadc', 'csac', '', '2022-03-10 00:44:58', '2022-03-10 01:46:43', 1, 1),
-(12, 'eat-sleep-code-repeat-er-1280x1024.jpg', '../src/img/inicio/eat-sleep-code-repeat-er-1280x1024.jpg', 'caf', 'scS', 'ASCASD', 'carrusel1', '2022-03-10 01:06:11', NULL, 1, NULL),
-(13, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'Hola', 'cadc', 'csac', '', '2022-03-10 01:40:07', NULL, 1, NULL),
-(14, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'Hola', 'cadc', 'csac', '', '2022-03-10 01:40:07', NULL, 1, NULL),
-(17, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'feasDSD', 'cadadADc', 'csacdad', 'carrusel1', '2022-03-10 01:43:13', NULL, 1, NULL),
-(18, 'wallpaper.png', '../src/img/inicio/wallpaper.png', 'feasDSD', 'cadadADc', 'csacdad', 'carrusel1', '2022-03-10 01:43:14', NULL, 1, NULL);
+(1, 'banner-1.jpg', '../src/img/inicio/banner-1.jpg', 'Titulo Prueba', 'Subtitulo de prueba', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 00:47:56', '2022-03-16 01:35:55', 1, 1),
+(2, 'banner-2.jpg', 'src/img/banner/banner-2.jpg', 'Titulo Prueba 2', 'Subtitulo prueba 2', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis ', 'carrusel1', '2022-03-16 01:21:13', NULL, 1, NULL),
+(3, 'banner-3.jpg', 'src/img/banner/banner-3.jpg', 'Titulo Prueba 3', 'Subtitulo prueba 3', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 01:31:58', NULL, 1, NULL),
+(4, 'banner-4.jpg', 'src/img/banner/banner-4.jpg', 'Titulo Prueba 4', 'Subtitulo prueba 4', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 01:32:18', NULL, 1, NULL),
+(5, 'resenia-2 - copia.jpg', 'src/img/banner/resenia-2 - copia.jpg', 'Titulo Prueba', 'Subtitulo', 'aaa', 'carrusel2', '2022-03-16 01:56:42', NULL, 1, NULL),
+(6, 'resenia-2.jpg', 'src/img/banner/resenia-2.jpg', 'Titulo Prueba', 'Subtitulo prueba 2', 's', 'carrusel2', '2022-03-16 02:07:28', NULL, 1, NULL),
+(7, 'resenia-1.jpg', 'src/img/banner/resenia-1.jpg', 'Titulo Prueba', 'Subtitulo', '--', 'carrusel2', '2022-03-16 02:29:39', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,8 +112,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombres`, `aPaterno`, `aMaterno`, `usuario`, `pass`, `email`, `tel`, `admin`, `super`, `estatus`, `fecha_creacion`, `fecha_mod`, `id_captC`, `id_captM`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin', 'admin', 'hola', '', 1, 1, '', NULL, NULL, NULL, NULL),
-(2, 'Erika', 'Rosas ', 'Fernandez', 'kika', 'erikaR', 'a@a.a', '(000) 000-0000', 0, 0, 'offline', '2022-03-04 22:19:07', '2022-03-04 23:07:22', 1, 1);
+(1, 'admin', 'admin', 'admin', 'admin', 'admin', 'hola', '', 1, 1, '', NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -144,7 +144,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
