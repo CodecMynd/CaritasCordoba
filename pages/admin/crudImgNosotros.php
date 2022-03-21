@@ -2,7 +2,7 @@
 require '../componentsAdmin/head-main.php';
 require '../componentsAdmin/head-dataTables.php'
 ?>
-<title>Panel Imagenes Pagina Inicio | <?php echo $nomComp ?></title>
+<title>Panel Imagenes Pagina Nosotros | <?php echo $nomComp ?></title>
 
 </head>
 
@@ -17,14 +17,14 @@ require '../componentsAdmin/head-dataTables.php'
                 <div class="container-fluid">
                     <div class="row my-3 mx-5">
                         <div class="col-sm-6">
-                            <h1 class="m-0 bienvenido" style="font-size:2vw">Tabla <strong>Imagenes Pagina Inicio</strong></h1>
+                            <h1 class="m-0 bienvenido" style="font-size:2vw">Tabla <strong>Imagenes Pagina Nosotros</strong></h1>
 
                         </div>
                         <!-- migas de pan -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="../admin/panelAdmin.php"><i class="fa-solid fa-house-user"></i> Home</a></li>
-                                <li class="breadcrumb-item active"><i class="fa-solid fa-image"></i> Imagenes Inicio</li>
+                                <li class="breadcrumb-item active"><i class="fa-solid fa-image"></i> Imagenes Nosotros</li>
                             </ol>
                         </div>
                     </div>
@@ -34,20 +34,20 @@ require '../componentsAdmin/head-dataTables.php'
             <section class="content">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-10">
+                        <div class="col-5">
                             <div class="card border-card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Imagenes del Módulo Inicio</h3>
+                                    <h3 class="card-title">Imagenes del Módulo Nosotros</h3>
                                     <div class="card-tools">
                                         <?php if ($super == 1) { ?>
-                                            <a type="button" class="btn btn-secondary" href="../adds/formAddImgInicio.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Inicio">
-                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Inicio</a>
-                                        <?php } else if ($regImgInicio == 1) { ?>
-                                            <a type="button" class="btn btn-secondary" href="../adds/formAddImgInicio.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Inicio">
-                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Inicio</a>
+                                            <a type="button" class="btn btn-secondary" href="../adds/formAddImgNosotros.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Nosotros">
+                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Nosotros</a>
+                                        <?php } else if ($regImgNosotros == 1) { ?>
+                                            <a type="button" class="btn btn-secondary" href="../adds/formAddImgNosotros.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Nosotros">
+                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Nosotros</a>
                                         <?php } else { ?>
-                                            <a type="button" class="btn btn-outline-danger" id="regImgInicio" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Inicio">
-                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Inicio</a>
+                                            <a type="button" class="btn btn-outline-danger" id="regImgNosotros" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Nosotros">
+                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Nosotros</a>
                                         <?php } ?>
 
                                         <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Actualizar página"><i class="fa-solid fa-arrows-rotate"></i></a>
@@ -57,9 +57,9 @@ require '../componentsAdmin/head-dataTables.php'
                                 <?php
                                 $cont = 0;
                                 if ($super == 1) {
-                                    $query = "SELECT * FROM recursos WHERE ruta = 'inicio' ORDER BY modulo DESC";
-                                } else if ($verTablaImgInicio == 1) {
-                                    $query = "SELECT * FROM recursos WHERE ruta = 'inicio' ORDER BY modulo DESC";
+                                    $query = "SELECT * FROM recursos WHERE ruta = 'nosotros' ORDER BY modulo DESC";
+                                } else if ($verTablaImgNosotros == 1) {
+                                    $query = "SELECT * FROM recursos WHERE ruta = 'nosotros' ORDER BY modulo DESC";
                                 } else {
                                     $query = "SELECT * FROM recursos WHERE id_recurso = 0";
                                 }
@@ -67,7 +67,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 ?>
                                 <div class="card-body">
                                     <?php if ($super == 1) {
-                                    } else if ($verTablaImgInicio == 0) { ?>
+                                    } else if ($verTablaImgNosotros == 0) { ?>
                                         <div class="ribbon ribbon-top-left"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-top-right"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-bottom-left"><span>Sin permiso</span></div>
@@ -78,9 +78,6 @@ require '../componentsAdmin/head-dataTables.php'
                                             <tr>
                                                 <th>#</th>
                                                 <th>Nombre Imagen</th>
-                                                <th>Titulo</th>
-                                                <th>Subtitulo</th>
-                                                <th>Descripción</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -98,15 +95,6 @@ require '../componentsAdmin/head-dataTables.php'
                                                         <?php echo $row['file'] ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row['titulo'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row['subtitulo'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row['descripcion'] ?>
-                                                    </td>
-                                                    <td>
                                                         <?php echo $row['modulo'] ?>
                                                     </td>
                                                     <td>
@@ -117,14 +105,14 @@ require '../componentsAdmin/head-dataTables.php'
                                                                 <ul class="dropdown-menu" style="min-width: 2em;">
                                                                     <div class="btn-group">
                                                                         <li class="dropdown-item">
-                                                                            <span data-toggle="tooltip" title="Editar Imagen Módulo Inicio">
+                                                                            <span data-toggle="tooltip" title="Editar Imagen Módulo Nosotros">
                                                                                 <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgInicio.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i>
+                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgNosotros.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i>
                                                                                     </a>
-                                                                                <?php  } else if ($editarImgInicio == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgInicio.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i> </a>
+                                                                                <?php  } else if ($editarImgNosotros == 1) { ?>
+                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgNosotros.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i> </a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="editarImgInicio"><i class="fas fa-edit"></i></a>
+                                                                                    <a class="btn btn-outline-danger" id="editarImgNosotros><i class="fas fa-edit"></i></a>
                                                                                 <?php } ?>
                                                                             </span>
                                                                         </li>
@@ -133,11 +121,11 @@ require '../componentsAdmin/head-dataTables.php'
                                                                                 <?php if ($super == 1) { ?>
                                                                                     <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
-                                                                                <?php  } else if ($eliImgInicio   == 1) { ?>
+                                                                                <?php  } else if ($eliImgNosotros   == 1) { ?>
                                                                                     <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="eliImgInicio"><i class="fas fa-trash-alt"></i>
+                                                                                    <a class="btn btn-outline-danger" id="eliImgNosotros"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
                                                                                 <?php } ?>
                                                                             </span>
@@ -159,11 +147,8 @@ require '../componentsAdmin/head-dataTables.php'
                                         <tfoot>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Ruta</th>
-                                                <th>Titulo</th>
-                                                <th>Subtitulo</th>
-                                                <th>Descripción</th>
-                                                <th>Módulo</th>
+                                                <th>Nombre Imagen</th>
+                                                <th>Identificador</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </tfoot>

@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `imagenes`
+-- Estructura de tabla para la tabla `recursos`
 --
 
-CREATE TABLE `imagenes` (
-  `id_imagen` int(11) NOT NULL,
+CREATE TABLE `recursos` (
+  `id_recurso` int(11) NOT NULL,
   `file` varchar(200) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `ruta` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `titulo` varchar(20) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
@@ -42,10 +42,10 @@ CREATE TABLE `imagenes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
--- Volcado de datos para la tabla `imagenes`
+-- Volcado de datos para la tabla `recursos`
 --
 
-INSERT INTO `imagenes` (`id_imagen`, `file`, `ruta`, `titulo`, `subtitulo`, `descripcion`, `modulo`, `fecha_creacion`, `fecha_mod`, `id_capC`, `id_capM`) VALUES
+INSERT INTO `recursos` (`id_recurso`, `file`, `ruta`, `titulo`, `subtitulo`, `descripcion`, `modulo`, `fecha_creacion`, `fecha_mod`, `id_capC`, `id_capM`) VALUES
 (1, 'banner-1.jpg', '../src/img/inicio/banner-1.jpg', 'Titulo Prueba', 'Subtitulo de prueba', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 00:47:56', '2022-03-16 01:35:55', 1, 1),
 (2, 'banner-2.jpg', 'src/img/banner/banner-2.jpg', 'Titulo Prueba 2', 'Subtitulo prueba 2', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis ', 'carrusel1', '2022-03-16 01:21:13', NULL, 1, NULL),
 (3, 'banner-3.jpg', 'src/img/banner/banner-3.jpg', 'Titulo Prueba 3', 'Subtitulo prueba 3', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 01:31:58', NULL, 1, NULL),
@@ -119,10 +119,10 @@ INSERT INTO `usuarios` (`id_usuario`, `nombres`, `aPaterno`, `aMaterno`, `usuari
 --
 
 --
--- Indices de la tabla `imagenes`
+-- Indices de la tabla `recursos`
 --
-ALTER TABLE `imagenes`
-  ADD PRIMARY KEY (`id_imagen`);
+ALTER TABLE `recursos`
+  ADD PRIMARY KEY (`id_recurso`);
 
 --
 -- Indices de la tabla `permisos`
@@ -141,10 +141,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `imagenes`
+-- AUTO_INCREMENT de la tabla `recursos`
 --
-ALTER TABLE `imagenes`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `recursos`
+  MODIFY `id_recurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`

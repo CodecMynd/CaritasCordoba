@@ -9,10 +9,10 @@ $date = date('Y-m-d H:i:s');
 $dateH = date('H:i:s');
 $id = $_SESSION['id_usuario'];
 
-$titulo =  $_POST['titulo'];
-$subtitulo =  $_POST['subtitulo'];
+$titulo =  (!empty($_POST['titulo'])) ? $_POST['titulo'] : '--';
+$subtitulo =  (!empty($_POST['subtitulo'])) ? $_POST['subtitulo'] : '--';
 $modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : 0;
-$descripcion =  $_POST['descripcion'];
+$descripcion =  (!empty($_POST['descripcion'])) ? $_POST['descripcion'] : '--';
 
 if ($modulo == '') {
     echo "<div class='alert alert-danger' role='role'>
@@ -21,12 +21,12 @@ if ($modulo == '') {
     exit;
 }
 
-if (($_FILES["ruta"]["type"] == "image/pjpeg")
+($_FILES["ruta"]["type"] == "image/pjpeg")
     || ($_FILES["ruta"]["type"] == "image/jpeg")
     || ($_FILES["ruta"]["type"] == "image/png")
-    || ($_FILES["ruta"]["type"] == "image/gif")
-) {
-    if (move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloInicio/" . $_FILES['ruta']['name'])) {
+    || ($_FILES["ruta"]["type"] == "image/gif");
+
+    move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloInicio/" . $_FILES['ruta']['name']);
         //more code here...
         //  echo '../src/img/inicio/'.$_FILES['ruta']['name'];
 
@@ -34,7 +34,9 @@ if (($_FILES["ruta"]["type"] == "image/pjpeg")
         $directorio = 'src/img/banner';
         $ruta = $directorio . "/" . $file;
 
-        $query = "INSERT INTO imagenes(file, ruta, titulo, subtitulo, descripcion, modulo, fecha_creacion, id_capC) VALUES ('$file', '$ruta', '$titulo', '$subtitulo', '$descripcion', '$modulo', '$date', $id)";
+    $ruta1 = 'inicio';
+
+        $query = "INSERT INTO recursos(file, ruta, titulo, subtitulo, descripcion, modulo, fecha_creacion, id_capC) VALUES ('$file', '$ruta1', '$titulo', '$subtitulo', '$descripcion', '$modulo', '$date', $id)";
         $resultado = mysqli_query($conexion, $query);
 
         if ($resultado) {
@@ -48,16 +50,7 @@ if (($_FILES["ruta"]["type"] == "image/pjpeg")
       </div>";
             exit;
         }
-    } else {
-        echo "<div class='alert alert-danger' role='role'>
-        <p><strong>¡Error no se encontro la carpeta especificada!</strong></p>
-        </div>";
-    }
-} else {
-    echo "<div class='alert alert-danger' role='role'>
-    <p><strong>¡Error no es el formato especificado!</strong></p>
-    </div>";
-}
+
 desconectar();
 ?>
 <script type="text/javascript">

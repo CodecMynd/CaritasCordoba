@@ -3,12 +3,21 @@ require 'config/functions.php';
 conectar();
 
 // query Imagen Carrusel Principal carrusel1
-$query = "SELECT * FROM imagenes WHERE modulo = 'carrusel1' LIMIT 4";
-$resultadoCarrusel1 = mysqli_query($conexion, $query);
+$query1 = "SELECT * FROM recursos WHERE modulo = 'carrusel1' LIMIT 4";
+$resultadoCarrusel1 = mysqli_query($conexion, $query1);
 
 // query Imagen Carrusel Principal carrusel2
-$query = "SELECT * FROM imagenes WHERE modulo = 'carrusel2' LIMIT 4";
-$resultadoCarrusel2 = mysqli_query($conexion, $query);
+$query2 = "SELECT file FROM recursos WHERE modulo = 'carrusel2' LIMIT 4";
+$resultadoCarrusel2 = mysqli_query($conexion, $query2);
+
+// query Imagen Carrusel Principal carrusel3
+$query3 = "SELECT descripcion FROM recursos WHERE modulo = 'carrusel3' LIMIT 10";
+$resultadoCarrusel3 = mysqli_query($conexion, $query3);
+
+// query Imagen Carrusel Principal carrusel3
+$query4 = "SELECT file FROM recursos WHERE modulo = 'carrusel4' LIMIT 20";
+$resultadoCarrusel4 = mysqli_query($conexion, $query4);
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -159,6 +168,7 @@ $resultadoCarrusel2 = mysqli_query($conexion, $query);
         <!-- carousell -->
 
         <div class="hero-slider position-relative">
+            <!-- query mostrar imagenes carrusel principal -->
             <?php while ($rowC1 = $resultadoCarrusel1->fetch_assoc()) { ?>
                 <div class="hero-slider-item py-160" style="background-image: url(src/img/imgModuloInicio/<?php echo $rowC1['file'] ?>);" data-icon="fas fa-info-circle" data-text="<?php echo $rowC1['titulo'] ?>">
                     <div class="container">
@@ -201,9 +211,10 @@ $resultadoCarrusel2 = mysqli_query($conexion, $query);
                 </div>
                 <div class="col-lg-6">
                     <div class="about-slider" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
-                    <?php while ($rowC2 = $resultadoCarrusel2->fetch_assoc()) { ?>
-                        <img class="img-fluid" src="src/img/imgModuloInicio/<?php echo $rowC2['file'] ?>" alt="about-image">
-                        <?php }?>
+                        <!-- query mostrar imagenes carrusel secundario -->
+                        <?php while ($rowC2 = $resultadoCarrusel2->fetch_assoc()) { ?>
+                            <img class="img-fluid" src="src/img/imgModuloInicio/<?php echo $rowC2['file'] ?>" alt="about-image">
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -218,33 +229,15 @@ $resultadoCarrusel2 = mysqli_query($conexion, $query);
                     <h2 class="section-title section-title-border-gray">Video testimoniales</h2>
                 </div>
             </div>
-            <!-- work slider -->
             <div class="row work-slider">
-                <div class="col-lg-3 px-0">
-                    <div class="work-slider-image">
-                        <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
+                <!-- query mostrar imagenes carrusel videos testimoniales -->
+                <?php while ($rowC3 = $resultadoCarrusel3->fetch_assoc()) { ?>
+                    <div class="col-lg-3 px-0">
+                        <div class="work-slider-image">
+                            <div class="youtube-player" data-id="<?php echo $rowC3['descripcion'] ?>"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 px-0">
-                    <div class="work-slider-image">
-                        <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 px-0">
-                    <div class="work-slider-image">
-                        <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 px-0">
-                    <div class="work-slider-image">
-                        <div class="youtube-player" data-id="G8Gd2SrwK44"></div>
-                    </div>
-                </div>
-                <div class="col-lg-3 px-0">
-                    <div class="work-slider-image">
-                        <div class="youtube-player" data-id="GZ-ZWVh8fXc"></div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -293,20 +286,16 @@ $resultadoCarrusel2 = mysqli_query($conexion, $query);
             <div class="col-12 text-center">
                 <h4 class="section-title section-title-border-gray">Nuestros benefactores</h4>
             </div>
+            <!-- query mostrar imagenes carrusel Benefactores -->
             <div class="client-logo-slider align-self-center">
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-1.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-2.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-3.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-4.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-5.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-1.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-2.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-3.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-4.png" alt="Benefactor-logo"></a>
-                <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/benefactorLogo/benefactor-logo-5.png" alt="Benefactor-logo"></a>
+                <?php while ($rowC4 = $resultadoCarrusel4->fetch_assoc()) { ?>
+                    <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/imgModuloInicio/<?php echo $rowC4['file'] ?>" alt="Benefactor-logo"></a>
+                <?php } ?>
             </div>
         </div>
     </section>
+    <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/imgModuloInicio/benefactor-logo-2-white.png" alt="Benefactor-logo"></a>
+
     <!-- /benefactores empresas logo slider -->
 
     <!-- footer -->

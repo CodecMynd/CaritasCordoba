@@ -37,9 +37,13 @@ while ($row = mysqli_fetch_array($query)) {
     $asignarPer = $row['asignarPer'];
     $nuevoUsu = $row['nuevoUsu'];
     $verTablaImgInicio = $row['verTablaImgInicio'];
-    $nuevoImgInicio = $row['nuevoImgInicio'];
+    $regImgInicio = $row['regImgInicio'];
     $editarImgInicio = $row['editarImgInicio'];
     $eliImgInicio = $row['eliImgInicio'];
+    $regImgNosotros = $row['regImgNosotros'];
+    $editarImgNosotros = $row['editarImgNosotros'];
+    $eliImgNosotros = $row['eliImgNosotros'];
+    $verTablaImgNosotros = $row['verTablaImgNosotros'];
 }
 
 

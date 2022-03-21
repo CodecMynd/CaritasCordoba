@@ -1,3 +1,16 @@
+<?php
+require '../../config/functions.php';
+conectar();
+
+// query Imagen Carrusel Principal carrusel1
+$query1 = "SELECT * FROM recursos WHERE modulo = 'bannerNosotros' LIMIT 1";
+$resultadoBannerNosotros = mysqli_query($conexion, $query1);
+
+// query Imagen Carrusel Principal carrusel2
+$query2 = "SELECT file FROM recursos WHERE modulo = 'carruselHistoria' LIMIT 10";
+$resultadoCarruselHistoria = mysqli_query($conexion, $query2);
+
+?>
 <!doctype html>
 <html lang="es">
 
@@ -17,7 +30,9 @@
     include '../components/header.php';
     ?>
     <!-- banner -->
-    <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
+    <?php while ($rowBN = $resultadoBannerNosotros->fetch_assoc()) { ?>
+    <section class="page-title overlay" style="background-image: url(../../src/img/imgModuloNosotros/<?php echo $rowBN['file'] ?>">
+   <?php } ?> 
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -62,8 +77,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-slider align-items-center">
-                        <img src="../../src/img/nosotros/historia.jpg" alt="Historia Cáritas-1" class="img-fluid">
-                        <img src="../../src/img/nosotros/historia.jpg" alt="Historia Cáritas-1" class="img-fluid">
+                    <?php while ($rowCH = $resultadoCarruselHistoria->fetch_assoc()) { ?>
+                        <img src="../../src/img/imgModuloNosotros/<?php echo $rowCH['file'] ?>" alt="Historia Cáritas" class="img-fluid">
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-md-12 text-center">

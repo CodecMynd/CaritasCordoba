@@ -6,7 +6,6 @@ $id_recurso = $_GET['id'];
 $query = "SELECT * FROM recursos WHERE id_recurso = $id_recurso";
 $respuesta = mysqli_query($conexion, $query);
 $row = $respuesta->fetch_assoc();
-$m = $row['modulo'];
 ?>
 
 <title>Edición Imagen Módulo Inicio | <?php echo $nomComp ?></title>
@@ -45,57 +44,15 @@ $m = $row['modulo'];
                                     <h3 class="card-title">*Todos los campos son obligatorios</h3>
                                 </div>
                                 <form id="formUpdateImgInicio" enctype="multipart/form-data">
-                                    <input type="hidden" name="id_recurso" id="id_recurso" value="<?php echo $id_recurso ?>">
+                                    <input type="hidden" name="id_recurso" id="id_recurso" value="<?php echo $id_recurso?>">
                                     <div class="card-body">
                                         <div class="row justify-content-center">
-                                            <?php if ($m == 'carrusel1') { ?>
-                                                <div class="col-md-5 col-sm-12 my-1 form-group">
-                                                    <div class="input-group form-floating mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fa-solid fa-pencil"></i></span>
-                                                        </div>
-                                                        <input autofocus name="titulo" id="titulo" type="text" class="form-control" placeholder="titulo" required maxlength="20" data-toggle="tooltip" data-placement="bottom" title="Max. 20 caracteres" value="<?php echo $row['titulo'] ?>">
-                                                        <label for="floatingInput" class="pl-5">*Titulo</label>
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
-
-                                            <?php if ($m == 'carrusel1') { ?>
-                                                <div class="col-md-4 col-sm-12 my-1">
-                                                    <div class="input-group form-floating mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fa-solid fa-pencil"></i></span>
-                                                        </div>
-                                                        <input name="subtitulo" id="subtitulo" type="text" class="form-control" placeholder="subtitulo " required maxlength="30" data-toggle="tooltip" data-placement="bottom" title="Max. 30 caracteres" value="<?php echo $row['subtitulo'] ?>">
-                                                        <label for="floatingInput" class="pl-5">*Subtitulo</label>
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
-
-                                            <?php if ($m == 'carrusel1' OR $m == 'carrusel3') { ?>
-                                                <div class="col-md-6 col-sm-12 my-1">
-                                                    <div class="form-group-input" style="border: 1px solid #CED4DA;">
-                                                        <label class="ml-5 mb-2">*Descripción Carrusel</label>
-                                                        <span data-toggle="tooltip" title="max. 200 caracteres">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text"><i class="fa-solid fa-toolbox"></i></span>
-                                                                </div>
-                                                                <textarea name="descripcion" id="descripcion" class="form-control" rows="2" placeholder="Agrega alguna breve Descripción del Carrusel" maxlength="200"><?php echo $row['descripcion'] ?></textarea>
-                                                            </div>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            <?php } ?>
-
-                                            <?php if ($m == 'carrusel1' OR $m == 'carrusel2' OR $m == 'carrusel4') { ?>
-                                                <div class="col-md-6 col-sm-12 my-2">
-                                                    <label for="image" class="form-label">*Imagen a Modificar: <strong><?php echo $row['file'] ?></strong></label>
-                                                    <input name="ruta" id="ruta" type="file" class="form-control" placeholder="subtitulo " required>
-                                                    <small id="helpId" class="text-muted">Forzosamente, si quieres modificar, deberás volver a ingresar imagen </small>
-                                                    <a href="../../src/img/imgModuloInicio/<?php echo  $row['file'] ?>" class="btn btn-secondary" download="Img<?php echo  $row['file']  ?>" title="Descargar"><i class="fa-solid fa-cloud-arrow-down"></i></a>
-                                                </div>
-                                            <?php } ?>
+                                            <div class="col-md-6 col-sm-12 my-2">
+                                            <label for="image" class="form-label">*Imagen a Modificar: <strong><?php echo $row['file'] ?></strong></label>
+                                                <input name="ruta" id="ruta" type="file" class="form-control" placeholder="subtitulo " required>
+                                                <small id="helpId" class="text-muted">Forzosamente, si quieres modificar, deberás volver a ingresar imagen </small>
+                                                <a href="../../src/img/imgModuloNosotros/<?php echo  $row['file'] ?>" class="btn btn-secondary" download="Img<?php echo  $row['file']  ?>" title="Descargar"><i class="fa-solid fa-cloud-arrow-down"></i></a>
+                                            </div>
                                             <div class="col-12">
                                                 <hr>
                                             </div>
@@ -151,5 +108,4 @@ $m = $row['modulo'];
     ?>
 </body>
 <script src="../src/js/ajax.js"></script>
-
 </html>

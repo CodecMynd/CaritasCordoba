@@ -56,16 +56,15 @@ if ($nombres == '' || $aPaterno == '' || $aMaterno == '' || $usuario == '' || $t
 
          //Asignamos permisos existentes
          if ($admin == 1) {
-             $querys = "INSERT INTO permisos(verTablaUsuario, editarUsu, asignarCon, eliminarUsu, asignarPer, nuevoUsu, verTablaImgInicio, nuevoImgInicio, editarImgInicio, eliImgInicio, id_usuario) VALUES (1,1,1,1,1,1,1,1,1,1,$id_id_usuario)";
+             $querys = "INSERT INTO permisos(verTablaUsuario, editarUsu, asignarCon, eliminarUsu, asignarPer, nuevoUsu, verTablaImgInicio, regImgInicio, editarImgInicio, eliImgInicio, regImgNosotros, editarImgNosotros, eliImgNosotros, verTablaImgNosotros, id_usuario) VALUES (1,1,1,1,1,1,1,1,1,1,1,1,1,1,$id_id_usuario)";
              $resultadoPermiso = mysqli_query($conexion, $querys);
          } else {
-             $querys = "INSERT INTO permisos(verTablaUsuario, editarUsu, asignarCon, eliminarUsu, asignarPer, nuevoUsu, verTablaImgInicio, nuevoImgInicio, editarImgInicio, eliImgInicio, id_usuario) VALUES (0,0,0,0,0,0,0,0,0,0,$id_id_usuario)";
+             $querys = "INSERT INTO permisos(verTablaUsuario, editarUsu, asignarCon, eliminarUsu, asignarPer, nuevoUsu, verTablaImgInicio, regImgInicio, editarImgInicio, eliImgInicio, regImgNosotros, editarImgNosotros, eliImgNosotros, verTablaImgNosotros, id_usuario) VALUES (0,0,0,0,0,0,0,0,0,0,0,0,0,0,$id_id_usuario)";
              // var_dump($querys);
              $resultadoPermiso = mysqli_query($conexion, $querys);
          }
     }
         // var_dump($resultadoPermiso);
-
 
     if ($resultado) {
         echo "<div class='alert alert-success' role='alert'>

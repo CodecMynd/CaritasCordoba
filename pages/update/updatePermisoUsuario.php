@@ -17,14 +17,17 @@ $eliminarUsu = (!empty($_POST['eliminarUsu'])) ? $_POST['eliminarUsu'] : 0;
 $asignarPer = (!empty($_POST['asignarPer'])) ? $_POST['asignarPer'] : 0;
 $nuevoUsu = (!empty($_POST['nuevoUsu'])) ? $_POST['nuevoUsu'] : 0;
 $verTablaImgInicio = (!empty($_POST['verTablaImgInicio'])) ? $_POST['verTablaImgInicio'] : 0;
-$nuevoImgInicio = (!empty($_POST['nuevoImgInicio'])) ? $_POST['nuevoImgInicio'] : 0;
+$regImgInicio = (!empty($_POST['regImgInicio'])) ? $_POST['regImgInicio'] : 0;
 $editarImgInicio = (!empty($_POST['editarImgInicio'])) ? $_POST['editarImgInicio'] : 0;
 $eliImgInicio = (!empty($_POST['eliImgInicio'])) ? $_POST['eliImgInicio'] : 0;
+$regImgNosotros = (!empty($_POST['regImgNosotros'])) ? $_POST['regImgNosotros'] : 0; 
+$editarImgNosotros = (!empty($_POST['editarImgNosotros'])) ? $_POST['editarImgNosotros'] : 0; 
+$eliImgNosotros = (!empty($_POST['eliImgNosotros'])) ? $_POST['eliImgNosotros'] : 0; 
+$verTablaImgNosotros = (!empty($_POST['verTablaImgNosotros'])) ? $_POST['verTablaImgNosotros'] : 0;
 
-$query = "UPDATE permisos SET verTablaUsuario = '$verTablaUsuario', editarUsu = '$editarUsu', asignarCon = '$asignarCon', eliminarUsu = '$eliminarUsu', asignarPer = '$asignarPer', nuevoUsu = '$nuevoUsu', verTablaImgInicio = '$verTablaImgInicio', nuevoImgInicio = '$nuevoImgInicio', editarImgInicio = '$editarImgInicio', eliImgInicio = '$eliImgInicio' WHERE id_usuario = $id_usuario";
-var_dump($query);
 
-
+$query = "UPDATE permisos SET verTablaUsuario = '$verTablaUsuario', editarUsu = '$editarUsu', asignarCon = '$asignarCon', eliminarUsu = '$eliminarUsu', asignarPer = '$asignarPer', nuevoUsu = '$nuevoUsu', verTablaImgInicio = '$verTablaImgInicio', regImgInicio = '$regImgInicio', editarImgInicio = '$editarImgInicio', eliImgInicio = '$eliImgInicio', regImgNosotros = '$regImgNosotros', editarImgNosotros = '$editarImgNosotros', eliImgNosotros = '$eliImgNosotros', verTablaImgNosotros = '$verTablaImgNosotros' WHERE id_usuario = $id_usuario";
+// var_dump($query);
  $resultado = mysqli_query($conexion, $query);
  if ($resultado) {
      echo "<div class='alert alert-success' role='alert'>

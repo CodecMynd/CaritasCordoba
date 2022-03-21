@@ -48,10 +48,7 @@
                       <hr>
                   </div>
                   <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Dimensiones de imagenes de 500x280px (preferencia)</li>
-                      <li class="list-group-item">Campo Titulo: Opcional</li>
-                      <li class="list-group-item">Campo Subtitulo: Opcional</li>
-                      <li class="list-group-item">Campo Descripción: Opcional</li>
+                      <li class="list-group-item">Dimensiones de imagenes de 500x280 (preferencia)</li>
                       <li class="list-group-item">Maximo 4 Imagenes para evitar desalinear la pantalla</li>
                   </ul>
               </div>
@@ -82,10 +79,11 @@
                   </div>
                   <ul class="list-group list-group-flush">
                       <li class="list-group-item">Tener cuenta de Youtube para guardar el video</li>
-                      <li class="list-group-item">Una ves subido el video a Youtube, copia su ID y agregalo a la base de datos </li>
+                      <li class="list-group-item">Una ves subido el video a Youtube, copia su ID y agregalo a el formulario </li>
                       <li class="list-group-item">Ej. https://www.youtube.com/watch?v=<strong>GZ-ZWVh8fXc</strong></li>
                       <li class="list-group-item"> <img src="../../src/img/imgModal/ejemploIdYoutube.png" alt="EjemploId" style="width: 90%;"></li>
-                      <li class="list-group-item">Este Id lo pegaras en el campo <strong>Titulo</strong></li>
+                      <li class="list-group-item">Este Id lo pegaras en el campo <strong>Descripción Carrusel</strong></li>
+                      <li class="list-group-item">Maximo 10 videos para evitar desalinear la pantalla</li>
                   </ul>
               </div>
               <div class="modal-footer">
@@ -115,11 +113,8 @@
                       <hr>
                   </div>
                   <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Dimensiones de imagenes de 500x280px (preferencia)</li>
-                      <li class="list-group-item">Campo Titulo: Opcional</li>
-                      <li class="list-group-item">Campo Subtitulo: Opcional</li>
-                      <li class="list-group-item">Campo Descripción: Opcional</li>
-                      <li class="list-group-item">Maximo 4 Imagenes para evitar desalinear la pantalla</li>
+                      <li class="list-group-item">Dimensiones de imagenes de 140x20 (preferencia) sin fondo</li>
+                      <li class="list-group-item">Maximo 20 Imagenes para evitar desalinear la pantalla</li>
                   </ul>
               </div>
               <div class="modal-footer">
