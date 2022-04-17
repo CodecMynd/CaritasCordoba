@@ -21,7 +21,7 @@ if ($modulo == '') {
     exit;
 }
 
-($_FILES["ruta"]["type"] == "image/pjpeg")
+($_FILES["ruta"]["type"] == "image/jpg")
     || ($_FILES["ruta"]["type"] == "image/jpeg")
     || ($_FILES["ruta"]["type"] == "image/png")
     || ($_FILES["ruta"]["type"] == "image/gif");

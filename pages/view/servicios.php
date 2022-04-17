@@ -1,3 +1,48 @@
+<?php
+require '../../config/functions.php';
+conectar();
+
+
+// query Imagen Banner Principal 
+$query = "SELECT * FROM recursos WHERE modulo = 'bannerServ' LIMIT 1";
+$resultado = mysqli_query($conexion, $query);
+
+// query Imagen servicio1
+$query1 = "SELECT * FROM recursos WHERE modulo = 'servicio1' LIMIT 1";
+$resultado1 = mysqli_query($conexion, $query1);
+// query Imagen servicio2
+$query2 = "SELECT * FROM recursos WHERE modulo = 'servicio2' LIMIT 1";
+$resultado2 = mysqli_query($conexion, $query2);
+// query Imagen servicio3
+$query3 = "SELECT * FROM recursos WHERE modulo = 'servicio3' LIMIT 1";
+$resultado3 = mysqli_query($conexion, $query3);
+// query Imagen servicio4
+$query4 = "SELECT * FROM recursos WHERE modulo = 'servicio4' LIMIT 1";
+$resultado4 = mysqli_query($conexion, $query4);
+// query Imagen servicio5
+$query5 = "SELECT * FROM recursos WHERE modulo = 'servicio5' LIMIT 1";
+$resultado5 = mysqli_query($conexion, $query5);
+// query Imagen servicio6
+$query6 = "SELECT * FROM recursos WHERE modulo = 'servicio6' LIMIT 1";
+$resultado6 = mysqli_query($conexion, $query6);
+// query Imagen servicio7
+$query7 = "SELECT * FROM recursos WHERE modulo = 'servicio7' LIMIT 1";
+$resultado7 = mysqli_query($conexion, $query7);
+// query Imagen servicio8
+$query8 = "SELECT * FROM recursos WHERE modulo = 'servicio8' LIMIT 1";
+$resultado8 = mysqli_query($conexion, $query8);
+// query Imagen servicio9
+$query9 = "SELECT * FROM recursos WHERE modulo = 'servicio9' LIMIT 1";
+$resultado9 = mysqli_query($conexion, $query9);
+// query Imagen servicio10
+$query10 = "SELECT * FROM recursos WHERE modulo = 'servicio10' LIMIT 1";
+$resultado10 = mysqli_query($conexion, $query10);
+// query Imagen servicio11
+$query11 = "SELECT * FROM recursos WHERE modulo = 'servicio11' LIMIT 1";
+$resultado11 = mysqli_query($conexion, $query11);
+
+?>
+
 <!doctype html>
 <html lang="es">
 
@@ -17,247 +62,279 @@
     include '../components/header.php';
     ?>
     <!-- banner -->
-    <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="text-white font-weight-bold">Servicios</h2>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="../../index.php"><i class="fas fa-arrow-left"></i> Inicio</a>
-                        </li>
-                        <li>Servicios</li>
-                    </ol>
+    <?php while ($row = $resultado->fetch_assoc()) { ?>
+        <section class="page-title overlay" style="background-image: url(../../src/img/imgModuloServicios/<?php echo $row['file'] ?>);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="text-white font-weight-bold">Servicios</h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="../../index.php"><i class="fas fa-arrow-left"></i> Inicio</a>
+                            </li>
+                            <li>Servicios</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
 
     <!-- seccion servicios -->
     <section class="section" id="seccionServicios1">
         <div class="container">
             <div class="row justify-content-center">
                 <!-- service Escucha de casos -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="escuchaCasos">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Escucha de casos
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/escuchaCasos/1-escuchaCasos.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">A partir de la escucha atenta, se detectan las necesidades de las personas y se puede idear y proponer un plan de atención...</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="escuchaCasos.php" id="generales" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row1 = $resultado1->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="escuchaCasos">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                                <?php echo $row1['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row1['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify"><?php echo $row1['descripcion'] ?>...</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="escuchaCasos.php" id="generales" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
                 <!-- service Luchamos contra el Cáncer -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="luchaCancer">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Luchamos contra el Cáncer
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/luchaCancer/1-luchaCancer.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Estancia para personas que están en tratamiento de Cáncer...</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="contraCancer.php" class="btn btn-primary"><i class="fab fa-readme"></i>  Leer más</a>
+                <?php while ($row2 = $resultado2->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="luchaCancer">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                                <?php echo $row2['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row2['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                    <?php echo $row2['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="contraCancer.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
                 <!-- service Farmacia -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="farmacia">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Farmacia
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/farmacia/1-farmacia.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Es el servicio que Cáritas brinda a los hermanos que necesitan medicinas después de haber recibido atención médica...
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="farmacia.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row3 = $resultado3->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="farmacia">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                                <?php echo $row3['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row3['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                    <?php echo $row3['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="farmacia.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
 
         <div class="container" id="seccionServicios2">
             <div class="row justify-content-center">
                 <!-- service Consultas médicas -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="consultasMedicas">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Consultas médicas
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/consultasMedicas/1-consultasMedicas.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Este es uno de los servicios con mayor demanda, de los más amplios y la más necesitada de apoyo. Esto es posible gracias a doctores generosos...
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="consultasMedicas.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row4 = $resultado4->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="consultasMedicas">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                                <?php echo $row4['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row4['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row4['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="consultasMedicas.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
                 <!-- service Consultas psicológicas -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="consultasPsicologicas">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Consultas psicológicas
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/consultapsicologica/1-consultaPsicologica.jfif" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Realizado por profesionistas capacitados que desean donar un poco de su tiempo y de su experiencia...
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="consultasPsicologicas.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row5 = $resultado5->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="consultasPsicologicas">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                            <?php echo $row5['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row5['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row5['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="consultasPsicologicas.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
                 <!-- service Despensas a adultos mayores -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="despensasAdultosMayores">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Despensas a adultos mayores
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/despensaAncianos/1-despensaAncianos.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                El apoyo se da una vez a personas de la tercera edad en extrema pobreza, se lleva un registro, antes se le hace una entrevista para conocer su situación
-                            <p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="despensaAncianos.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row6 = $resultado6->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="despensasAdultosMayores">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                            <?php echo $row6['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row6['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row6['descripcion'] ?>...
+                                <p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="despensaAncianos.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
 
         <div class="container" id="seccionServicios3">
             <div class="row justify-content-center">
                 <!-- service Despensa a familias -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="despensaFamilias">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Despensa a familias
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/despensaFamilias/1-despensaFamilias.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                La ayuda se les da a madres solteras, viudas o sin empleo, también se les hace la entrevista...
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="despensaFamilias.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row7 = $resultado7->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="despensaFamilias">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                            <?php echo $row7['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row7['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row7['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="despensaFamilias.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
                 <!-- service Bazar de ropa -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="bazarRopa">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Bazar de ropa
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/bazarRopa/1-bazarRopa.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Es el de compartir diversos artículos recibidos en donación como ropa, zapatos, línea blanca, utensilios de cocina
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="bazarRopa.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row8 = $resultado8->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="bazarRopa">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                            <?php echo $row8['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row8['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row8['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="bazarRopa.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
                 <!-- service Emergencias -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="emergencias">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Emergencias
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/emergencias/1-emergencias.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Ante la fuerza de la naturaleza, el ser humano descubre su pequeñez y hasta su impotencia...
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="emergencias.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row9 = $resultado9->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="emergencias">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                            <?php echo $row9['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row9['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row9['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="emergencias.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
 
         <div class="container" id="seccionServicios4">
             <div class="row justify-content-center">
                 <!-- service Comedor de pobres -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="comedorPobres">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Comedor de pobres
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios//comedorPobres/1-comedorPobres.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Este servicio que dará Cáritas, será de mucha ayuda a personas que andan en la calle, hemos notado que, en las nuevas instalaciones...
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="comedor.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row10 = $resultado10->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="comedorPobres">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                            <?php echo $row10['titulo']; ?>
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row10['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row10['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="comedor.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
+
                 <!-- service Servicios varios -->
-                <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="serviciosVarios">
-                    <div class="card text-center" id="card-services">
-                        <div class="card-header">
-                            Servicios varios
-                        </div>
-                        <div class="card-img-wrapper overlay-rounded-top">
-                            <img class="card-img-top rounded-0" src="../../src/img/servicios/serviciosVarios/1-serviciosVarios.png" alt="service-image">
-                        </div>
-                        <div class="card-body p-0">
-                            <p class="card-text mx-2 mb-0 text-justify">
-                                Apoyos económicos y en especie. Préstamo o donación de sillas de ruedas, bastones, andaderas y otros aparatos ortopédicos...
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="serviciosVarios.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                <?php while ($row11 = $resultado11->fetch_assoc()) { ?>
+                    <div class="col-lg-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2500" id="serviciosVarios">
+                        <div class="card text-center" id="card-services">
+                            <div class="card-header">
+                                Servicios varios
+                            </div>
+                            <div class="card-img-wrapper overlay-rounded-top">
+                                <img class="card-img-top rounded-0" src="../../src/img/imgModuloServicios/<?php echo $row11['file'] ?>" alt="service-image">
+                            </div>
+                            <div class="card-body p-0">
+                                <p class="card-text mx-2 mb-0 text-justify">
+                                <?php echo $row11['descripcion'] ?>...
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="serviciosVarios.php" class="btn btn-primary"><i class="fab fa-readme"></i> Leer más</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -279,4 +356,4 @@
 
 </body>
 
-</html>
+</html> -->

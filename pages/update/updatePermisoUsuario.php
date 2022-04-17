@@ -24,9 +24,24 @@ $regImgNosotros = (!empty($_POST['regImgNosotros'])) ? $_POST['regImgNosotros'] 
 $editarImgNosotros = (!empty($_POST['editarImgNosotros'])) ? $_POST['editarImgNosotros'] : 0; 
 $eliImgNosotros = (!empty($_POST['eliImgNosotros'])) ? $_POST['eliImgNosotros'] : 0; 
 $verTablaImgNosotros = (!empty($_POST['verTablaImgNosotros'])) ? $_POST['verTablaImgNosotros'] : 0;
+$regImgNosotrosDirectorio = (!empty($_POST['regImgNosotrosDirectorio'])) ? $_POST['regImgNosotrosDirectorio'] : 0;
+$editarImgNosotrosDirectorio = (!empty($_POST['editarImgNosotrosDirectorio'])) ? $_POST['editarImgNosotrosDirectorio'] : 0;
+$eliImgNosotrosDirectorio = (!empty($_POST['eliImgNosotrosDirectorio'])) ? $_POST['eliImgNosotrosDirectorio'] : 0;
+$verTablaImgNosotrosDirectorio = (!empty($_POST['verTablaImgNosotrosDirectorio'])) ? $_POST['verTablaImgNosotrosDirectorio'] : 0;
+$regImgQayudar = (!empty($_POST['regImgQayudar'])) ? $_POST['regImgQayudar'] : 0;
+$editarImgQayudar = (!empty($_POST['editarImgQayudar'])) ? $_POST['editarImgQayudar'] : 0;
+$eliImgQayudar = (!empty($_POST['eliImgQayudar'])) ? $_POST['eliImgQayudar'] : 0;
+$verTablaImgQayudar = (!empty($_POST['verTablaImgQayudar'])) ? $_POST['verTablaImgQayudar'] : 0;
+$regImgReportes = (!empty($_POST['regImgReportes'])) ? $_POST['regImgReportes'] : 0;
+$editarImgReportes = (!empty($_POST['editarImgReportes'])) ? $_POST['editarImgReportes'] : 0;
+$eliImgReportes = (!empty($_POST['eliImgReportes'])) ? $_POST['eliImgReportes'] : 0;
+$verTablaImgReportes = (!empty($_POST['verTablaImgReportes'])) ? $_POST['verTablaImgReportes'] : 0;
+$regImgServicios = (!empty($_POST['regImgServicios'])) ? $_POST['regImgServicios'] : 0;
+$editarImgServicios = (!empty($_POST['editarImgServicios'])) ? $_POST['editarImgServicios'] : 0;
+$eliImgServicios = (!empty($_POST['eliImgServicios'])) ? $_POST['eliImgServicios'] : 0;
+$verTablaImgServicios = (!empty($_POST['verTablaImgServicios'])) ? $_POST['verTablaImgServicios'] : 0;
 
-
-$query = "UPDATE permisos SET verTablaUsuario = '$verTablaUsuario', editarUsu = '$editarUsu', asignarCon = '$asignarCon', eliminarUsu = '$eliminarUsu', asignarPer = '$asignarPer', nuevoUsu = '$nuevoUsu', verTablaImgInicio = '$verTablaImgInicio', regImgInicio = '$regImgInicio', editarImgInicio = '$editarImgInicio', eliImgInicio = '$eliImgInicio', regImgNosotros = '$regImgNosotros', editarImgNosotros = '$editarImgNosotros', eliImgNosotros = '$eliImgNosotros', verTablaImgNosotros = '$verTablaImgNosotros' WHERE id_usuario = $id_usuario";
+$query = "UPDATE permisos SET verTablaUsuario = '$verTablaUsuario', editarUsu = '$editarUsu', asignarCon = '$asignarCon', eliminarUsu = '$eliminarUsu', asignarPer = '$asignarPer', nuevoUsu = '$nuevoUsu', verTablaImgInicio = '$verTablaImgInicio', regImgInicio = '$regImgInicio', editarImgInicio = '$editarImgInicio', eliImgInicio = '$eliImgInicio', regImgNosotros = '$regImgNosotros', editarImgNosotros = '$editarImgNosotros', eliImgNosotros = '$eliImgNosotros', verTablaImgNosotros = '$verTablaImgNosotros', regImgNosotrosDirectorio = '$regImgNosotrosDirectorio', editarImgNosotrosDirectorio = '$editarImgNosotrosDirectorio', eliImgNosotrosDirectorio = '$eliImgNosotrosDirectorio', verTablaImgNosotrosDirectorio = '$verTablaImgNosotrosDirectorio', regImgQayudar = '$regImgQayudar', editarImgQayudar = '$editarImgQayudar', eliImgQayudar = '$eliImgQayudar', verTablaImgQayudar = '$verTablaImgQayudar', regImgReportes = '$regImgReportes', editarImgReportes = '$editarImgReportes', eliImgReportes = '$eliImgReportes', verTablaImgReportes = '$verTablaImgReportes', regImgServicios = '$regImgServicios', editarImgServicios = '$editarImgServicios', eliImgServicios = '$eliImgServicios', verTablaImgServicios = '$verTablaImgServicios' WHERE id_usuario = $id_usuario";
 // var_dump($query);
  $resultado = mysqli_query($conexion, $query);
  if ($resultado) {

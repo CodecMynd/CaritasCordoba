@@ -10,23 +10,26 @@ $dateH = date('H:i:s');
 $id = $_SESSION['id_usuario'];
 
 $titulo =  '--';
-$subtitulo = '--';
-$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : 0;
-$descripcion =  '--';
+ $subtitulo = '--';
+ $descripcion =  '--';
+ $ruta1 = 'reportes';
+ $modulo = 'reportes';
 
-if ($modulo == '') {
-    echo "<div class='alert alert-danger' role='role'>
-    <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
-    </div>";
-    exit;
-}
+// $descripcion =  (!empty($_POST['descripcion'])) ? $_POST['descripcion'] : '--';
+
+// if ($modulo == '') {
+//     echo "<div class='alert alert-danger' role='role'>
+//     <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
+//     </div>";
+//     exit;
+// }
 
 ($_FILES["ruta"]["type"] == "image/jpg")
     || ($_FILES["ruta"]["type"] == "image/jpeg")
     || ($_FILES["ruta"]["type"] == "image/png")
     || ($_FILES["ruta"]["type"] == "image/gif");
 
-    move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloNosotros/" . $_FILES['ruta']['name']);
+    move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloReportes/" . $_FILES['ruta']['name']);
         //more code here...
         //  echo '../src/img/inicio/'.$_FILES['ruta']['name'];
 
@@ -34,9 +37,9 @@ if ($modulo == '') {
         $directorio = 'src/img/banner';
         $ruta = $directorio . "/" . $file;
 
-    $ruta1 = 'nosotros';
+    
 
-        $query = "INSERT INTO recursos(file, ruta, titulo, subtitulo, descripcion, modulo, fecha_creacion, id_capC) VALUES ('$file', '$ruta1', '$titulo', '$subtitulo', '$descripcion', '$modulo', '$date', $id)";
+       $query = "INSERT INTO recursos(file, ruta, titulo, subtitulo, descripcion, modulo, fecha_creacion, id_capC) VALUES ('$file', '$ruta1', '$titulo', '$subtitulo', '$descripcion', '$modulo', '$date', $id)";
         $resultado = mysqli_query($conexion, $query);
 
         if ($resultado) {

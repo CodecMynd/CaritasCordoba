@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-03-2022 a las 03:47:07
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.1
+-- Tiempo de generación: 17-04-2022 a las 22:10:36
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,35 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `recursos`
+-- Estructura de tabla para la tabla `directivos`
 --
 
-CREATE TABLE `recursos` (
-  `id_recurso` int(11) NOT NULL,
-  `file` varchar(200) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `ruta` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `titulo` varchar(20) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `subtitulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `modulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `fecha_creacion` datetime NOT NULL,
-  `fecha_mod` datetime DEFAULT NULL,
-  `id_capC` int(11) DEFAULT NULL,
-  `id_capM` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
-
---
--- Volcado de datos para la tabla `recursos`
---
-
-INSERT INTO `recursos` (`id_recurso`, `file`, `ruta`, `titulo`, `subtitulo`, `descripcion`, `modulo`, `fecha_creacion`, `fecha_mod`, `id_capC`, `id_capM`) VALUES
-(1, 'banner-1.jpg', '../src/img/inicio/banner-1.jpg', 'Titulo Prueba', 'Subtitulo de prueba', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 00:47:56', '2022-03-16 01:35:55', 1, 1),
-(2, 'banner-2.jpg', 'src/img/banner/banner-2.jpg', 'Titulo Prueba 2', 'Subtitulo prueba 2', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis ', 'carrusel1', '2022-03-16 01:21:13', NULL, 1, NULL),
-(3, 'banner-3.jpg', 'src/img/banner/banner-3.jpg', 'Titulo Prueba 3', 'Subtitulo prueba 3', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 01:31:58', NULL, 1, NULL),
-(4, 'banner-4.jpg', 'src/img/banner/banner-4.jpg', 'Titulo Prueba 4', 'Subtitulo prueba 4', 'adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit lab', 'carrusel1', '2022-03-16 01:32:18', NULL, 1, NULL),
-(5, 'resenia-2 - copia.jpg', 'src/img/banner/resenia-2 - copia.jpg', 'Titulo Prueba', 'Subtitulo', 'aaa', 'carrusel2', '2022-03-16 01:56:42', NULL, 1, NULL),
-(6, 'resenia-2.jpg', 'src/img/banner/resenia-2.jpg', 'Titulo Prueba', 'Subtitulo prueba 2', 's', 'carrusel2', '2022-03-16 02:07:28', NULL, 1, NULL),
-(7, 'resenia-1.jpg', 'src/img/banner/resenia-1.jpg', 'Titulo Prueba', 'Subtitulo', '--', 'carrusel2', '2022-03-16 02:29:39', NULL, 1, NULL);
+CREATE TABLE `directivos` (
+  `idDirectivo` int(11) NOT NULL,
+  `nombreDirec` varchar(30) DEFAULT '--',
+  `aPatDirec` varchar(25) DEFAULT '--',
+  `aMatDirec` varchar(25) DEFAULT '--',
+  `puesto` varchar(30) DEFAULT '--',
+  `funcionPuesto` varchar(100) DEFAULT '--',
+  `tel` varchar(14) DEFAULT '--',
+  `correoElect` varchar(35) DEFAULT '--',
+  `id_CapC` int(11) DEFAULT 0,
+  `archivo` varchar(200) DEFAULT '--',
+  `fecha_creacion` datetime DEFAULT '0000-01-01 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -69,9 +56,29 @@ CREATE TABLE `permisos` (
   `asignarPer` char(1) CHARACTER SET utf8 NOT NULL DEFAULT '0',
   `nuevoUsu` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
   `verTablaImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
-  `nuevoImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `regImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
   `editarImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
   `eliImgInicio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `regImgNosotros` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `editarImgNosotros` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `eliImgNosotros` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `verTablaImgNosotros` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `regImgNosotrosDirectorio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `editarImgNosotrosDirectorio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `eliImgNosotrosDirectorio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `verTablaImgNosotrosDirectorio` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `regImgQayudar` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `editarImgQayudar` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `eliImgQayudar` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `verTablaImgQayudar` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `regImgReportes` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `editarImgReportes` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `eliImgReportes` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `verTablaImgReportes` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `regImgServicios` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `editarImgServicios` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `eliImgServicios` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `verTablaImgServicios` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -79,9 +86,28 @@ CREATE TABLE `permisos` (
 -- Volcado de datos para la tabla `permisos`
 --
 
-INSERT INTO `permisos` (`id_permiso`, `verTablaUsuario`, `editarUsu`, `asignarCon`, `eliminarUsu`, `asignarPer`, `nuevoUsu`, `verTablaImgInicio`, `nuevoImgInicio`, `editarImgInicio`, `eliImgInicio`, `id_usuario`) VALUES
-(1, '1', '1', '1', '1', '1', '1', '0', '0', '0', '0', 1),
-(2, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 2);
+INSERT INTO `permisos` (`id_permiso`, `verTablaUsuario`, `editarUsu`, `asignarCon`, `eliminarUsu`, `asignarPer`, `nuevoUsu`, `verTablaImgInicio`, `regImgInicio`, `editarImgInicio`, `eliImgInicio`, `regImgNosotros`, `editarImgNosotros`, `eliImgNosotros`, `verTablaImgNosotros`, `regImgNosotrosDirectorio`, `editarImgNosotrosDirectorio`, `eliImgNosotrosDirectorio`, `verTablaImgNosotrosDirectorio`, `regImgQayudar`, `editarImgQayudar`, `eliImgQayudar`, `verTablaImgQayudar`, `regImgReportes`, `editarImgReportes`, `eliImgReportes`, `verTablaImgReportes`, `regImgServicios`, `editarImgServicios`, `eliImgServicios`, `verTablaImgServicios`, `id_usuario`) VALUES
+(1, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `recursos`
+--
+
+CREATE TABLE `recursos` (
+  `id_recurso` int(11) NOT NULL,
+  `file` varchar(200) COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `ruta` text COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `titulo` varchar(20) COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `subtitulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `modulo` varchar(40) COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `fecha_creacion` datetime DEFAULT '0000-01-01 00:00:00',
+  `fecha_mod` datetime DEFAULT '0000-01-01 00:00:00',
+  `id_capC` int(11) DEFAULT 0,
+  `id_capM` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -91,7 +117,7 @@ INSERT INTO `permisos` (`id_permiso`, `verTablaUsuario`, `editarUsu`, `asignarCo
 
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
-  `nombres` varchar(40) NOT NULL,
+  `nombres` varchar(30) NOT NULL,
   `aPaterno` varchar(20) NOT NULL,
   `aMaterno` varchar(20) NOT NULL,
   `usuario` varchar(20) NOT NULL,
@@ -119,16 +145,22 @@ INSERT INTO `usuarios` (`id_usuario`, `nombres`, `aPaterno`, `aMaterno`, `usuari
 --
 
 --
--- Indices de la tabla `recursos`
+-- Indices de la tabla `directivos`
 --
-ALTER TABLE `recursos`
-  ADD PRIMARY KEY (`id_recurso`);
+ALTER TABLE `directivos`
+  ADD PRIMARY KEY (`idDirectivo`);
 
 --
 -- Indices de la tabla `permisos`
 --
 ALTER TABLE `permisos`
   ADD PRIMARY KEY (`id_permiso`);
+
+--
+-- Indices de la tabla `recursos`
+--
+ALTER TABLE `recursos`
+  ADD PRIMARY KEY (`id_recurso`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -141,22 +173,28 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `recursos`
+-- AUTO_INCREMENT de la tabla `directivos`
 --
-ALTER TABLE `recursos`
-  MODIFY `id_recurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `directivos`
+  MODIFY `idDirectivo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_permiso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `recursos`
+--
+ALTER TABLE `recursos`
+  MODIFY `id_recurso` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

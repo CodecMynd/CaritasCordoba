@@ -1,3 +1,11 @@
+<?php
+require '../../config/functions.php';
+conectar();
+
+// query Imagen banner quiero ayudar
+$query1 = "SELECT * FROM recursos WHERE modulo = 'quieroAyudar' LIMIT 1";
+$resultadoQayudar = mysqli_query($conexion, $query1);
+?>
 <!doctype html>
 <html lang="es">
 
@@ -17,7 +25,9 @@
     include '../components/header.php';
     ?>
     <!-- banner -->
-    <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner-donar.jpg);">
+    <?php while ($rowQa = $resultadoQayudar->fetch_assoc()) { ?>
+        <section class="page-title overlay" style="background-image: url(../../src/img/imgModuloQayudar/<?php echo $rowQa['file'] ?>">
+        <?php } ?>
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">

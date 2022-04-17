@@ -8,29 +8,33 @@ ini_set('date.timezone',  'America/Mexico_City');
 $date = date('Y-m-d H:i:s');
 $id = $_SESSION['id_usuario'];
 
-$id_recurso = $_POST['id_recurso'];
-$titulo =  (!empty($_POST['titulo'])) ? $_POST['titulo'] : '';
-$subtitulo =  (!empty($_POST['subtitulo'])) ? $_POST['subtitulo'] : '';
-$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : '';
-$descripcion =  (!empty($_POST['descripcion'])) ? $_POST['descripcion'] : '';
+$idDirectivo = $_POST['idDirectivo'];
+$nombre =  $_POST['nombre'];
+$apellidopaterno =  $_POST['apellidopaterno'];
+$apellidomaterno =  $_POST['apellidomaterno'];
+$puesto =  $_POST['puesto'];
+$email =  $_POST['email'];
+$tel =  $_POST['tel'];
+$descripcion =  $_POST['descripcion'];
+//$ruta =  $_POST['ruta'];
 
 
-if (($_FILES["ruta"]["type"] == "image/jpg")
+if (($_FILES["ruta"]["type"] == "image/pjpeg")
     || ($_FILES["ruta"]["type"] == "image/jpeg")
     || ($_FILES["ruta"]["type"] == "image/png")
     || ($_FILES["ruta"]["type"] == "image/gif")
 ) {
-    if (move_uploaded_file($_FILES["ruta"]["tmp_name"], "../src/img/inicio/" . $_FILES['ruta']['name'])) {
+    if (move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/personal/" . $_FILES['ruta']['name'])) {
         //more code here...
         //  echo '../src/img/inicio/'.$_FILES['ruta']['name'];
 
         $file = $_FILES['ruta']['name'];
-        $directorio = '../src/img/inicio';
+        $directorio = '../../src/img/personal/';
         $ruta = $directorio . "/" . $file;
 
-        $query = "UPDATE recursos SET file = '$file', ruta = '$ruta', titulo = '$titulo', subtitulo = '$subtitulo', descripcion = '$descripcion', modulo = '$modulo', fecha_mod = '$date', id_capM = $id WHERE id_recurso = $id_recurso";
+        $query = "UPDATE directivos SET nombreDirec = '$nombre', aPatDirec = '$apellidopaterno', aMatDirec = '$apellidomaterno', puesto = '$puesto', funcionPuesto = '$descripcion', tel = '$tel', correoElect = '$email', id_capC = $id, archivo = '$file' WHERE idDirectivo = $idDirectivo";
         // var_dump($query);
-        $resultado = mysqli_query($conexion, $query);
+      $resultado = mysqli_query($conexion, $query);
 
         if ($resultado) {
             echo "<div class='alert alert-success' role='alert'>

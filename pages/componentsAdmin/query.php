@@ -44,6 +44,22 @@ while ($row = mysqli_fetch_array($query)) {
     $editarImgNosotros = $row['editarImgNosotros'];
     $eliImgNosotros = $row['eliImgNosotros'];
     $verTablaImgNosotros = $row['verTablaImgNosotros'];
+    $regImgNosotrosDirectorio = $row['regImgNosotrosDirectorio']; 
+    $editarImgNosotrosDirectorio = $row['editarImgNosotrosDirectorio'];
+    $eliImgNosotrosDirectorio = $row['eliImgNosotrosDirectorio'];
+    $verTablaImgNosotrosDirectorio = $row['verTablaImgNosotrosDirectorio'];
+    $regImgQayudar = $row['regImgQayudar'];
+    $editarImgQayudar = $row['editarImgQayudar'];
+    $eliImgQayudar = $row['eliImgQayudar'];
+    $verTablaImgQayudar = $row['verTablaImgQayudar'];
+    $regImgReportes = $row['regImgReportes'];
+    $editarImgReportes = $row['editarImgReportes'];
+    $eliImgReportes = $row['eliImgReportes'];
+    $verTablaImgReportes = $row['verTablaImgReportes'];
+    $regImgServicios = $row['regImgServicios'];
+    $editarImgServicios = $row['editarImgServicios'];
+    $eliImgServicios = $row['eliImgServicios'];
+    $verTablaImgServicios = $row['verTablaImgServicios'];
 }
 
 

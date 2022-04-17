@@ -56,9 +56,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 <!-- consulta sql -->
                                 <?php
                                 $cont = 0;
-                                if ($super == 1) {
-                                    $query = "SELECT * FROM recursos WHERE ruta = 'nosotros' ORDER BY modulo DESC";
-                                } else if ($verTablaImgNosotros == 1) {
+                                if ($super == 1 OR $verTablaImgNosotros == 1) {
                                     $query = "SELECT * FROM recursos WHERE ruta = 'nosotros' ORDER BY modulo DESC";
                                 } else {
                                     $query = "SELECT * FROM recursos WHERE id_recurso = 0";
@@ -106,27 +104,19 @@ require '../componentsAdmin/head-dataTables.php'
                                                                     <div class="btn-group">
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Editar Imagen Módulo Nosotros">
-                                                                                <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgNosotros.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i>
-                                                                                    </a>
-                                                                                <?php  } else if ($editarImgNosotros == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgNosotros.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i> </a>
+                                                                                <?php if ($super == 1 OR $editarImgNosotros == 1) { ?>
+                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgNosotros.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i></a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="editarImgNosotros><i class="fas fa-edit"></i></a>
+                                                                                    <a class="btn btn-outline-danger" id="editarImgNosotros"><i class="fas fa-edit"></i></a>
                                                                                 <?php } ?>
                                                                             </span>
                                                                         </li>
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Imagen Módulo inicio">
-                                                                                <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i>
-                                                                                    </a>
-                                                                                <?php  } else if ($eliImgNosotros   == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i>
-                                                                                    </a>
+                                                                                <?php if ($super == 1 OR $eliImgNosotros   == 1) { ?>
+                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="eliImgNosotros"><i class="fas fa-trash-alt"></i>
-                                                                                    </a>
+                                                                                    <a class="btn btn-outline-danger" id="eliImgNosotros"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } ?>
                                                                             </span>
                                                                         </li>

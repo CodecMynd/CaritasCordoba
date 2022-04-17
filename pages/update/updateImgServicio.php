@@ -6,38 +6,29 @@ if (!haIniciadoSesion()) {
 conectar();
 ini_set('date.timezone',  'America/Mexico_City');
 $date = date('Y-m-d H:i:s');
-$dateH = date('H:i:s');
 $id = $_SESSION['id_usuario'];
 
-$titulo =  '--';
-$subtitulo = '--';
-$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : 0;
-$descripcion =  '--';
+$id_recurso = $_POST['id_recurso'];
+$titulo =  $_POST['titulo'];
+$descripcion =  $_POST['descripcion'];
 
-if ($modulo == '') {
-    echo "<div class='alert alert-danger' role='role'>
-    <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
-    </div>";
-    exit;
-}
 
-($_FILES["ruta"]["type"] == "image/jpg")
+if (($_FILES["ruta"]["type"] == "image/pjpeg")
     || ($_FILES["ruta"]["type"] == "image/jpeg")
     || ($_FILES["ruta"]["type"] == "image/png")
-    || ($_FILES["ruta"]["type"] == "image/gif");
-
-    move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloNosotros/" . $_FILES['ruta']['name']);
+    || ($_FILES["ruta"]["type"] == "image/gif")
+) {
+    if (move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloServicios/" . $_FILES['ruta']['name'])) {
         //more code here...
         //  echo '../src/img/inicio/'.$_FILES['ruta']['name'];
 
         $file = $_FILES['ruta']['name'];
-        $directorio = 'src/img/banner';
+        $directorio = '../src/img/inicio';
         $ruta = $directorio . "/" . $file;
 
-    $ruta1 = 'nosotros';
-
-        $query = "INSERT INTO recursos(file, ruta, titulo, subtitulo, descripcion, modulo, fecha_creacion, id_capC) VALUES ('$file', '$ruta1', '$titulo', '$subtitulo', '$descripcion', '$modulo', '$date', $id)";
-        $resultado = mysqli_query($conexion, $query);
+        $query = "UPDATE recursos SET file = '$file', titulo = '$titulo', descripcion = '$descripcion', fecha_mod = '$date', id_capM = $id WHERE id_recurso = $id_recurso";
+        //var_dump($query);
+     $resultado = mysqli_query($conexion, $query);
 
         if ($resultado) {
             echo "<div class='alert alert-success' role='alert'>
@@ -50,6 +41,16 @@ if ($modulo == '') {
       </div>";
             exit;
         }
+    } else {
+        echo "<div class='alert alert-danger' role='role'>
+         <p><strong>¡Error no se encontro la carpeta especificada!</strong></p>
+         </div>";
+    }
+} else {
+    echo "<div class='alert alert-danger' role='role'>
+     <p><strong>¡Error no es el formato especificado!</strong></p>
+     </div>";
+    }
 
 desconectar();
 ?>

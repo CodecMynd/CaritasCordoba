@@ -72,7 +72,7 @@ require '../componentsAdmin/head-main.php';
                                                                     </div>
                                                                 </div>
                                                                 <div class="card-body ">
-                                                                    <div class="row">
+                                                                    <div class="row justify-content-center">
                                                                         <div class="col-md-3 col-sm-6 col-12">
                                                                             <button type="button" class="btn btn-permisos">
                                                                                 <div class="info-box">
@@ -149,11 +149,11 @@ require '../componentsAdmin/head-main.php';
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- Imagenes Modulo Inicio -->
+                                                        <!-- Imagenes Módulo Inicio -->
                                                         <div class="col-12">
                                                             <div class="card card-secondary card-outline collapsed-card">
                                                                 <div class="card-header">
-                                                                    <h2 class="card-title"><strong>Imagenes Modulo Inicio</strong></h2>
+                                                                    <h2 class="card-title"><strong>Imagenes Módulo Inicio</strong></h2>
                                                                     <div class="card-tools">
                                                                         <button type="button" class="btn btn-tool text-dark parpadea" data-card-widget="collapse">
                                                                             <i class="fas fa-plus"></i>
@@ -214,11 +214,11 @@ require '../componentsAdmin/head-main.php';
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!-- Imagenes Modulo Nosotros -->
+                                                        <!-- Imagenes Módulo Nosotros -->
                                                         <div class="col-12">
                                                             <div class="card card-secondary card-outline collapsed-card">
                                                                 <div class="card-header">
-                                                                    <h2 class="card-title"><strong>Imagenes Modulo Nosotros</strong></h2>
+                                                                    <h2 class="card-title"><strong>Imagenes Módulo Nosotros</strong></h2>
                                                                     <div class="card-tools">
                                                                         <button type="button" class="btn btn-tool text-dark parpadea" data-card-widget="collapse">
                                                                             <i class="fas fa-plus"></i>
@@ -246,7 +246,7 @@ require '../componentsAdmin/head-main.php';
                                                                                     <div class="info-box-content">
                                                                                         <span class="info-box-text">Editar Imagen Nosotros</span>
                                                                                         <span class="info-box-text"> <input type="checkbox" name="editarImgNosotros" id="editarImgNosotros" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" value="1" <?php if ($rowPer['editarImgNosotros'] == 1) echo 'checked';
-                                                                                                                                                                                                                                                                                                                                            else echo ''; ?>></span>
+                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
                                                                                     </div>
                                                                                 </div>
                                                                             </button>
@@ -258,7 +258,7 @@ require '../componentsAdmin/head-main.php';
                                                                                     <div class="info-box-content">
                                                                                         <span class="info-box-text">Eliminar Imagen Nosotros</span>
                                                                                         <span class="info-box-text"> <input type="checkbox" name="eliImgNosotros" id="eliImgNosotros" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['eliImgNosotros'] == 1) echo 'checked';
-                                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
+                                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
                                                                                     </div>
                                                                                 </div>
                                                                             </button>
@@ -268,9 +268,274 @@ require '../componentsAdmin/head-main.php';
                                                                                 <div class="info-box">
                                                                                     <span class="info-box-icon bg-secondary"><i class="fa-solid fa-eye"></i></span>
                                                                                     <div class="info-box-content">
-                                                                                        <span class="info-box-text">Ver Tabla Módulo Página Nosotros</span>
+                                                                                        <span class="info-box-text">Ver Tabla Módulo Nosotros</span>
                                                                                         <span class="info-box-text"> <input type="checkbox" name="verTablaImgNosotros" id="verTablaImgNosotros" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['verTablaImgNosotros'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Imagenes Módulo Servicios -->
+                                                        <div class="col-12">
+                                                            <div class="card card-secondary card-outline collapsed-card">
+                                                                <div class="card-header">
+                                                                    <h2 class="card-title"><strong>Imagenes Módulo Servicios</strong></h2>
+                                                                    <div class="card-tools">
+                                                                        <button type="button" class="btn btn-tool text-dark parpadea" data-card-widget="collapse">
+                                                                            <i class="fas fa-plus"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-circle-plus"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Registrar Imagen Servicios</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="regImgServicios" id="regImgServicios" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['regImgServicios'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                        else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-pen-to-square"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Editar Imagen Servicios</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="editarImgServicios" id="editarImgServicios" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" value="1" <?php if ($rowPer['editarImgServicios'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-trash-can"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Eliminar Imagen Servicios</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="eliImgServicios" id="eliImgServicios" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['eliImgServicios'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                        else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-eye"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Ver Tabla Módulo Servicios</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="verTablaImgServicios" id="verTablaImgServicios" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['verTablaImgServicios'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Imagenes Módulo Quiero Ayudar -->
+                                                        <div class="col-12">
+                                                            <div class="card card-secondary card-outline collapsed-card">
+                                                                <div class="card-header">
+                                                                    <h2 class="card-title"><strong>Imagenes Módulo Quiero Ayudar</strong></h2>
+                                                                    <div class="card-tools">
+                                                                        <button type="button" class="btn btn-tool text-dark parpadea" data-card-widget="collapse">
+                                                                            <i class="fas fa-plus"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-circle-plus"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Registrar Imagen Quiero Ayudar</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="regImgQayudar" id="regImgQayudar" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['regImgQayudar'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-pen-to-square"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Editar Imagen Quiero Ayudar</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="editarImgQayudar" id="editarImgQayudar" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" value="1" <?php if ($rowPer['editarImgQayudar'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-trash-can"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Eliminar Imagen Quiero Ayudar</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="eliImgQayudar" id="eliImgQayudar" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['eliImgQayudar'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-eye"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Ver Tabla Módulo Servicios</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="verTablaImgQayudar" id="verTablaImgQayudar" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['verTablaImgQayudar'] == 1) echo 'checked';
                                                                                                                                                                                                                                                                                                                                                                             else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Imagenes Módulo Reportes -->
+                                                        <div class="col-12">
+                                                            <div class="card card-secondary card-outline collapsed-card">
+                                                                <div class="card-header">
+                                                                    <h2 class="card-title"><strong>Imagenes Módulo Reportes</strong></h2>
+                                                                    <div class="card-tools">
+                                                                        <button type="button" class="btn btn-tool text-dark parpadea" data-card-widget="collapse">
+                                                                            <i class="fas fa-plus"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-circle-plus"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Registrar Imagen Reportes</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="regImgReportes" id="regImgReportes" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['regImgReportes'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-pen-to-square"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Editar Imagen Reportes</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="editarImgReportes" id="editarImgReportes" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" value="1" <?php if ($rowPer['editarImgReportes'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-trash-can"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Eliminar Imagen Reportes</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="eliImgReportes" id="eliImgReportes" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['eliImgReportes'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-eye"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Ver Tabla Módulo Servicios</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="verTablaImgReportes" id="verTablaImgReportes" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['verTablaImgReportes'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--******************************************* Separador de Módulos *******************************************-->
+                                                        <div class="col-md-12">
+                                                            <hr>
+                                                        </div>
+                                                        <!--******************************************* Separador de Módulos *******************************************-->
+                                                        <!-- Módulo Nosotros Directorio -->
+                                                        <div class="col-12">
+                                                            <div class="card card-secondary card-outline collapsed-card">
+                                                                <div class="card-header">
+                                                                    <h2 class="card-title"><strong>Módulo Nosotros (Directorio)</strong></h2>
+                                                                    <div class="card-tools">
+                                                                        <button type="button" class="btn btn-tool text-dark parpadea" data-card-widget="collapse">
+                                                                            <i class="fas fa-plus"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body ">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-circle-plus"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Registrar Imagen Directorio</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="regImgNosotrosDirectorio" id="regImgNosotrosDirectorio" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['regImgNosotrosDirectorio'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-pen-to-square"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Editar Imagen Directorio</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="editarImgNosotrosDirectorio" id="editarImgNosotrosDirectorio" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" value="1" <?php if ($rowPer['editarImgNosotrosDirectorio'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-trash-can"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Eliminar Imagen Directorio</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="eliImgNosotrosDirectorio" id="eliImgNosotrosDirectorio" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['eliImgNosotrosDirectorio'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                    else echo ''; ?>></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col-md-3 col-sm-6 col-12">
+                                                                            <button type="button" class="btn btn-permisos">
+                                                                                <div class="info-box">
+                                                                                    <span class="info-box-icon bg-secondary"><i class="fa-solid fa-eye"></i></span>
+                                                                                    <div class="info-box-content">
+                                                                                        <span class="info-box-text">Ver Tabla Módulo Directorio</span>
+                                                                                        <span class="info-box-text"> <input type="checkbox" name="verTablaImgNosotrosDirectorio" id="verTablaImgNosotrosDirectorio" data-toggle="toggle" data-on="Activo" data-off="Inactivo" data-width="100" data-height="10" data-onstyle="success" data-offstyle="danger" name="status" id="status" value="1" <?php if ($rowPer['verTablaImgNosotrosDirectorio'] == 1) echo 'checked';
+                                                                                                                                                                                                                                                                                                                                                                                else echo ''; ?>></span>
                                                                                     </div>
                                                                                 </div>
                                                                             </button>

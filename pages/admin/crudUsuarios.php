@@ -1,5 +1,6 @@
 <?php
 require '../componentsAdmin/head-main.php';
+require '../componentsAdmin/head-dataTables.php'
 ?>
 <title>Tabla Usuarios | <?php echo $nomComp ?></title>
 
@@ -52,9 +53,7 @@ require '../componentsAdmin/head-main.php';
                                 <!-- consulta sql -->
                                 <?php
                                 $cont = 0;
-                                 if ($super == 1) {
-                                     $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
-                                 } else if ($verTablaUsuario == 1) {
+                                 if ($super == 1 OR $verTablaUsuario == 1) {
                                      $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
                                  } else {
                                      $query = "SELECT super FROM usuarios WHERE super = 10";
@@ -70,7 +69,7 @@ require '../componentsAdmin/head-main.php';
                                         <div class="ribbon ribbon-bottom-left"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-bottom-right"><span>Sin permiso</span></div>
                                     <?php  } ?> 
-                                    <table id="tablePermisos" class="table table-sm table-bordered table-striped">
+                                    <table id="tableCrudUsuarios" class="table table-sm table-bordered table-striped">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -118,11 +117,8 @@ require '../componentsAdmin/head-main.php';
                                                                     <div class="btn-group">
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Editar Usuario">
-                                                                                <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateUsuario.php?id=<?php echo $row['id_usuario'] ?>"><i class="fas fa-edit"></i>
-                                                                                    </a>
-                                                                                <?php  } else if ($editarUsu == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateUsuario.php?id=<?php echo $row['id_usuario'] ?>"><i class="fas fa-edit"></i> </a>
+                                                                                <?php if ($super == 1 OR $editarUsu == 1) { ?>
+                                                                                    <a class="btn btn-secondary" href="../update/formUpdateUsuario.php?id=<?php echo $row['id_usuario'] ?>"><i class="fas fa-edit"></i></a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="editarUsu"><i class="fas fa-edit"></i></a>
                                                                                 <?php } ?>
@@ -130,43 +126,28 @@ require '../componentsAdmin/head-main.php';
                                                                         </li>
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Asignar Contraseña">
-                                                                                <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePass.php?id=<?php echo $row['id_usuario'] ?>"> <i class="fa-solid fa-lock"></i>
-                                                                                    </a>
-                                                                                <?php  } else if ($asignarCon  == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePass.php?id=<?php echo $row['id_usuario'] ?>"> <i class="fa-solid fa-lock"></i>
-                                                                                    </a>
+                                                                                <?php if ($super == 1 OR $asignarCon  == 1) { ?>
+                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePass.php?id=<?php echo $row['id_usuario'] ?>"> <i class="fa-solid fa-lock"></i></a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="asignarCon"> <i class="fa-solid fa-lock"></i>
-                                                                                    </a>
+                                                                                    <a class="btn btn-outline-danger" id="asignarCon"> <i class="fa-solid fa-lock"></i></a>
                                                                                 <?php } ?>
                                                                             </span>
                                                                         </li>
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Usuario">
-                                                                                <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-sm<?php echo $row['id_usuario'] ?>"><i class="fas fa-trash-alt"></i>
-                                                                                    </a>
-                                                                                <?php  } else if ($eliminarUsu   == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-sm<?php echo $row['id_usuario'] ?>"><i class="fas fa-trash-alt"></i>
-                                                                                    </a>
+                                                                                <?php if ($super == 1 OR $eliminarUsu   == 1) { ?>
+                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-sm<?php echo $row['id_usuario'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="eliminarUsu"><i class="fas fa-trash-alt"></i>
-                                                                                    </a>
+                                                                                    <a class="btn btn-outline-danger" id="eliminarUsu"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } ?>
                                                                             </span>
                                                                         </li>
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Asignar Permiso">
-                                                                                <?php if ($super == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePermiso.php?id=<?php echo $row['id_usuario'] ?>"><i class="fa-solid fa-key"></i>
-                                                                                    </a>
-                                                                                <?php  } else if ($asignarPer == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePermiso.php?id=<?php echo $row['id_usuario'] ?>"><i class="fa-solid fa-key"></i>
-                                                                                    </a>
+                                                                                <?php if ($super == 1 OR $asignarPer == 1) { ?>
+                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePermiso.php?id=<?php echo $row['id_usuario'] ?>"><i class="fa-solid fa-key"></i></a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="asignarPer"><i class="fa-solid fa-key"></i>
-                                                                                    </a>
+                                                                                    <a class="btn btn-outline-danger" id="asignarPer"><i class="fa-solid fa-key"></i></a>
                                                                                 <?php } ?>
                                                                             </span>
                                                                         </li>

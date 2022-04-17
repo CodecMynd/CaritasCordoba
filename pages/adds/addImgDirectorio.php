@@ -9,34 +9,31 @@ $date = date('Y-m-d H:i:s');
 $dateH = date('H:i:s');
 $id = $_SESSION['id_usuario'];
 
-$titulo =  '--';
-$subtitulo = '--';
-$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : 0;
-$descripcion =  '--';
+$nombre =  (!empty($_POST['nombre'])) ? $_POST['nombre'] : '--';
+$apellidopaterno =  (!empty($_POST['apellidopaterno'])) ? $_POST['apellidopaterno'] : '--';
+$apellidomaterno =  (!empty($_POST['apellidomaterno'])) ? $_POST['apellidomaterno'] : '--';
+$puesto =  (!empty($_POST['puesto'])) ? $_POST['puesto'] : '--';
+$email =  (!empty($_POST['email'])) ? $_POST['email'] : '--';
+$tel =  (!empty($_POST['tel'])) ? $_POST['tel'] : '--';
+$descripcion =  (!empty($_POST['descripcion'])) ? $_POST['descripcion'] : '--';
+$ruta =  (!empty($_POST['ruta'])) ? $_POST['ruta'] : '--';
 
-if ($modulo == '') {
-    echo "<div class='alert alert-danger' role='role'>
-    <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
-    </div>";
-    exit;
-}
 
-($_FILES["ruta"]["type"] == "image/jpg")
+($_FILES["ruta"]["type"] == "image/pjpeg")
     || ($_FILES["ruta"]["type"] == "image/jpeg")
     || ($_FILES["ruta"]["type"] == "image/png")
     || ($_FILES["ruta"]["type"] == "image/gif");
 
-    move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/imgModuloNosotros/" . $_FILES['ruta']['name']);
-        //more code here...
-        //  echo '../src/img/inicio/'.$_FILES['ruta']['name'];
+    move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/personal/" . $_FILES['ruta']['name']);
+        
 
         $file = $_FILES['ruta']['name'];
-        $directorio = 'src/img/banner';
-        $ruta = $directorio . "/" . $file;
+        //$directorio = 'src/img/banner';
+       // $ruta = $directorio . "/" . $file;
 
-    $ruta1 = 'nosotros';
+    //$ruta1 = 'inicio';
 
-        $query = "INSERT INTO recursos(file, ruta, titulo, subtitulo, descripcion, modulo, fecha_creacion, id_capC) VALUES ('$file', '$ruta1', '$titulo', '$subtitulo', '$descripcion', '$modulo', '$date', $id)";
+        $query = "INSERT INTO directivos(nombreDirec, aPatDirec, aMatDirec, puesto, funcionPuesto, tel, correoElect, id_capC, archivo, fecha_creacion) VALUES ('$nombre', '$apellidopaterno', '$apellidomaterno', '$puesto', '$descripcion', '$tel', '$email', $id, '$file', '$date')";
         $resultado = mysqli_query($conexion, $query);
 
         if ($resultado) {

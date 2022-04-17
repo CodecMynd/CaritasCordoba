@@ -2,7 +2,7 @@
 require '../componentsAdmin/head-main.php';
 require '../componentsAdmin/head-dataTables.php'
 ?>
-<title>Panel Imagenes Pagina Inicio | <?php echo $nomComp ?></title>
+<title>Panel Imagenes Página Quiero Ayudar | <?php echo $nomComp ?></title>
 
 </head>
 
@@ -17,14 +17,14 @@ require '../componentsAdmin/head-dataTables.php'
                 <div class="container-fluid">
                     <div class="row my-3 mx-5">
                         <div class="col-sm-6">
-                            <h1 class="m-0 bienvenido" style="font-size:2vw">Tabla <strong>Imagenes Pagina Inicio</strong></h1>
+                            <h1 class="m-0 bienvenido" style="font-size:2vw">Tabla <strong>Imagenes Página Quiero Ayudar</strong></h1>
 
                         </div>
                         <!-- migas de pan -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="../admin/panelAdmin.php"><i class="fa-solid fa-house-user"></i> Home</a></li>
-                                <li class="breadcrumb-item active"><i class="fa-solid fa-image"></i> Imagenes Inicio</li>
+                                <li class="breadcrumb-item active"><i class="fa-solid fa-image"></i> Imagenes Quiero ayudar</li>
                             </ol>
                         </div>
                     </div>
@@ -34,17 +34,17 @@ require '../componentsAdmin/head-dataTables.php'
             <section class="content">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-10">
+                        <div class="col-6">
                             <div class="card border-card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Imagenes del Módulo Inicio</h3>
+                                    <h3 class="card-title">Imagenes del Módulo Quiero Ayudar</h3>
                                     <div class="card-tools">
-                                        <?php if ($super == 1 OR $regImgInicio == 1) { ?>
-                                            <a type="button" class="btn btn-secondary" href="../adds/formAddImgInicio.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Inicio">
-                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Inicio</a>
+                                        <?php if ($super == 1 OR $regImgQayudar == 1 ) { ?>
+                                            <a type="button" class="btn btn-secondary" href="../adds/formAddImgQayudar.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Quiero Ayudar">
+                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Quiero Ayudar</a>
                                         <?php } else { ?>
-                                            <a type="button" class="btn btn-outline-danger" id="regImgInicio" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Inicio">
-                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Inicio</a>
+                                            <a type="button" class="btn btn-outline-danger" id="regImgQayudar" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Quiero Ayudar">
+                                                <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Quiero Ayudar</a>
                                         <?php } ?>
 
                                         <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Actualizar página"><i class="fa-solid fa-arrows-rotate"></i></a>
@@ -53,8 +53,8 @@ require '../componentsAdmin/head-dataTables.php'
                                 <!-- consulta sql -->
                                 <?php
                                 $cont = 0;
-                                if ($super == 1 OR $verTablaImgInicio == 1) {
-                                    $query = "SELECT * FROM recursos WHERE ruta = 'inicio' ORDER BY modulo DESC";
+                                if ($super == 1 OR $verTablaImgQayudar == 1) {
+                                    $query = "SELECT id_recurso, file, modulo FROM recursos WHERE ruta = 'quieroayudar' ORDER BY modulo DESC";
                                 } else {
                                     $query = "SELECT * FROM recursos WHERE id_recurso = 0";
                                 }
@@ -62,7 +62,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 ?>
                                 <div class="card-body">
                                     <?php if ($super == 1) {
-                                    } else if ($verTablaImgInicio == 0) { ?>
+                                    } else if ($verTablaImgQayudar == 0) { ?>
                                         <div class="ribbon ribbon-top-left"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-top-right"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-bottom-left"><span>Sin permiso</span></div>
@@ -73,9 +73,6 @@ require '../componentsAdmin/head-dataTables.php'
                                             <tr>
                                                 <th>#</th>
                                                 <th>Nombre Imagen</th>
-                                                <th>Titulo</th>
-                                                <th>Subtitulo</th>
-                                                <th>Descripción</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -93,39 +90,30 @@ require '../componentsAdmin/head-dataTables.php'
                                                         <?php echo $row['file'] ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row['titulo'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row['subtitulo'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $row['descripcion'] ?>
-                                                    </td>
-                                                    <td>
                                                         <?php echo $row['modulo'] ?>
                                                     </td>
                                                     <td>
                                                         <div class="input-group input-group-sm mb-3">
                                                             <div class="input-group-prepend">
-                                                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i><span data-toogle="tooltip" title="Botónes de administración tabla Inicio"> Acciones</span>
+                                                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i><span data-toogle="tooltip" title="Botónes de administración tabla Quiero Ayudar"> Acciones</span>
                                                                 </button>
                                                                 <ul class="dropdown-menu" style="min-width: 2em;">
                                                                     <div class="btn-group">
                                                                         <li class="dropdown-item">
-                                                                            <span data-toggle="tooltip" title="Editar Imagen Módulo Inicio">
-                                                                                <?php if ($super == 1 OR $editarImgInicio == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgInicio.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i></a>
+                                                                            <span data-toggle="tooltip" title="Editar Imagen Módulo Quiero Ayudar">
+                                                                                <?php if ($super == 1 OR $editarImgQayudar == 1) { ?>
+                                                                                    <a class="btn btn-secondary" href="../update/formUpdateImgQayudar.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i></a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="editarImgInicio"><i class="fas fa-edit"></i></a>
+                                                                                    <a class="btn btn-outline-danger" id="editarImgQayudar"><i class="fas fa-edit"></i></a>
                                                                                 <?php } ?>
                                                                             </span>
                                                                         </li>
                                                                         <li class="dropdown-item">
-                                                                            <span data-toggle="tooltip" title="Eliminar Imagen Módulo inicio">
-                                                                                <?php if ($super == 1 OR $eliImgInicio   == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
+                                                                            <span data-toggle="tooltip" title="Eliminar Imagen Módulo Quiero ayudar">
+                                                                                <?php if ($super == 1 OR $eliImgQayudar   == 1) { ?>
+                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgQayudar<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="eliImgInicio"><i class="fas fa-trash-alt"></i>
+                                                                                    <a class="btn btn-outline-danger" id="eliImgQayudar"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
                                                                                 <?php } ?>
                                                                             </span>
@@ -136,7 +124,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                         </div>
                                                     </td>
                                                     <?php
-                                                    require '../componentsAdmin/modal-eliminarImgInicio.php';
+                                                    require '../componentsAdmin/modal-eliminarImgQayudar.php';
                                                     ?>
                                                 </tr>
                                             <?php
@@ -147,11 +135,8 @@ require '../componentsAdmin/head-dataTables.php'
                                         <tfoot>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Ruta</th>
-                                                <th>Titulo</th>
-                                                <th>Subtitulo</th>
-                                                <th>Descripción</th>
-                                                <th>Módulo</th>
+                                                <th>Nombre Imagen</th>
+                                                <th>Identificador</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </tfoot>
@@ -178,19 +163,19 @@ require '../componentsAdmin/head-dataTables.php'
 <!-- Ajax Jquery -->
 <script src="../src/js/ajax.js"></script>
 <script>
-    $('.btnBorrarImgInicio').click(function(e) {
+    $('.btnBorrarImgQayudar').click(function(e) {
         e.preventDefault();
         if (confirm("¿Estás seguro de eliminar esta Imagen? Una vez borrado ya no se podrá recuperar la información.")) {
             var id = $(this).attr("id_recurso");
 
             var dataString = 'id=' + id;
-            url = "../delete/deleteImgInicio.php";
+            url = "../delete/deleteImgQayudar.php";
             $.ajax({
                 type: "POST",
                 url: url,
                 data: dataString,
                 success: function(data) {
-                    window.location.href = "crudImgInicio.php";
+                    window.location.href = "crudImgQayudar.php";
                     $('#respuesta').html(data);
                 }
             });

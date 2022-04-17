@@ -1,3 +1,13 @@
+<?php
+require '../../config/functions.php';
+conectar();
+
+
+// query Imagen Banner Principal 
+$query = "SELECT * FROM recursos WHERE modulo = 'reportes' LIMIT 1";
+$resultado = mysqli_query($conexion, $query);
+
+?>
 <!doctype html>
 <html lang="es">
 
@@ -17,7 +27,8 @@
     include '../components/header.php';
     ?>
     <!-- banner -->
-    <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
+    <?php while ($row = $resultado->fetch_assoc()) { ?>
+    <section class="page-title overlay" style="background-image: url(../../src/img/imgModuloReportes/<?php echo $row['file'] ?>);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -26,6 +37,7 @@
             </div>
         </div>
     </section>
+    <?php } ?>
 
     <!-- seccion reportes -->
     <section class="section" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" id="donar">

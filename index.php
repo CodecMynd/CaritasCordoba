@@ -294,8 +294,7 @@ $resultadoCarrusel4 = mysqli_query($conexion, $query4);
             </div>
         </div>
     </section>
-    <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset" src="src/img/imgModuloInicio/benefactor-logo-2-white.png" alt="Benefactor-logo"></a>
-
+    
     <!-- /benefactores empresas logo slider -->
 
     <!-- footer -->
