@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-04-2022 a las 22:10:36
+-- Tiempo de generación: 17-04-2022 a las 23:36:50
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -99,15 +99,33 @@ CREATE TABLE `recursos` (
   `id_recurso` int(11) NOT NULL,
   `file` varchar(200) COLLATE utf8mb4_spanish_ci DEFAULT '--',
   `ruta` text COLLATE utf8mb4_spanish_ci DEFAULT '--',
-  `titulo` varchar(20) COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `titulo` varchar(50) COLLATE utf8mb4_spanish_ci DEFAULT '--',
   `subtitulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT '--',
   `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT '--',
   `modulo` varchar(40) COLLATE utf8mb4_spanish_ci DEFAULT '--',
+  `idServicio` int(11) NOT NULL,
+  `fechaImgServ` varchar(7) COLLATE utf8mb4_spanish_ci NOT NULL,
   `fecha_creacion` datetime DEFAULT '0000-01-01 00:00:00',
   `fecha_mod` datetime DEFAULT '0000-01-01 00:00:00',
   `id_capC` int(11) DEFAULT 0,
   `id_capM` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `servicios`
+--
+
+CREATE TABLE `servicios` (
+  `idServicio` int(11) NOT NULL,
+  `titulo` varchar(50) NOT NULL,
+  `subtitulo` varchar(50) NOT NULL,
+  `descripcion` text NOT NULL,
+  `img` varchar(100) NOT NULL,
+  `fechaRegistro` datetime DEFAULT NULL,
+  `id_capC` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -188,7 +206,7 @@ ALTER TABLE `permisos`
 -- AUTO_INCREMENT de la tabla `recursos`
 --
 ALTER TABLE `recursos`
-  MODIFY `id_recurso` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_recurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

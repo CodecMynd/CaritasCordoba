@@ -65,7 +65,7 @@ require '../componentsAdmin/head-main.php';
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text"><i class="fa-solid fa-pencil"></i></span>
                                                     </div>
-                                                    <input autofocus name="titulo" id="titulo" type="text" class="form-control" placeholder="titulo" maxlength="20" data-toggle="tooltip" data-placement="bottom" title="Max. 20 caracteres">
+                                                    <input autofocus name="titulo" id="titulo" type="text" class="form-control" placeholder="titulo" maxlength="50" data-toggle="tooltip" data-placement="bottom" title="Max. 50 caracteres">
                                                     <label for="floatingInput" class="pl-5">*Titulo</label>
                                                 </div>
                                             </div>

@@ -54,8 +54,8 @@
                             <a href="contacto.php" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-at"></i> Contáctanos</a>
                         </div>
                         <div style="float:right;">
-                           <a href="escuchaCasos.php" class="prevArrowS" title="Anterior: Escucha de casos"><i class="fas fa-angle-left fa-2x"></i></a>
-                           <a href="farmacia.php" class="nextArrowS" title="Siguiente: Farmacia"><i class="fas fa-angle-right fa-2x"></i></a>
+                            <a href="escuchaCasos.php" class="prevArrowS" title="Anterior: Escucha de casos"><i class="fas fa-angle-left fa-2x"></i></a>
+                            <a href="farmacia.php" class="nextArrowS" title="Siguiente: Farmacia"><i class="fas fa-angle-right fa-2x"></i></a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
     <!-- /seccion escucha de casos: descripcion -->
 
     <!-- galeria imagenes -->
-    <section class="section text-center"> 
+    <section class="section text-center">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center" data-aos="fade-right" data-aos-duration="2000">
@@ -106,9 +106,9 @@
                         <div class="position-relative">
                             <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-1.jpg" alt="project-image">
                             <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
+                                <a href="project-single.html" class="h6">EXpo feria puebla- parque 23 de mayo numero 723EXpo feria puebla- parque 23 de mayo numero 723EXpo feria puebla- parque 23 de mayo numero 723EXpo feria puebla- parque 23 de mayo numero 723EXpo feria puebla- parque 23 de mayo numero 723</a>
                                 <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
+                                    <i class="ti-tag"></i>Expo feria
                                 </p>
                             </div>
                         </div>
@@ -118,9 +118,9 @@
                             <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-2.jpg" alt="project-image">
                             <div class="project-info">
                                 <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
+                                <h1>
                                     <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
+                                </h1>
                             </div>
                         </div>
                     </div>
