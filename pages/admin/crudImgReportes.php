@@ -71,6 +71,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
@@ -84,6 +85,9 @@ require '../componentsAdmin/head-dataTables.php'
                                                         <?php $cont++;
                                                         echo $cont;
                                                         ?>
+                                                    </td>
+                                                    <td>
+                                                        <span class='badge badge-dark badge-pill'><?php echo $row['id_recurso'] ?></span>
                                                     </td>
                                                     <td>
                                                         <?php echo $row['file'] ?>
@@ -134,6 +138,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <tfoot>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
@@ -180,6 +185,25 @@ require '../componentsAdmin/head-dataTables.php'
             });
         }
         return false;
+    });
+    $(document).ready(function() {
+        $('#btnDeleteImgReporte').click(function() {
+            $.ajax({
+                    url: '../delete/deleteImgReporte.php',
+                    type: 'POST',
+                    data: $('#formDeleteImgReporte').serialize(),
+                })
+                .done(function(res) {
+                    $('#respuestaNuevoPermiso').html(res)
+                })
+        });
+    });
+    //Ocultar boton por 5 minutos para evitar el doble submit
+    $("#btnDeleteImgReporte").on('click', function() {
+        $("#btnDeleteImgReporte").css('visibility', 'hidden');
+        setTimeout(function() {
+            $("#btnDeleteImgReporte").css('visibility', 'visible');
+        }, 300000);
     });
 </script>
 

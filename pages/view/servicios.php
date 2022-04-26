@@ -8,37 +8,37 @@ $query = "SELECT * FROM recursos WHERE modulo = 'bannerServ' LIMIT 1";
 $resultado = mysqli_query($conexion, $query);
 
 // query Imagen servicio1
-$query1 = "SELECT * FROM recursos WHERE modulo = 'servicio1' LIMIT 1";
+$query1 = "SELECT * FROM recursos WHERE modulo = 'escuchaCasos' LIMIT 1";
 $resultado1 = mysqli_query($conexion, $query1);
 // query Imagen servicio2
-$query2 = "SELECT * FROM recursos WHERE modulo = 'servicio2' LIMIT 1";
+$query2 = "SELECT * FROM recursos WHERE modulo = 'luchamosVsCancer' LIMIT 1";
 $resultado2 = mysqli_query($conexion, $query2);
 // query Imagen servicio3
-$query3 = "SELECT * FROM recursos WHERE modulo = 'servicio3' LIMIT 1";
+$query3 = "SELECT * FROM recursos WHERE modulo = 'farmacia' LIMIT 1";
 $resultado3 = mysqli_query($conexion, $query3);
 // query Imagen servicio4
-$query4 = "SELECT * FROM recursos WHERE modulo = 'servicio4' LIMIT 1";
+$query4 = "SELECT * FROM recursos WHERE modulo = 'consultasMedicas' LIMIT 1";
 $resultado4 = mysqli_query($conexion, $query4);
 // query Imagen servicio5
-$query5 = "SELECT * FROM recursos WHERE modulo = 'servicio5' LIMIT 1";
+$query5 = "SELECT * FROM recursos WHERE modulo = 'consultasPsicologicas' LIMIT 1";
 $resultado5 = mysqli_query($conexion, $query5);
 // query Imagen servicio6
-$query6 = "SELECT * FROM recursos WHERE modulo = 'servicio6' LIMIT 1";
+$query6 = "SELECT * FROM recursos WHERE modulo = 'despensasAncianos' LIMIT 1";
 $resultado6 = mysqli_query($conexion, $query6);
 // query Imagen servicio7
-$query7 = "SELECT * FROM recursos WHERE modulo = 'servicio7' LIMIT 1";
+$query7 = "SELECT * FROM recursos WHERE modulo = 'despensasFamilias' LIMIT 1";
 $resultado7 = mysqli_query($conexion, $query7);
 // query Imagen servicio8
-$query8 = "SELECT * FROM recursos WHERE modulo = 'servicio8' LIMIT 1";
+$query8 = "SELECT * FROM recursos WHERE modulo = 'bazarRopa' LIMIT 1";
 $resultado8 = mysqli_query($conexion, $query8);
 // query Imagen servicio9
-$query9 = "SELECT * FROM recursos WHERE modulo = 'servicio9' LIMIT 1";
+$query9 = "SELECT * FROM recursos WHERE modulo = 'emergencias' LIMIT 1";
 $resultado9 = mysqli_query($conexion, $query9);
 // query Imagen servicio10
-$query10 = "SELECT * FROM recursos WHERE modulo = 'servicio10' LIMIT 1";
+$query10 = "SELECT * FROM recursos WHERE modulo = 'comedor' LIMIT 1";
 $resultado10 = mysqli_query($conexion, $query10);
 // query Imagen servicio11
-$query11 = "SELECT * FROM recursos WHERE modulo = 'servicio11' LIMIT 1";
+$query11 = "SELECT * FROM recursos WHERE modulo = 'serviciosVarios' LIMIT 1";
 $resultado11 = mysqli_query($conexion, $query11);
 
 ?>

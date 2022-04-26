@@ -17,38 +17,47 @@ $email =  (!empty($_POST['email'])) ? $_POST['email'] : '--';
 $tel =  (!empty($_POST['tel'])) ? $_POST['tel'] : '--';
 $descripcion =  (!empty($_POST['descripcion'])) ? $_POST['descripcion'] : '--';
 $ruta =  (!empty($_POST['ruta'])) ? $_POST['ruta'] : '--';
+if ($_FILES["ruta"]["type"] == '') {
+    echo "<div class='alert alert-danger' role='role'>
+    <p><strong>Error, Selecciona una Imagen</strong></p>
+    </div>";
+    exit;
+}
 
+try {
+    $conexion->autocommit(FALSE);
 
-($_FILES["ruta"]["type"] == "image/pjpeg")
-    || ($_FILES["ruta"]["type"] == "image/jpeg")
-    || ($_FILES["ruta"]["type"] == "image/png")
-    || ($_FILES["ruta"]["type"] == "image/gif");
+    ($_FILES["ruta"]["type"] == "image/pjpeg")
+        || ($_FILES["ruta"]["type"] == "image/jpeg")
+        || ($_FILES["ruta"]["type"] == "image/png")
+        || ($_FILES["ruta"]["type"] == "image/gif");
 
     move_uploaded_file($_FILES["ruta"]["tmp_name"], "../../src/img/personal/" . $_FILES['ruta']['name']);
-        
 
-        $file = $_FILES['ruta']['name'];
-        //$directorio = 'src/img/banner';
-       // $ruta = $directorio . "/" . $file;
+
+    $file = $_FILES['ruta']['name'];
+    //$directorio = 'src/img/banner';
+    // $ruta = $directorio . "/" . $file;
 
     //$ruta1 = 'inicio';
 
-        $query = "INSERT INTO directivos(nombreDirec, aPatDirec, aMatDirec, puesto, funcionPuesto, tel, correoElect, id_capC, archivo, fecha_creacion) VALUES ('$nombre', '$apellidopaterno', '$apellidomaterno', '$puesto', '$descripcion', '$tel', '$email', $id, '$file', '$date')";
-        $resultado = mysqli_query($conexion, $query);
+    $query = "INSERT INTO directivos(nombreDirec, aPatDirec, aMatDirec, puesto, funcionPuesto, tel, correoElect, id_capC, archivo, fecha_creacion) VALUES ('$nombre', '$apellidopaterno', '$apellidomaterno', '$puesto', '$descripcion', '$tel', '$email', $id, '$file', '$date')";
+    $resultado = mysqli_query($conexion, $query);
 
-        if ($resultado) {
-            echo "<div class='alert alert-success' role='alert'>
-          <p><strong>Imagen ingresada correctamente!</strong></p>
-          </div>";
-            exit;
-        } else {
-            echo "<div class='alert alert-danger' role='role'>
-      <p><strong>¡Error interno: vuelve a intentarlo!</strong></p>
-      </div>";
-            exit;
-        }
+    $conexion->commit(TRUE);
+    echo "<div class='alert alert-success' role='alert'>
+       <p><strong>Personal ingresado correctamente!</strong></p>
+    </div>";
+} catch (Exception $e) {
+    $conexion->rollback();
+    echo 'Error detectado: ',  $e->getMessage(), "\n";
+    echo "<div class='alert alert-danger' role='role'>
+            <p><strong>¡Error interno! Por favor tome captura de pantalla y repórtelo inmediatamente a el área de Soporte</strong></p>
+     </div>";
+}
 
 desconectar();
+
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -58,6 +67,6 @@ desconectar();
 
         setTimeout(function() {
             $(".alert-danger").fadeIn(1500);
-        }, 4000);
+        }, 5000);
     });
 </script>

@@ -135,7 +135,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Imagen del Directorio">
                                                                                 <?php if ($super == 1 OR $eliImgNosotrosDirectorio  == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgDirectorio<?php echo $row['idDirectivo'] ?>"><i class="fas fa-trash-alt"></i>JAJAJA</a>
+                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgDirectorio<?php echo $row['idDirectivo'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="eliImgDirectorio"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
@@ -194,24 +194,24 @@ require '../componentsAdmin/head-dataTables.php'
 <!-- Ajax Jquery -->
 <script src="../src/js/ajax.js"></script>
 <script>
-    $('.btnBorrarImgDirectorio').click(function(e) {
-        e.preventDefault();
-        if (confirm("¿Estás seguro de eliminar este empleado? Una vez borrado ya no se podrá recuperar la información.")) {
-            var id = $(this).attr("idDirectivo");
-
-            var dataString = 'id=' + id;
-            url = "../delete/deleteImgDirectorio.php";
+    $(document).ready(function() {
+        $('#btnDeleteImgDirectorio').click(function() {
             $.ajax({
-                type: "POST",
-                url: url,
-                data: dataString,
-                success: function(data) {
-                    window.location.href = "crudImgNosotrosDirectorio.php";
-                    $('#respuesta').html(data);
-                }
-            });
-        }
-        return false;
+                    url: '../delete/deleteImgDirectorio.php',
+                    type: 'POST',
+                    data: $('#formDeleteImgDirectorio').serialize(),
+                })
+                .done(function(res) {
+                    $('#respuestaNuevoDirectorio').html(res)
+                })
+        });
+    });
+    //Ocultar boton por 5 minutos para evitar el doble submit
+    $("#btnDeleteImgDirectorio").on('click', function() {
+        $("#btnDeleteImgDirectorio").css('visibility', 'hidden');
+        setTimeout(function() {
+            $("#btnDeleteImgDirectorio").css('visibility', 'visible');
+        }, 300000);
     });
 </script>
 

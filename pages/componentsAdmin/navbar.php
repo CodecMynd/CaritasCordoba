@@ -62,12 +62,19 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle  disabled">4.0 Menú</a>
+                    <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-dark">Servicios</a>
                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-                        <li><a href="#" class="dropdown-item">4.1 item </a></li>
-                        <li><a href="#" class="dropdown-item">4.2 item </a></li>
-                        <li><a href="#" class="dropdown-item">4.3 item </a></li>
-                        <li><a href="#" class="dropdown-item">4.4 item </a></li>
+                        <li><a href="../admin/crudServEscuchaCasos.php" class="dropdown-item">Escucha de Casos</a></li>
+                        <li><a href="#" class="dropdown-item">Luchamos Contra el Cáncer</a></li>
+                        <li><a href="#" class="dropdown-item">Farmacia</a></li>
+                        <li><a href="#" class="dropdown-item">Consultas Médicas</a></li>
+                        <li><a href="#" class="dropdown-item">Consultas Psicológicas</a></li>
+                        <li><a href="#" class="dropdown-item">Despensas a Ancianos</a></li>
+                        <li><a href="#" class="dropdown-item">Despensas a Familias</a></li>
+                        <li><a href="#" class="dropdown-item">Bazar de Ropa</a></li>
+                        <li><a href="#" class="dropdown-item">Emergencias</a></li>
+                        <li><a href="#" class="dropdown-item">Comedor</a></li>
+                        <li><a href="#" class="dropdown-item">Servicios Varios</a></li>
                     </ul>
                 </li>
             </ul>

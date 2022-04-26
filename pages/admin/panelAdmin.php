@@ -31,6 +31,7 @@ require '../componentsAdmin/head-main.php';
                 </div>
             </div>
 
+
             <!-- small box-->
             <section class="content">
                 <div class="container-fluid">

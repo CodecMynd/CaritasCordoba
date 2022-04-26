@@ -75,6 +75,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
@@ -88,6 +89,9 @@ require '../componentsAdmin/head-dataTables.php'
                                                         <?php $cont++;
                                                         echo $cont;
                                                         ?>
+                                                    </td>
+                                                    <td>
+                                                        <span class='badge badge-dark badge-pill'><?php echo $row['id_recurso'] ?></span>
                                                     </td>
                                                     <td>
                                                         <?php echo $row['file'] ?>
@@ -114,7 +118,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Imagen Módulo inicio">
                                                                                 <?php if ($super == 1 OR $eliImgNosotros   == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
+                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgNosotros<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="eliImgNosotros"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } ?>
@@ -126,7 +130,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                         </div>
                                                     </td>
                                                     <?php
-                                                    require '../componentsAdmin/modal-eliminarImgInicio.php';
+                                                    require '../componentsAdmin/modal-eliminarImgNosotros.php';
                                                     ?>
                                                 </tr>
                                             <?php
@@ -137,6 +141,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <tfoot>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
@@ -165,25 +170,26 @@ require '../componentsAdmin/head-dataTables.php'
 <!-- Ajax Jquery -->
 <script src="../src/js/ajax.js"></script>
 <script>
-    $('.btnBorrarImgInicio').click(function(e) {
-        e.preventDefault();
-        if (confirm("¿Estás seguro de eliminar esta Imagen? Una vez borrado ya no se podrá recuperar la información.")) {
-            var id = $(this).attr("id_recurso");
-
-            var dataString = 'id=' + id;
-            url = "../delete/deleteImgInicio.php";
+    $(document).ready(function() {
+        $('#btnDeleteImgNosotros').click(function() {
             $.ajax({
-                type: "POST",
-                url: url,
-                data: dataString,
-                success: function(data) {
-                    window.location.href = "crudImgInicio.php";
-                    $('#respuesta').html(data);
-                }
-            });
-        }
-        return false;
+                    url: '../delete/deleteImgNosotros.php',
+                    type: 'POST',
+                    data: $('#formDeleteImgNosotros').serialize(),
+                })
+                .done(function(res) {
+                    $('#respuestaDeleteImgNosotros').html(res)
+                })
+        });
+    });
+    //Ocultar boton por 5 minutos para evitar el doble submit
+    $("#btnDeleteImgNosotros").on('click', function() {
+        $("#btnDeleteImgNosotros").css('visibility', 'hidden');
+        setTimeout(function() {
+            $("#btnDeleteImgNosotros").css('visibility', 'visible');
+        }, 300000);
     });
 </script>
+
 
 </html>

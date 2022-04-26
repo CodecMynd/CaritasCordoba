@@ -72,6 +72,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Titulo</th>
@@ -87,6 +88,9 @@ require '../componentsAdmin/head-dataTables.php'
                                                         <?php $cont++;
                                                         echo $cont;
                                                         ?>
+                                                    </td>
+                                                    <td>
+                                                        <span class='badge badge-dark badge-pill'><?php echo $row['id_recurso'] ?></span>
                                                     </td>
                                                     <td>
                                                         <?php echo $row['file'] ?>
@@ -143,6 +147,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <tfoot>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Titulo</th>
@@ -173,24 +178,24 @@ require '../componentsAdmin/head-dataTables.php'
 <!-- Ajax Jquery -->
 <script src="../src/js/ajax.js"></script>
 <script>
-    $('.btnBorrarImgServicio').click(function(e) {
-        e.preventDefault();
-        if (confirm("¿Estás seguro de eliminar esta Imagen? Una vez borrado ya no se podrá recuperar la información.")) {
-            var id = $(this).attr("id_recurso");
-
-            var dataString = 'id=' + id;
-            url = "../delete/deleteImgServicio.php";
+    $(document).ready(function() {
+        $('#btnDeleteImgServicios').click(function() {
             $.ajax({
-                type: "POST",
-                url: url,
-                data: dataString,
-                success: function(data) {
-                    window.location.href = "crudImgServicios.php";
-                    $('#respuesta').html(data);
-                }
-            });
-        }
-        return false;
+                    url: '../delete/deleteImgServicio.php',
+                    type: 'POST',
+                    data: $('#formDeleteImgServicios').serialize(),
+                })
+                .done(function(res) {
+                    $('#respuestaDeleteImgServicios').html(res)
+                })
+        });
+    });
+    //Ocultar boton por 5 minutos para evitar el doble submit
+    $("#btnDeleteImgServicios").on('click', function() {
+        $("#btnDeleteImgServicios").css('visibility', 'hidden');
+        setTimeout(function() {
+            $("#btnDeleteImgServicios").css('visibility', 'visible');
+        }, 300000);
     });
 </script>
 

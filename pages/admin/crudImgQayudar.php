@@ -39,7 +39,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 <div class="card-header">
                                     <h3 class="card-title">Imagenes del Módulo Quiero Ayudar</h3>
                                     <div class="card-tools">
-                                        <?php if ($super == 1 OR $regImgQayudar == 1 ) { ?>
+                                        <?php if ($super == 1 or $regImgQayudar == 1) { ?>
                                             <a type="button" class="btn btn-secondary" href="../adds/formAddImgQayudar.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Quiero Ayudar">
                                                 <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Quiero Ayudar</a>
                                         <?php } else { ?>
@@ -53,7 +53,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 <!-- consulta sql -->
                                 <?php
                                 $cont = 0;
-                                if ($super == 1 OR $verTablaImgQayudar == 1) {
+                                if ($super == 1 or $verTablaImgQayudar == 1) {
                                     $query = "SELECT id_recurso, file, modulo FROM recursos WHERE ruta = 'quieroayudar' ORDER BY modulo DESC";
                                 } else {
                                     $query = "SELECT * FROM recursos WHERE id_recurso = 0";
@@ -72,6 +72,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
@@ -85,6 +86,9 @@ require '../componentsAdmin/head-dataTables.php'
                                                         <?php $cont++;
                                                         echo $cont;
                                                         ?>
+                                                    </td>
+                                                    <td>
+                                                        <span class='badge badge-dark badge-pill'><?php echo $row['id_recurso'] ?></span>
                                                     </td>
                                                     <td>
                                                         <?php echo $row['file'] ?>
@@ -101,7 +105,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                                     <div class="btn-group">
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Editar Imagen Módulo Quiero Ayudar">
-                                                                                <?php if ($super == 1 OR $editarImgQayudar == 1) { ?>
+                                                                                <?php if ($super == 1 or $editarImgQayudar == 1) { ?>
                                                                                     <a class="btn btn-secondary" href="../update/formUpdateImgQayudar.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i></a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="editarImgQayudar"><i class="fas fa-edit"></i></a>
@@ -110,7 +114,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                                         </li>
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Imagen Módulo Quiero ayudar">
-                                                                                <?php if ($super == 1 OR $eliImgQayudar   == 1) { ?>
+                                                                                <?php if ($super == 1 or $eliImgQayudar   == 1) { ?>
                                                                                     <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgQayudar<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="eliImgQayudar"><i class="fas fa-trash-alt"></i>
@@ -135,6 +139,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <tfoot>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Identificador</th>
                                                 <th>Acciones</th>
@@ -181,6 +186,26 @@ require '../componentsAdmin/head-dataTables.php'
             });
         }
         return false;
+    });
+
+    $(document).ready(function() {
+        $('#btnDeleteImgQayudar').click(function() {
+            $.ajax({
+                    url: '../delete/deleteImgQayudar.php',
+                    type: 'POST',
+                    data: $('#formDeleteImgQayudar').serialize(),
+                })
+                .done(function(res) {
+                    $('#respuestaNuevoPermiso').html(res)
+                })
+        });
+    });
+    //Ocultar boton por 5 minutos para evitar el doble submit
+    $("#btnDeleteImgQayudar").on('click', function() {
+        $("#btnDeleteImgQayudar").css('visibility', 'hidden');
+        setTimeout(function() {
+            $("#btnDeleteImgQayudar").css('visibility', 'visible');
+        }, 300000);
     });
 </script>
 

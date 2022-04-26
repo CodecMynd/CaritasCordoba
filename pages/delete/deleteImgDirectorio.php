@@ -8,9 +8,32 @@ ini_set('date.timezone',  'America/Mexico_City');
 $date = date('Y-m-d H:i:s');
 $id = $_SESSION['id'];
 
-$idDirectivo = $_POST['id'];
-$query = ("DELETE FROM directivos WHERE idDirectivo = $idDirectivo");
-$resultado = mysqli_query($conexion, $query);
-desconectar();
 
-?>
+$file = $_POST['file'];
+$idDirectivo = $_POST['idDirectivo'];
+$ruta = '../../src/img/personal/' . $file;
+
+try {
+  $conexion->autocommit(FALSE);
+
+  $query = ("DELETE FROM directivos WHERE idDirectivo = $idDirectivo");
+  $resultado = mysqli_query($conexion, $query);
+
+  unlink($ruta);
+
+  $conexion->commit();
+
+  echo '<script>
+alert("¡Registro eliminado correctamente")
+location.href = "../admin/crudImgNosotrosDirectorio.php";
+ </script>';
+} catch (Exception $e) {
+  $conexion->rollback();
+
+  echo '<script>
+alert(¡Error interno! Por favor tome captura de pantalla y repórtelo inmediatamente a el área de Soporte, Error detectado: ' . $e->getMessage() . ' )
+location.href = "../admin/crudImgNosotrosDirectorio.php";
+</script>';
+}
+
+desconectar();

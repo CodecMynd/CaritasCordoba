@@ -39,7 +39,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 <div class="card-header">
                                     <h3 class="card-title">Imagenes del Módulo Inicio</h3>
                                     <div class="card-tools">
-                                        <?php if ($super == 1 OR $regImgInicio == 1) { ?>
+                                        <?php if ($super == 1 or $regImgInicio == 1) { ?>
                                             <a type="button" class="btn btn-secondary" href="../adds/formAddImgInicio.php" data-toggle="tooltip" data-placement="left" title="Registrar Imagen Módulo Inicio">
                                                 <i class="fa-solid fa-image"></i></i>&nbsp;&nbsp; Registrar Imagen Módulo Inicio</a>
                                         <?php } else { ?>
@@ -53,7 +53,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 <!-- consulta sql -->
                                 <?php
                                 $cont = 0;
-                                if ($super == 1 OR $verTablaImgInicio == 1) {
+                                if ($super == 1 or $verTablaImgInicio == 1) {
                                     $query = "SELECT * FROM recursos WHERE ruta = 'inicio' ORDER BY modulo DESC";
                                 } else {
                                     $query = "SELECT * FROM recursos WHERE id_recurso = 0";
@@ -72,6 +72,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <thead>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nombre Imagen</th>
                                                 <th>Titulo</th>
                                                 <th>Subtitulo</th>
@@ -88,6 +89,9 @@ require '../componentsAdmin/head-dataTables.php'
                                                         <?php $cont++;
                                                         echo $cont;
                                                         ?>
+                                                    </td>
+                                                    <td>
+                                                        <span class='badge badge-dark badge-pill'><?php echo $row['id_recurso'] ?></span>
                                                     </td>
                                                     <td>
                                                         <?php echo $row['file'] ?>
@@ -113,7 +117,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                                     <div class="btn-group">
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Editar Imagen Módulo Inicio">
-                                                                                <?php if ($super == 1 OR $editarImgInicio == 1) { ?>
+                                                                                <?php if ($super == 1 or $editarImgInicio == 1) { ?>
                                                                                     <a class="btn btn-secondary" href="../update/formUpdateImgInicio.php?id=<?php echo $row['id_recurso'] ?>"><i class="fas fa-edit"></i></a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="editarImgInicio"><i class="fas fa-edit"></i></a>
@@ -122,7 +126,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                                         </li>
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Imagen Módulo inicio">
-                                                                                <?php if ($super == 1 OR $eliImgInicio   == 1) { ?>
+                                                                                <?php if ($super == 1 or $eliImgInicio   == 1) { ?>
                                                                                     <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="eliImgInicio"><i class="fas fa-trash-alt"></i>
@@ -147,6 +151,7 @@ require '../componentsAdmin/head-dataTables.php'
                                         <tfoot>
                                             <tr>
                                                 <th>#</th>
+                                                <th>ID</th>
                                                 <th>Ruta</th>
                                                 <th>Titulo</th>
                                                 <th>Subtitulo</th>
@@ -178,24 +183,24 @@ require '../componentsAdmin/head-dataTables.php'
 <!-- Ajax Jquery -->
 <script src="../src/js/ajax.js"></script>
 <script>
-    $('.btnBorrarImgInicio').click(function(e) {
-        e.preventDefault();
-        if (confirm("¿Estás seguro de eliminar esta Imagen? Una vez borrado ya no se podrá recuperar la información.")) {
-            var id = $(this).attr("id_recurso");
-
-            var dataString = 'id=' + id;
-            url = "../delete/deleteImgInicio.php";
+    $(document).ready(function() {
+        $('#btnDeleteImgInicio').click(function() {
             $.ajax({
-                type: "POST",
-                url: url,
-                data: dataString,
-                success: function(data) {
-                    window.location.href = "crudImgInicio.php";
-                    $('#respuesta').html(data);
-                }
-            });
-        }
-        return false;
+                    url: '../delete/deleteImgInicio.php',
+                    type: 'POST',
+                    data: $('#formDeleteImgInicio').serialize(),
+                })
+                .done(function(res) {
+                    $('#respuestaNuevoPermiso').html(res)
+                })
+        });
+    });
+    //Ocultar boton por 5 minutos para evitar el doble submit
+    $("#btnDeleteImgInicio").on('click', function() {
+        $("#btnDeleteImgInicio").css('visibility', 'hidden');
+        setTimeout(function() {
+            $("#btnDeleteImgInicio").css('visibility', 'visible');
+        }, 300000);
     });
 </script>
 

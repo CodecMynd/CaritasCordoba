@@ -11,10 +11,15 @@
                     Nombre: <?php echo $row['file'] ?>
                 </strong>
             </div>
-            <div class="modal-footer">
-                <buttom type="submit" data-dismiss="modal" id_recurso="<?php echo $row['id_recurso']; ?>" class="btn btn-secondary btn-block btnBorrarImgQayudar" data-toggle="tooltip" data-placement="bottom" title="Estas de acuerdo en eliminar "><i class="fa-solid fa-ban"></i> Eliminar</buttom>
-                <a data-dismiss="modal" class="btn btn-secondary btn-block" data-toggle="tooltip" data-placement="bottom" title="Cancelar"><i class="fa-solid fa-xmark"></i> Salir</a>
-            </div>
+            <form id="formDeleteImgQayudar">
+                <div class="modal-footer text-left">
+                    <input type="hidden" name="id_recurso" id="id_recurso" value="<?php echo $row['id_recurso']; ?>">
+                    <input type="hidden" name="file" id="file" value="<?php echo $row['file']; ?>">
+                    
+                    <button type="submit" id="btnDeleteImgQayudar" class="btn btn-secondary"><i class="fas fa-ban"></i> Eliminar</button>
+                    <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Salir"><i class="fa-solid fa-circle-xmark"></i> Salir</a>
+                </div>
+            </form>
             <div class="pie">
                 <h5>Eliminar Imagen Módulo Quiero Ayudar</h5>
             </div>
