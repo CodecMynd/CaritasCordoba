@@ -50,7 +50,7 @@ $file2 = $_FILES['ruta2']['name'];
 $directorio = 'src/img/banner';
 $ruta = $directorio . "/" . $file2;
 
-$query = "INSERT INTO servicios(titulo, subtitulo, descripcion, modulo, imgBanner, imgPrincipal, fechaRegistro, id_capC) VALUES ('$titulo', '$subtitulo', '$descripcion', ''$modulo, '$file', '$file2', '$date', '$id')";
+$query = "INSERT INTO servicios(titulo, subtitulo, descripcion, modulo, imgBanner, imgPrincipal, fechaRegistro, id_capC) VALUES ('$titulo', '$subtitulo', '$descripcion', '$modulo', '$file', '$file2', '$date', '$id')";
 $resultado = mysqli_query($conexion, $query);
 // var_dump($query);
 

@@ -34,7 +34,7 @@ require '../componentsAdmin/head-dataTables.php'
             <section class="content">
                 <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-8">
+                        <div class="col-10">
                             <div class="card border-card">
                                 <div class="card-header">
                                     <h3 class="card-title">Imagenes del Módulo Servicios</h3>
@@ -54,7 +54,7 @@ require '../componentsAdmin/head-dataTables.php'
                                 <?php
                                 $cont = 0;
                                 if ($super == 1 OR $verTablaImgServicios == 1) {
-                                    $query = "SELECT id_recurso, file, modulo, titulo, descripcion FROM recursos WHERE ruta = 'servicios' ORDER BY modulo DESC";
+                                    $query = "SELECT id_recurso, file, modulo, titulo, modulo, descripcion FROM recursos WHERE ruta = 'servicios' ORDER BY modulo DESC";
                                 } else {
                                     $query = "SELECT * FROM recursos WHERE id_recurso = 0";
                                 }
@@ -77,6 +77,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                 <th>Identificador</th>
                                                 <th>Titulo</th>
                                                 <th>Descripción</th>
+                                                <th>Modulo</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -103,6 +104,9 @@ require '../componentsAdmin/head-dataTables.php'
                                                     </td>
                                                     <td>
                                                         <?php echo $row['descripcion'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $row['modulo'] ?>
                                                     </td>
                                                     <td>
                                                         <div class="input-group input-group-sm mb-3">
@@ -152,6 +156,7 @@ require '../componentsAdmin/head-dataTables.php'
                                                 <th>Identificador</th>
                                                 <th>Titulo</th>
                                                 <th>Descripción</th>
+                                                <th>Modulo</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </tfoot>

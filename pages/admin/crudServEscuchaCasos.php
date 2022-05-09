@@ -1,8 +1,26 @@
 <?php
 require '../componentsAdmin/head-main.php';
-require '../componentsAdmin/head-dataTables.php'
+require '../componentsAdmin/head-dataTables.php';
+
+$query = "SELECT modulo FROM servicios WHERE modulo = 'Servicio Escucha de Casos' ";
+$respuesta = mysqli_query($conexion, $query);
+$row = $respuesta->fetch_assoc();
+
 ?>
 <title>Tabla Servicio Escucha de Casos | <?php echo $nomComp ?></title>
+<!-- Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO -->
+<script>
+    function abrirModal1(idServicio, imgBanner, imgPrincipal, modulo) {
+        $("#btnModal-eliminarServEscCasos").click();
+        $("#idServicio").val(idServicio);
+        $("#imgBanner").val(imgBanner);
+        $("#imgPrincipal").val(imgPrincipal);
+        $("#imgBannerText").html(imgBanner);
+        $("#imgPrincipalText").html(imgPrincipal);
+        $("#moduloText").html(modulo);
+    }
+</script>
+<!-- Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO -->
 </head>
 
 <body class="hold-transition layout-top-nav layout-navbar-fixed layout-footer-fixed">
@@ -37,12 +55,18 @@ require '../componentsAdmin/head-dataTables.php'
                                     <h3 class="card-title">Servicio Escucha de Casos dados de alta en el sistema</h3>
                                     <div class="card-tools">
                                         <?php
-                                        if ($super == 1 or $nuevoEscuchaCasos == 1) {
-                                            echo '<a type="button" class="btn btn-secondary" href="../adds/formAddServEscuchaCasos.php" data-toggle="tooltip" data-placement="left" title="Registrar Servicio Escucha de Casos"><i class="fa-solid fa-hands-holding-child"></i>&nbsp;&nbsp; Registrar Servicio Escucha de Casos</a>';
-                                        } else {
-                                            echo '<a type="button" class="btn btn-outline-danger" id="nuevoEscuchaCasos" data-toggle="tooltip" data-placement="left" title="Registrar Servicio Escucha de Casos
+                                        if (empty($row['modulo'])) {
+
+                                            if ($super == 1 or $nuevoEscuchaCasos == 1) {
+                                                echo '<a type="button" class="btn btn-secondary" href="../adds/formAddServEscuchaCasos.php" data-toggle="tooltip" data-placement="left" title="Registrar Servicio Escucha de Casos"><i class="fa-solid fa-hands-holding-child"></i>&nbsp;&nbsp; Registrar Servicio Escucha de Casos</a>';
+                                            } else {
+                                                echo '<a type="button" class="btn btn-outline-danger" id="nuevoEscuchaCasos" data-toggle="tooltip" data-placement="left" title="Registrar Servicio Escucha de Casos
                                             "><i class="fa-solid fa-hands-holding-child"></i>&nbsp;&nbsp; Registrar Servicio Escucha de Casos</a>';
-                                        } ?>
+                                            }
+                                        } else {
+                                            echo '<a type="button" class="btn btn-outline-danger" id="YaRegistrado" data-toggle="tooltip" data-placement="left" title="No puedes agregar otro registro"><i class="fa-solid fa-hands-holding-child"></i>&nbsp;&nbsp; Registrar Servicio Escucha de Casos</a>';
+                                        }
+                                        ?>
                                         <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Actualizar página"><i class="fa-solid fa-arrows-rotate"></i></a>
                                     </div>
                                 </div>
@@ -50,7 +74,12 @@ require '../componentsAdmin/head-dataTables.php'
                                 <?php
                                 $cont = 0;
                                 if ($super == 1 or $verTablaEscuchaCasos == 1) {
-                                    $query = "SELECT * FROM usuarios WHERE super <> 1 AND admin <> 1 ORDER BY id_usuario DESC";
+                                    $query = "SELECT S.idServicio, S.titulo, S.subtitulo, 
+                                    S.descripcion, S.imgBanner, S.imgPrincipal, S.fechaRegistro, S.modulo,
+                                    U.nombres, U.aPaterno, U.aMaterno
+                                    FROM servicios S
+                                    INNER JOIN usuarios U ON S.id_capC = U.id_usuario
+                                    WHERE modulo = 'Servicio Escucha de Casos' ";
                                 } else {
                                     $query = "SELECT super FROM usuarios WHERE super = 10";
                                 }
@@ -65,117 +94,112 @@ require '../componentsAdmin/head-dataTables.php'
                                         <div class="ribbon ribbon-bottom-left"><span>Sin permiso</span></div>
                                         <div class="ribbon ribbon-bottom-right"><span>Sin permiso</span></div>
                                     <?php  } ?>
-                                    <table id="tableCrudUsuarios" class="table table-sm table-bordered table-striped" style="width: 100%;">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Titulo</th>
-                                                <th>Subtitulo</th>
-                                                <th>Descripción</th>
-                                                <th>Imagen</th>
-                                                <th>Fecha de Registro</th>
-                                                <th>Capturista</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            while ($row = $resultado->fetch_assoc()) { ?>
+                                    <div id="table_refresh">
+                                        <table id="tableCrudUsuarios" class="table table-sm table-bordered table-striped" style="width: 100%;">
+                                            <thead>
                                                 <tr>
-                                                    <td>
-                                                        <?php $cont++;
-                                                        echo $cont;
-                                                        ?>
-                                                    </td>
-                                                    <td>
-
-                                                    </td>
-                                                    <td>
-
-                                                    </td>
-                                                    <td>
-
-                                                    </td>
-                                                    <td>
-
-                                                    </td>
-                                                    <td>
-
-                                                    </td>
-                                                    <td>
-
-                                                    </td>
-                                                    <td>
-
-                                                    </td>
-                                                    <td>
-                                                        <div class="input-group input-group-sm mb-3">
-                                                            <div class="input-group-prepend">
-                                                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i><span data-toogle="tooltip" title="Botónes de administración tabla Usuarios"> Acciones</span>
-                                                                </button>
-                                                                <ul class="dropdown-menu">
-                                                                    <div class="btn-group">
-                                                                        <li class="dropdown-item">
-                                                                            <span data-toggle="tooltip" title="Editar Usuario">
-                                                                                <?php if ($super == 1 or $editarUsu == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdateUsuario.php?id=<?php echo $row['id_usuario'] ?>"><i class="fas fa-edit"></i></a>
-                                                                                <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="editarUsu"><i class="fas fa-edit"></i></a>
-                                                                                <?php } ?>
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="dropdown-item">
-                                                                            <span data-toggle="tooltip" title="Asignar Contraseña">
-                                                                                <?php if ($super == 1 or $asignarCon  == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePass.php?id=<?php echo $row['id_usuario'] ?>"> <i class="fa-solid fa-lock"></i></a>
-                                                                                <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="asignarCon"> <i class="fa-solid fa-lock"></i></a>
-                                                                                <?php } ?>
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="dropdown-item">
-                                                                            <span data-toggle="tooltip" title="Eliminar Usuario">
-                                                                                <?php if ($super == 1 or $eliminarUsu   == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-sm<?php echo $row['id_usuario'] ?>"><i class="fas fa-trash-alt"></i></a>
-                                                                                <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="eliminarUsu"><i class="fas fa-trash-alt"></i></a>
-                                                                                <?php } ?>
-                                                                            </span>
-                                                                        </li>
-                                                                        <li class="dropdown-item">
-                                                                            <span data-toggle="tooltip" title="Asignar Permiso">
-                                                                                <?php if ($super == 1 or $asignarPer == 1) { ?>
-                                                                                    <a class="btn btn-secondary" href="../update/formUpdatePermiso.php?id=<?php echo $row['id_usuario'] ?>"><i class="fa-solid fa-key"></i></a>
-                                                                                <?php } else { ?>
-                                                                                    <a class="btn btn-outline-danger" id="asignarPer"><i class="fa-solid fa-key"></i></a>
-                                                                                <?php } ?>
-                                                                            </span>
-                                                                        </li>
-                                                                    </div>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </td>
+                                                    <th>#</th>
+                                                    <th>Titulo</th>
+                                                    <th>Subtitulo</th>
+                                                    <th>Descripción</th>
+                                                    <th>Imagen Banner</th>
+                                                    <th>Imagen Principal</th>
+                                                    <th>Fecha de Registro</th>
+                                                    <th>Capturista</th>
+                                                    <th>Acciones</th>
                                                 </tr>
-                                            <?php
-                                                require '../componentsAdmin/modal-eliminarUsuario.php';
-                                            }
-                                            desconectar();
-                                            ?>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Titulo</th>
-                                                <th>Subtitulo</th>
-                                                <th>Descripción</th>
-                                                <th>Imagen</th>
-                                                <th>Fecha de Registro</th>
-                                                <th>Capturista</th>
-                                                <th>Acciones</th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                while ($row = $resultado->fetch_assoc()) {
+                                                    $capturista = $row['nombres'] . ' ' . $row['aPaterno'] . ' ' . $row['aMaterno'];
+                                                ?>
+                                                    <tr>
+                                                        <td>
+                                                            <?php $cont++;
+                                                            echo $cont;
+                                                            ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['titulo'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['subtitulo'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['descripcion'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['imgBanner'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['imgPrincipal'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row['fechaRegistro'] ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $capturista ?>
+                                                        </td>
+                                                        <td>
+                                                            <div class="input-group input-group-sm mb-3">
+                                                                <div class="input-group-prepend">
+                                                                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i><span data-toogle="tooltip" title="Botónes de administración tabla Usuarios"> Acciones</span>
+                                                                    </button>
+                                                                    <ul class='dropdown-menu text-center' style='min-width:2em;'>
+                                                                        <div class="btn-group">
+                                                                            <li class="dropdown-item">
+                                                                                <span data-toggle="tooltip" title="Editar Servicio Escucha de Casos">
+                                                                                    <?php if ($super == 1 or $editarSerEscuCasos == 1) { ?>
+                                                                                        <a class="btn btn-secondary" href="../update/formUpdateSerEscuCasos.php?id=<?php echo $row['idServicio'] ?>"><i class="fas fa-edit"></i></a>
+                                                                                    <?php } else { ?>
+                                                                                        <a class="btn btn-outline-danger" id="editarUsu"><i class="fas fa-edit"></i></a>
+                                                                                    <?php } ?>
+                                                                                </span>
+                                                                            </li>
+                                                                            <li class="dropdown-item">
+                                                                                <!-- Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO -->
+                                                                                <span data-toggle="tooltip" title="Eliminar Servicio Escucha de Casos">
+                                                                                    <?php if ($super == 1 or $eliminarSerEscuCasos   == 1) {
+                                                                                        echo  "<a href='#' onclick='abrirModal1(\"" . $row['idServicio'] . "\", \"" . $row['imgBanner'] . "\",\"" . $row['imgPrincipal'] . "\",\"" . $row['modulo'] . "\")' class='btn btn-secondary'><i class='fas fa-trash-alt'></i></a>";
+                                                                                    } else {
+                                                                                        echo  "<a class='btn btn-outline-danger' id='eliminarUsu'><i class='fas fa-trash-alt'></i></a>";
+                                                                                    } ?>
+                                                                                </span>
+                                                                                <!-- Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO -->
+                                                                            </li>
+                                                                        </div>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                    desconectar();
+                                                    ?>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Titulo</th>
+                                                    <th>Subtitulo</th>
+                                                    <th>Descripción</th>
+                                                    <th>Imagen Banner</th>
+                                                    <th>Imagen Principal</th>
+                                                    <th>Fecha de Registro</th>
+                                                    <th>Capturista</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <!-- Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO -->
+                                    <button id="btnModal-eliminarServEscCasos" class="btn btn-white" data-toggle="modal" data-target='.eliminarServEscCasos'></button>
+                                <?php
+                                    require '../componentsAdmin/modal-eliminarServEscCasos.php';
+                                    }
+                                ?>
+                                <!-- Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO -->
                                 </div>
                             </div>
                         </div>
@@ -194,11 +218,61 @@ require '../componentsAdmin/head-dataTables.php'
     // Scripts dataTables
     require '../componentsAdmin/scripts-dataTables.php';
     ?>
-    <!-- avisos -->
+
     <script>
+        // Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO
+        $('#btnEliminarServEscCasos').click(function() {
+            var param = $('#formEliminarServEscCasos').serialize();
+            $.ajax({
+                    url: '../delete/deleteServEscCasos.php',
+                    cache: false,
+                    type: 'POST',
+                    data: param,
+
+                    success: function(vs) {
+                        $('#formEliminarServEscCasos')[0].reset();
+                        $("#table_refresh").load(" #table_refresh");
+                    }
+                })
+                .done(function(res) {
+                    $('#respuestaEliminarServEscCasos').html(res)
+                })
+        });
+
+        //Ocultar boton por 10 Segundos para evitar el doble submit
+        $("#btnEliminarServEscCasos").on('click', function() {
+            $("#btnEliminarServEscCasos").css('visibility', 'hidden');
+            setTimeout(function() {
+                $("#btnEliminarServEscCasos").css('visibility', 'visible');
+            }, 10000);
+        });
+        // Boton eliminar ------------------------------------------------- ZEN ESTE JQUERY ES NUEVO
+        // avisos ----------------------------------------
         $(document).ready(function() {
             $("#nuevoEscuchaCasos").click(function() {
                 toastr["error"]("¡No tienes acceso a: Registrar Nuevo Escucha de Casos, consulta al administrador!")
+
+                tostadas.opciones = {
+                    "botóncerrar": falso,
+                    "depuración": cierto,
+                    "newestOnTop": falso,
+                    "barra de progreso": falso,
+                    "positionClass": "brindis arriba a la derecha",
+                    "prevenir duplicados": falso,
+                    "onclick": nulo,
+                    "showDuration": "400",
+                    "ocultarDuración": "1000",
+                    "tiempo de espera": "5000",
+                    "tiempo de espera extendido": "1200",
+                    "showEasing": "oscilación",
+                    "hideEasing": "lineal",
+                    "showMethod": "fundido de entrada",
+                    "hideMethod": "desaparecer"
+                }
+            })
+
+            $("#YaRegistrado").click(function() {
+                toastr["error"]("¡No puedes generar dos registros a la vez, en dado caso que quieres ingresar toda la información nuevamente deberás eliminar este registro!")
 
                 tostadas.opciones = {
                     "botóncerrar": falso,

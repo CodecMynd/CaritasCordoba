@@ -6,6 +6,7 @@ function conectar()
     global $conexion;
     // conexion local
     $conexion = mysqli_connect('localhost', 'root', '', 'db_caritas');
+    // $conexion = mysqli_connect('localhost', 'u910288658_pruebas2', 'jsolAutomotriz2022@', 'u910288658_pruebas2');
 
     mysqli_set_charset($conexion, 'utf8');
 

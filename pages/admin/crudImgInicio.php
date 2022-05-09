@@ -127,7 +127,8 @@ require '../componentsAdmin/head-dataTables.php'
                                                                         <li class="dropdown-item">
                                                                             <span data-toggle="tooltip" title="Eliminar Imagen Módulo inicio">
                                                                                 <?php if ($super == 1 or $eliImgInicio   == 1) { ?>
-                                                                                    <a class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInico<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></a>
+                                                                                    <!-- <a href="../update/formDeleteImgInicio.php?id=<?php echo $row['id_recurso'] ?>" class="btn btn-secondary"><i class="fas fa-trash-alt"></i></a>         -->
+                                                                                    <button class="btn btn-secondary" data-toggle="modal" data-target="#eliminarImgInicio<?php echo $row['id_recurso'] ?>"><i class="fas fa-trash-alt"></i></button>
                                                                                 <?php } else { ?>
                                                                                     <a class="btn btn-outline-danger" id="eliImgInicio"><i class="fas fa-trash-alt"></i>
                                                                                     </a>
@@ -191,7 +192,7 @@ require '../componentsAdmin/head-dataTables.php'
                     data: $('#formDeleteImgInicio').serialize(),
                 })
                 .done(function(res) {
-                    $('#respuestaNuevoPermiso').html(res)
+                    $('#respuestaDeleteImgInicio').html(res)
                 })
         });
     });

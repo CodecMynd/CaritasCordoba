@@ -50,6 +50,8 @@
                         <li><a href="../admin/crudImgServicios.php" class="dropdown-item">Módulo Página Servicios </a></li>
                         <li><a href="../admin/crudImgQayudar.php" class="dropdown-item">Módulo Página Quiero Ayudar</a></li>
                         <li><a href="../admin/crudImgReportes.php" class="dropdown-item">Módulo Página Reportes</a></li>
+                        <li><a href="../admin/crudImgContacto.php" class="dropdown-item">Módulo Página Contacto</a></li>
+                        <li><a href="../admin/crudMensajeUsuario.php" class="dropdown-item">Mensajes Usuarios</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -65,16 +67,19 @@
                     <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-dark">Servicios</a>
                     <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                         <li><a href="../admin/crudServEscuchaCasos.php" class="dropdown-item">Escucha de Casos</a></li>
-                        <li><a href="#" class="dropdown-item">Luchamos Contra el Cáncer</a></li>
-                        <li><a href="#" class="dropdown-item">Farmacia</a></li>
-                        <li><a href="#" class="dropdown-item">Consultas Médicas</a></li>
-                        <li><a href="#" class="dropdown-item">Consultas Psicológicas</a></li>
-                        <li><a href="#" class="dropdown-item">Despensas a Ancianos</a></li>
-                        <li><a href="#" class="dropdown-item">Despensas a Familias</a></li>
-                        <li><a href="#" class="dropdown-item">Bazar de Ropa</a></li>
-                        <li><a href="#" class="dropdown-item">Emergencias</a></li>
-                        <li><a href="#" class="dropdown-item">Comedor</a></li>
-                        <li><a href="#" class="dropdown-item">Servicios Varios</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Luchamos Contra el Cáncer</a></li>
+                        <li><a href="../admin/crudServFarmacia.php" class="dropdown-item ">Farmacia</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Consultas Médicas</a></li>
+                        <li><a href="../admin/crudServConsulPsico.php" class="dropdown-item">Consultas Psicológicas</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Despensas a Ancianos</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Despensas a Familias</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Bazar de Ropa</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Emergencias</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Comedor</a></li>
+                        <li><a href="#" class="dropdown-item disabled">Servicios Varios</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a href="../admin/crudGaleriaServicios.php" class="dropdown-item">Galeria</a></li>
+
                     </ul>
                 </li>
             </ul>

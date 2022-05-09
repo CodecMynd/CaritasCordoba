@@ -57,21 +57,24 @@ require '../componentsAdmin/head-main.php';
                                                     <label for="floatingInput" class="pl-5">*Subtitulo</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-8 col-sm-12 my-1 descripcion">
+                                            <div class="col-md-12 col-sm-12 my-1 descripcion">
                                                 <div class="form-group-input" style="border: 1px solid #CED4DA;">
                                                     <label class="ml-5 mb-2">*Descripción del Servicio</label>
-                                                    <span data-toggle="tooltip" title="max. 200 caracteres">
+                                                    <span data-toggle="tooltip" title="max. 500 caracteres">
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text"><i class="fa-solid fa-toolbox"></i></span>
                                                             </div>
-                                                            <textarea name="descripcion" id="descripcion" class="form-control" rows="2" placeholder="Agrega alguna breve Descripción del Carrusel" maxlength="200"></textarea>
+                                                            <textarea name="descripcion" id="descripcion" class="form-control" rows="2" placeholder="Agrega alguna breve Descripción del Servicio Escucha de Casos" maxlength="500"></textarea>
                                                         </div>
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center">
+                                            <div class="col-md-12 col-sm-12 my-2 file text-center">
+                                                <h5 class="parpadea">El formato de nombre de tu Imagen no debe tener separaciones</h5>
+                                            </div>
                                             <div class="col-md-6 col-sm-12 my-2 file">
                                                 <label for="image" class="form-label">*Agregar imagen Banner</label>
                                                 <input name="ruta" id="ruta" type="file" class="form-control" placeholder="imagen Banner ">

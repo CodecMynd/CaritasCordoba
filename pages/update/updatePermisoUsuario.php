@@ -40,8 +40,16 @@ $regImgServicios = (!empty($_POST['regImgServicios'])) ? $_POST['regImgServicios
 $editarImgServicios = (!empty($_POST['editarImgServicios'])) ? $_POST['editarImgServicios'] : 0;
 $eliImgServicios = (!empty($_POST['eliImgServicios'])) ? $_POST['eliImgServicios'] : 0;
 $verTablaImgServicios = (!empty($_POST['verTablaImgServicios'])) ? $_POST['verTablaImgServicios'] : 0;
+$nuevoEscuchaCasos = (!empty($_POST['nuevoEscuchaCasos'])) ? $_POST['nuevoEscuchaCasos'] : 0;
+$editarSerEscuCasos = (!empty($_POST['editarSerEscuCasos'])) ? $_POST['editarSerEscuCasos'] : 0;
+$eliminarSerEscuCasos = (!empty($_POST['eliminarSerEscuCasos'])) ? $_POST['eliminarSerEscuCasos'] : 0;
+$verTablaEscuchaCasos = (!empty($_POST['verTablaEscuchaCasos'])) ? $_POST['verTablaEscuchaCasos'] : 0;
+$nuevoGalServicios = (!empty($_POST['nuevoGalServicios'])) ? $_POST['nuevoGalServicios'] : 0;
+$eliminarGalServicios = (!empty($_POST['eliminarGalServicios'])) ? $_POST['eliminarGalServicios'] : 0;
+$verTablaGalServicios = (!empty($_POST['verTablaGalServicios'])) ? $_POST['verTablaGalServicios'] : 0;
 
-$query = "UPDATE permisos SET verTablaUsuario = '$verTablaUsuario', editarUsu = '$editarUsu', asignarCon = '$asignarCon', eliminarUsu = '$eliminarUsu', asignarPer = '$asignarPer', nuevoUsu = '$nuevoUsu', verTablaImgInicio = '$verTablaImgInicio', regImgInicio = '$regImgInicio', editarImgInicio = '$editarImgInicio', eliImgInicio = '$eliImgInicio', regImgNosotros = '$regImgNosotros', editarImgNosotros = '$editarImgNosotros', eliImgNosotros = '$eliImgNosotros', verTablaImgNosotros = '$verTablaImgNosotros', regImgNosotrosDirectorio = '$regImgNosotrosDirectorio', editarImgNosotrosDirectorio = '$editarImgNosotrosDirectorio', eliImgNosotrosDirectorio = '$eliImgNosotrosDirectorio', verTablaImgNosotrosDirectorio = '$verTablaImgNosotrosDirectorio', regImgQayudar = '$regImgQayudar', editarImgQayudar = '$editarImgQayudar', eliImgQayudar = '$eliImgQayudar', verTablaImgQayudar = '$verTablaImgQayudar', regImgReportes = '$regImgReportes', editarImgReportes = '$editarImgReportes', eliImgReportes = '$eliImgReportes', verTablaImgReportes = '$verTablaImgReportes', regImgServicios = '$regImgServicios', editarImgServicios = '$editarImgServicios', eliImgServicios = '$eliImgServicios', verTablaImgServicios = '$verTablaImgServicios' WHERE id_usuario = $id_usuario";
+$query = "UPDATE permisos SET verTablaUsuario = '$verTablaUsuario', editarUsu = '$editarUsu', asignarCon = '$asignarCon', eliminarUsu = '$eliminarUsu', asignarPer = '$asignarPer', nuevoUsu = '$nuevoUsu', verTablaImgInicio = '$verTablaImgInicio', regImgInicio = '$regImgInicio', editarImgInicio = '$editarImgInicio', eliImgInicio = '$eliImgInicio', regImgNosotros = '$regImgNosotros', editarImgNosotros = '$editarImgNosotros', eliImgNosotros = '$eliImgNosotros', verTablaImgNosotros = '$verTablaImgNosotros', regImgNosotrosDirectorio = '$regImgNosotrosDirectorio', editarImgNosotrosDirectorio = '$editarImgNosotrosDirectorio', eliImgNosotrosDirectorio = '$eliImgNosotrosDirectorio', verTablaImgNosotrosDirectorio = '$verTablaImgNosotrosDirectorio', regImgQayudar = '$regImgQayudar', editarImgQayudar = '$editarImgQayudar', eliImgQayudar = '$eliImgQayudar', verTablaImgQayudar = '$verTablaImgQayudar', regImgReportes = '$regImgReportes', editarImgReportes = '$editarImgReportes', eliImgReportes = '$eliImgReportes', verTablaImgReportes = '$verTablaImgReportes', regImgServicios = '$regImgServicios', editarImgServicios = '$editarImgServicios', eliImgServicios = '$eliImgServicios', verTablaImgServicios = '$verTablaImgServicios',
+nuevoEscuchaCasos = '$nuevoEscuchaCasos', editarSerEscuCasos = '$editarSerEscuCasos', eliminarSerEscuCasos = '$eliminarSerEscuCasos', verTablaEscuchaCasos = '$verTablaEscuchaCasos', nuevoGalServicios = '$nuevoGalServicios', eliminarGalServicios = '$eliminarGalServicios', verTablaGalServicios = '$verTablaGalServicios' WHERE id_usuario = $id_usuario";
 // var_dump($query);
  $resultado = mysqli_query($conexion, $query);
  if ($resultado) {
@@ -65,3 +73,4 @@ $query = "UPDATE permisos SET verTablaUsuario = '$verTablaUsuario', editarUsu = 
         }, 3000);
     });
 </script>
+

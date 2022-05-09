@@ -49,9 +49,11 @@ $m = $row['modulo'];
                                     <div class="card-body">
                                         <div class="row justify-content-center">  
                                             <div class="col-md-6 col-sm-12 my-2">
-                                                <label for="image" class="form-label">*Imagen a Modificar: <strong><?php echo $row['file'] ?></strong></label>
+                                                <label for="image" class="form-label">*Imagen a Modificar: <strong><?php echo $row['file'] ?></strong></label> 
+
                                                 <input name="ruta" id="ruta" type="file" class="form-control" placeholder="subtitulo " required>
-                                                <small id="helpId" class="text-muted">Forzosamente, si quieres modificar, deberás volver a ingresar imagen </small>
+                                                
+                                                <small id="helpId" class="text-muted">Forzosamente, si quieres modificar, deberás volver a ingresar imagen </small> 
                                                 <a href="../../src/img/imgModuloQayudar/<?php echo  $row['file'] ?>" class="btn btn-secondary" download="Img<?php echo  $row['file']  ?>" title="Descargar"><i class="fa-solid fa-cloud-arrow-down"></i></a>
                                             </div>
                                             <div class="col-12">

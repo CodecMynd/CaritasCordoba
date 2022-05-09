@@ -20,6 +20,11 @@
                     <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Salir"><i class="fa-solid fa-circle-xmark"></i> Salir</a>
                 </div>
             </form>
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div id="respuestaDeleteImgQayudar"></div>
+                </div>
+            </div>
             <div class="pie">
                 <h5>Eliminar Imagen Módulo Quiero Ayudar</h5>
             </div>

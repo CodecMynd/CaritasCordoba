@@ -11,10 +11,10 @@ $id = $_SESSION['id_usuario'];
 
 $titulo =  '--';
 $subtitulo = '--';
-$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : 0;
+$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : '';
 $descripcion =  '--';
 
-if ($modulo == 0) {
+if ($modulo == '') {
     echo "<div class='alert alert-danger' role='role'>
     <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
     </div>";

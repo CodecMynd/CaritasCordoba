@@ -1,3 +1,18 @@
+<?php
+require '../../config/functions.php';
+conectar();
+
+// query Imagen Carrusel Principal carrusel1
+$query1 = "SELECT * FROM servicios WHERE modulo = 'Servicio Escucha de Casos'";
+$respuesta1 = mysqli_query($conexion, $query1);
+$row1 = $respuesta1->fetch_assoc();
+
+// query Galeria de Imagenes
+$query2 = "SELECT file, descripcion, mes_anio FROM galeriaservicios WHERE modulo = 'Servicio Escucha de Casos'";
+$respuesta2 = mysqli_query($conexion, $query2);
+
+?>
+
 <!doctype html>
 <html lang="es">
 
@@ -8,43 +23,47 @@
     include '../components/head.php';
     ?>
     <!-- Titulo de la pagina -->
-    <title>Servicio: Escucha de casos | Cáritas Córdoba A.C.</title>
+    <title>Servicio: <?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?> | Cáritas Córdoba A.C.</title>
+
 </head>
 
 <body>
     <?php
-    /* preloader, particles & header */
+
     include '../components/header.php';
     ?>
     <!-- banner -->
-    <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
+    <!-- query mostrar imagenes carrusel principal -->
+    <section class="page-title overlay" style="background-image: url(../../src/img/servicios/escuchaCasos/<?php echo $row1['imgBanner'] ?>);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="text-white font-weight-bold">Escucha de casos</h2>
+                    <h2 class="text-white font-weight-bold"><?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?></h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="../../index.php"><i class="fas fa-arrow-left"></i> Inicio</a>
                         </li>
-                        <li>Escucha de casos</li>
+                        <li><?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?></li>
                     </ol>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- seccion escucha de casos: descripcion -->
     <section class="overlay" data-aos="fade-left" data-aos-duration="3000">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 px-0 pl-0">
-                    <div class="p-sm-5 pl-5 py-5 div-info-video">
-                        <h3 class="section-title section-title-border-half text-white">Servicio: Escucha de casos.</h3>
+                    <div class="p-sm-5 pl-5 pt-5 pb-2 div-info-video">
+                        <h3 class="section-title section-title-border-half text-white">Servicio: <?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?></h3>
+                        <h4 class="text-white pb-2"><?php echo $subtitulo = (empty($row1['subtitulo'])) ? 'Sin Registro' :  $row1['subtitulo']; ?></h4>
                         <div>
                             <ul class="pl-3 d-inline-block float-sm-left mr-sm-5">
                                 <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
-                                    A partir de la escucha atenta, se detectan las necesidades de las personas y se puede idear y proponer un plan de atención integral al hermano necesitado. Es un espacio de acogida, de mantenimiento y respeto a fin de analizar la problemática y apoyar a los hermanos para que, viendo con serenidad su situación y, contando con el respaldo de Caritas, superen sus crisis y aprendan a resolver sus problemas; se valora con ellas alternativas y recursos que pueden ayudarles en este proceso.
+                                    <?php echo $descripcion = (empty($row1['descripcion'])) ? 'Sin Registro' :  $row1['descripcion']; ?>
                                 </li>
                             </ul>
                         </div>
@@ -58,12 +77,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mx-0 align-self-center img-back-div" style="background-image: url(../../src/img/servicios/escuchaCasos/1-escuchaCasos.png);">
+                <div class="col-lg-6 mx-0 align-self-center img-back-div" style="background-image: url(../../src/img/servicios/escuchaCasos/<?php echo $row1['imgPrincipal'] ?>);">
                     <div class="about-video">
-                        <!-- about-video -->
-                        <a class="popup-youtube play-icon centralized" href="https://www.youtube.com/watch?v=6ZfuNTqbHE8">
-                            <i class="ti-control-play"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -82,6 +97,7 @@
                     <div class="project-menu text-center">
                         <ul class="controls list-inline">
                             <!-- filter item list -->
+                            <?php while ($row2= $respuesta2->fetch_assoc()) { ?>
                             <li class="list-inline-item control active" data-filter="all">All</li>
                             <li class="list-inline-item control" data-filter="enero">Enero</li>
                             <li class="list-inline-item control" data-filter="febrero">Febrero</li>
@@ -103,16 +119,16 @@
                 <div class="row filtr-container">
                     <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="febrero">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-1.jpg" alt="project-image">
+                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/galeria/<?php echo $row2['file']?>" alt="<?php echo $row2['file']?>">
                             <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
+                                <a href="#" class="h4"><?php echo $row2['mes_anio']?></a>
                                 <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
+                                    <i class="ti-tag"></i><?php echo $row2['mes_anio']?>
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="enero, diciembre">
+                    <!-- <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="enero, diciembre">
                         <div class="position-relative">
                             <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-2.jpg" alt="project-image">
                             <div class="project-info">
@@ -232,9 +248,10 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
+            <?php } ?>
         </div>
     </section>
     <!-- /galeria imagenes -->

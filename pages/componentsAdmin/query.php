@@ -60,10 +60,14 @@ while ($row = mysqli_fetch_array($query)) {
     $editarImgServicios = $row['editarImgServicios'];
     $eliImgServicios = $row['eliImgServicios'];
     $verTablaImgServicios = $row['verTablaImgServicios'];
+    $nuevoEscuchaCasos = $row['nuevoEscuchaCasos'];
+    $editarSerEscuCasos = $row['editarSerEscuCasos'];
+    $eliminarSerEscuCasos = $row['eliminarSerEscuCasos'];
+    $verTablaEscuchaCasos = $row['verTablaEscuchaCasos'];
+    $nuevoGalServicios = $row['nuevoGalServicios'];
+    $eliminarGalServicios = $row['eliminarGalServicios'];
+    $verTablaGalServicios = $row['verTablaGalServicios'];
 }
-
-
-
 
 // Mostar Modal al recargar pagína en panelAdmin ------------------------------------------------------------------------------------------
 if ($passUser === 'SIN_PASSWORD') {

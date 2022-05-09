@@ -193,6 +193,27 @@ require '../componentsAdmin/head-dataTables.php'
     ?>
     <!-- avisos -->
     <script src="../src/js/toastr.js"></script>
+    <script>
+            $(document).ready(function() {
+        $('#btnDeleteUsuario').click(function() {
+            $.ajax({
+                    url: '../delete/deleteUsuario.php',
+                    type: 'POST',
+                    data: $('#formDeleteUsuario').serialize(),
+                })
+                .done(function(res) {
+                    $('#respuestaDeleteUsuario').html(res)
+                })
+        });
+    });
+    //Ocultar boton por 5 minutos para evitar el doble submit
+    $("#btnDeleteUsuario").on('click', function() {
+        $("#btnDeleteUsuario").css('visibility', 'hidden');
+        setTimeout(function() {
+            $("#btnDeleteUsuario").css('visibility', 'visible');
+        }, 300000);
+    });
+    </script>
 
 </body>
 

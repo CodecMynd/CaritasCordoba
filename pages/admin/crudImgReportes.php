@@ -194,7 +194,7 @@ require '../componentsAdmin/head-dataTables.php'
                     data: $('#formDeleteImgReporte').serialize(),
                 })
                 .done(function(res) {
-                    $('#respuestaNuevoPermiso').html(res)
+                    $('#respuestaDeleteImgReporte').html(res)
                 })
         });
     });

@@ -196,7 +196,7 @@ require '../componentsAdmin/head-dataTables.php'
                     data: $('#formDeleteImgQayudar').serialize(),
                 })
                 .done(function(res) {
-                    $('#respuestaNuevoPermiso').html(res)
+                    $('#respuestaDeleteImgQayudar').html(res)
                 })
         });
     });

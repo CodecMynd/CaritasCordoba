@@ -23,10 +23,13 @@ try {
 
   $conexion->commit();
 
+  echo "<div class='alert alert-success' role='alert'>
+  <p><strong>¡Registro Eliminado correctamente!</strong></p>
+</div>";
   echo '<script>
-       alert("¡Registro eliminado correctamente")
-       location.href = "../admin/crudImgQayudar.php";
-        </script>';
+alert("¡Registro eliminado correctamente")
+location.href = "../admin/crudImgQayudar.php";
+</script>';
 } catch (Exception $e) {
   $conexion->rollback();
 

@@ -16,6 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `contacto`
+--
+
+DROP TABLE IF EXISTS `contacto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contacto` (
+  `idContacto` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreCompleto` varchar(80) NOT NULL,
+  `correoElectronico` varchar(40) DEFAULT '--',
+  `asunto` varchar(30) DEFAULT '--',
+  `mensaje` text DEFAULT '--',
+  `tel` varchar(14) DEFAULT NULL,
+  `id_CapC` int(11) DEFAULT 0,
+  `fecha_creacion` datetime DEFAULT '0000-01-01 00:00:00',
+  PRIMARY KEY (`idContacto`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contacto`
+--
+
+LOCK TABLES `contacto` WRITE;
+/*!40000 ALTER TABLE `contacto` DISABLE KEYS */;
+INSERT INTO `contacto` VALUES (4,'jose uriel guerra','aaa@a.aaaa','prueba','hola como estas','(221) 209-6482',1,'2022-04-30 19:32:34');
+/*!40000 ALTER TABLE `contacto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `directivos`
 --
 
@@ -35,7 +65,7 @@ CREATE TABLE `directivos` (
   `archivo` varchar(200) DEFAULT '--',
   `fecha_creacion` datetime DEFAULT '0000-01-01 00:00:00',
   PRIMARY KEY (`idDirectivo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +75,35 @@ CREATE TABLE `directivos` (
 LOCK TABLES `directivos` WRITE;
 /*!40000 ALTER TABLE `directivos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `directivos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `galeriaservicios`
+--
+
+DROP TABLE IF EXISTS `galeriaservicios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `galeriaservicios` (
+  `id_galServicio` int(11) NOT NULL AUTO_INCREMENT,
+  `file` varchar(100) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `mes_anio` varchar(10) NOT NULL,
+  `modulo` varchar(40) NOT NULL,
+  `fechaRegistro` datetime DEFAULT NULL,
+  `id_capC` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_galServicio`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `galeriaservicios`
+--
+
+LOCK TABLES `galeriaservicios` WRITE;
+/*!40000 ALTER TABLE `galeriaservicios` DISABLE KEYS */;
+INSERT INTO `galeriaservicios` VALUES (2,'1.jpeg','Prueba de Imagen ????????','2022-05','Servicio Escucha de Casos','2022-05-02 21:51:35',1);
+/*!40000 ALTER TABLE `galeriaservicios` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -86,9 +145,16 @@ CREATE TABLE `permisos` (
   `editarImgServicios` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
   `eliImgServicios` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
   `verTablaImgServicios` char(1) COLLATE utf8mb4_spanish_ci NOT NULL DEFAULT '0',
+  `nuevoEscuchaCasos` tinyint(1) NOT NULL DEFAULT 0,
+  `editarSerEscuCasos` tinyint(1) NOT NULL DEFAULT 0,
+  `eliminarSerEscuCasos` tinyint(1) NOT NULL DEFAULT 0,
+  `verTablaEscuchaCasos` tinyint(1) NOT NULL DEFAULT 0,
+  `nuevoGalServicios` tinyint(1) NOT NULL DEFAULT 0,
+  `eliminarGalServicios` tinyint(1) NOT NULL DEFAULT 0,
+  `verTablaGalServicios` tinyint(1) NOT NULL DEFAULT 0,
   `id_usuario` int(11) NOT NULL,
   PRIMARY KEY (`id_permiso`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +163,7 @@ CREATE TABLE `permisos` (
 
 LOCK TABLES `permisos` WRITE;
 /*!40000 ALTER TABLE `permisos` DISABLE KEYS */;
-INSERT INTO `permisos` VALUES (1,'1','1','1','1','1','1','1','1','1','1','1','1','1','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',1);
+INSERT INTO `permisos` VALUES (1,'1','1','1','1','1','1','1','1','1','1','1','1','1','1','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0',0,0,0,0,0,0,0,1);
 /*!40000 ALTER TABLE `permisos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +189,7 @@ CREATE TABLE `recursos` (
   `id_capC` int(11) DEFAULT 0,
   `id_capM` int(11) DEFAULT 0,
   PRIMARY KEY (`id_recurso`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +198,7 @@ CREATE TABLE `recursos` (
 
 LOCK TABLES `recursos` WRITE;
 /*!40000 ALTER TABLE `recursos` DISABLE KEYS */;
-INSERT INTO `recursos` VALUES (5,'uriel.jpg','servicios','Escucha de Casos','--','hola','escuchaCasos','--','','2022-04-24 22:40:42','0000-01-01 00:00:00',1,0),(7,'banner-1.jpg','inicio','AAA','AAA','AAAA','carrusel1','--','','2022-04-26 00:02:33','0000-01-01 00:00:00',1,0),(11,'banner-2.jpg','inicio','222','222','222','carrusel1','--','','2022-04-26 00:35:03','0000-01-01 00:00:00',1,0);
+INSERT INTO `recursos` VALUES (18,'banner.jpg','servicios','--','--','--','bannerServ','--','','2022-05-09 01:05:09','0000-01-01 00:00:00',1,0),(19,'1-escuchaCasos.png','servicios','Escucha de Casos','--','Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend efficitur enim, sed pretium purus gravida nec. Aenean porta tortor ac ipsum egestas porttitor. Aliquam erat volutpat. Dui','escuchaCasos','--','','2022-05-09 01:07:29','0000-01-01 00:00:00',1,0),(21,'1-despensaAncianos.png','servicios','Consultas Psicológicas','--','Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend efficitur enim, sed pretium purus gravida nec. Aenean porta tortor ac ipsum egestas porttitor. Aliquam erat volutpat. Dui','consultasPsicologicas','--','','2022-05-09 01:35:45','0000-01-01 00:00:00',1,0);
 /*!40000 ALTER TABLE `recursos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +210,7 @@ DROP TABLE IF EXISTS `servicios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `servicios` (
-  `idServicio` int(11) NOT NULL,
+  `idServicio` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(40) NOT NULL,
   `subtitulo` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
@@ -152,8 +218,9 @@ CREATE TABLE `servicios` (
   `imgBanner` varchar(100) NOT NULL,
   `imgPrincipal` varchar(100) NOT NULL,
   `fechaRegistro` datetime DEFAULT NULL,
-  `id_capC` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_capC` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idServicio`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,6 +229,7 @@ CREATE TABLE `servicios` (
 
 LOCK TABLES `servicios` WRITE;
 /*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (5,'Escucha de Casos','Nuestro Servicio','Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend efficitur enim, sed pretium purus gravida nec. Aenean porta tortor ac ipsum egestas porttitor. Aliquam erat volutpat. Duis iaculis dolor ligula, fringilla congue metus mollis quis. Vivamus eu viverra nisi. Quisque non felis sem. Integer mauris nisi, interdum interdum molestie id, maximus ac eros. Curabitur ut urna hendrerit, rutrum ante rhoncus, venenatis libero. Vivamus lacus turpis, dignissim nec magna vitae, condim','Servicio Escucha de Casos','resenia-1.jpg','resenia-2.jpg','2022-05-09 01:08:27',1);
 /*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +257,7 @@ CREATE TABLE `usuarios` (
   `id_captC` int(11) DEFAULT NULL,
   `id_captM` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,4 +283,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-26  1:41:02
+-- Dump completed on 2022-05-09  2:46:53

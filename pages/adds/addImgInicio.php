@@ -11,20 +11,26 @@ $id = $_SESSION['id_usuario'];
 
 $titulo =  (!empty($_POST['titulo'])) ? $_POST['titulo'] : '--';
 $subtitulo =  (!empty($_POST['subtitulo'])) ? $_POST['subtitulo'] : '--';
-$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : 0;
+$modulo =  (!empty($_POST['modulo'])) ? $_POST['modulo'] : '';
 $descripcion =  (!empty($_POST['descripcion'])) ? $_POST['descripcion'] : '--';
 
-if ($modulo == 0) {
-    echo "<div class='alert alert-danger' role='role'>
-    <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
-    </div>";
-    exit;
-}else if( $_FILES["ruta"]["type"] == ''){
-    echo "<div class='alert alert-danger' role='role'>
-    <p><strong>Error, Selecciona una Imagen</strong></p>
-    </div>";
-    exit;
+if($modulo != 'carrusel3'){
+
+    if ($modulo == '') {
+        echo "<div class='alert alert-danger' role='role'>
+        <p><strong>Error, Selecciona una opción de la lista desplegable</strong></p>
+        </div>";
+        exit;
+    }else 
+    if( $_FILES["ruta"]["type"] == ''){
+       echo "<div class='alert alert-danger' role='role'>
+       <p><strong>Error, Selecciona una Imagen</strong></p>
+       </div>";
+       exit;
+    }
 }
+
+
 
 try {
     $conexion->autocommit(FALSE);
@@ -49,7 +55,7 @@ try {
 
     $conexion->commit(TRUE);
     echo "<div class='alert alert-success' role='alert'>
-       <p><strong>Imagen ingresada correctamente!</strong></p>
+       <p><strong>Archivo ingresado correctamente!</strong></p>
     </div>";
 } catch (Exception $e) {
     $conexion->rollback();

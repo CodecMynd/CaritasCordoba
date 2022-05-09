@@ -1,3 +1,10 @@
+<?php
+require '../../config/functions.php';
+conectar();
+$query = "SELECT * FROM recursos WHERE modulo = 'contacto' LIMIT 1";
+$resultadoContacto = mysqli_query($conexion, $query);
+
+?>
 <!doctype html>
 <html lang="es">
 
@@ -17,29 +24,31 @@
     include '../components/header.php';
     ?>
     <!-- banner -->
-    <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="text-white font-weight-bold">Contacto</h2>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="../../index.php"><i class="fas fa-arrow-left"></i> Inicio</a>
-                        </li>
-                        <li>Contacto</li>
-                    </ol>
+    <?php while ($row = $resultadoContacto->fetch_assoc()) { ?>
+        <section class="page-title overlay" style="background-image: url(../../src/img/imgModuloContacto/<?php echo $row['file'] ?>);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="text-white font-weight-bold">Contacto</h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="../../index.php"><i class="fas fa-arrow-left"></i> Inicio</a>
+                            </li>
+                            <li>Contacto</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php } ?>
     <!-- /banner -->
 
     <!-- contact -->
-      <section class="section" data-aos="fade-out" data-aos-duration="1500">
-        <div class="container">
+    <section class="section" data-aos="fade-out" data-aos-duration="1500">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-5 col-md-12 col-sm-12 ml-auto" data-aos="zoom-in" data-aos-duration="1500" >
-                    <div class="rounded p-sm-5 px-3 py-5 bg-secondary" style="height: 450px;">
+                <div class="col-lg-5 col-md-12 col-sm-12 ml-auto" data-aos="zoom-in" data-aos-duration="1500">
+                    <div class="rounded p-sm-5 px-3 py-5 bg-secondary" style="height: 550px;">
                         <h3 class="section-title section-title-border-half text-white">Contáctanos</h3>
                         <ul class="pl-0">
                             <!-- contact items -->
@@ -60,31 +69,76 @@
                             <li class="d-flex mb-30 text-white">
                                 <i class="round-icon mr-3 ti-map-alt"></i>
                                 <div class="align-self-center font-primary">
-                                <a class="text-white" href=""> Calle 1, núm. 407 entre av. 4 y 6. Col. Centro C.P. 94500, Córdoba, Ver</a>
+                                    <a class="text-white" href=""> Calle 1, núm. 407 entre av. 4 y 6. Col. Centro C.P. 94500, Córdoba, Ver</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 col-sm-12 ml-auto" data-aos="zoom-in" data-aos-duration="1500">
-                    <div class="rounded p-sm-5 px-3 py-5 bg-secondary" style="height: 450px;">
+                    <div class="rounded p-sm-5 px-3 py-5 bg-secondary" style="height: 550px;">
                         <h3 class="section-title section-title-border-half text-white">Formulario de contacto</h3>
-                        <form action="#" class="row">
-                            <div class="col-lg-6">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Ingresa tu nombre" required>
+                        <form id="formAddImgContactoUsuario" autocomplete="off">
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 col-sm-10 my-1 form-group">
+                                        <div class="input-group form-floating mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                            </div>
+                                            <input autofocus name="nombres" id="nombres" type="text" class="form-control" placeholder="Nombre (s)" required maxlength="40" data-toggle="tooltip" data-placement="bottom" title="Max. 40 caracteres">
+                                            <label for="floatingInput" class="pl-5">Nombre(s)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-10 my-1">
+                                        <div class="input-group form-floating mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-at"></i></span>
+                                            </div>
+                                            <input type="text" id="email" name="email" class="form-control" placeholder="Correo" data-inputmask="'alias': 'email'" />
+                                            <label for="floatingInput" class="pl-5">Email <small> *Ej. prueba@prueba.com</small> </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-10 my-1 form-group">
+                                        <div class="input-group form-floating mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                            </div>
+                                            <input autofocus name="asunto" id="asunto" type="text" class="form-control" placeholder="Asunto" required maxlength="40" data-toggle="tooltip" data-placement="bottom" title="Max. 40 caracteres">
+                                            <label for="floatingInput" class="pl-5">Asunto</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-10 my-1">
+                                        <div class="input-group form-floating mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-mobile"></i></span>
+                                            </div>
+                                            <input name="tel" id="tel" type="text" class="form-control" placeholder="Telefono" data-inputmask="'mask' : '(999) 999-9999'">
+                                            <label for="floatingInput" class="pl-5">Teléfono <small>* 10 dígitos</small></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-10 my-1 form-group">
+                                        <div class="input-group form-floating mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                            </div>
+                                            <textarea autofocus name="mensaje" id="mensaje" type="text" class="form-control"  placeholder="Asunto" required maxlength="200" data-toggle="tooltip" data-placement="bottom" title="Max. 200 caracteres"></textarea>
+                                            <label for="floatingInput" class="pl-5">Mensaje</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Correo electrónico" required>
-                            </div>
-                            <div class="col-12">
-                                <input type="text" name="subject" id="subject" class="form-control" placeholder="Asunto" required>
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control p-2" name="message" id="message" placeholder="Ingresa tu mensaje aqui..." required style="height: 100px;"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit" value="send">Enviar</button>
-                            </div>
+                            <!-- <div class="card-footer border-footer"> -->
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12 align-self-center">
+                                        <button type="submit" id="btnAddContactoUsuario" class="btn btn-primary mb-md-50 mt-40" data-toggle="tooltip" data-placement="bottom" title="Guardar "><i class="fas fa-pen"></i> Guardar</button>
+                                    </div>
+                                    <br>
+                                    <div class="col-md-12 col-sm-12 align-self-center mt-2">
+                                        <div id="respuestaAddContactoUsuario"></div>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
                         </form>
                     </div>
                 </div>
@@ -113,7 +167,45 @@
     include '../components/socialBar.php';
     /* scripts */
     include '../components/scripts.php';
+    require '../componentsAdmin/scripts-main.php';
     ?>
+
+    <script>
+        $("form").on("submit", function(e) {
+            e.preventDefault();
+            var datos = $(this).serializeArray();
+            var imagen = new FormData($("#formAddImgContactoUsuario")[0]);
+
+            $.each(datos, function(key, input) {
+                imagen.append(input.name, input.value);
+            });
+            $.ajax({
+                    type: 'post',
+                    url: '../adds/addContactoUsuario.php',
+                    data: imagen,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        if (response != 0) {
+                            $('#formAddImgContactoUsuario')[0].reset();
+                        } else {
+                            $("#fracaso").delay(500).fadeIn("slow");
+                        }
+                    }
+                })
+                .done(function(res) {
+                    $('#respuestaAddContactoUsuario').html(res)
+                })
+        });
+        //Ocultar boton por 5 minutos para evitar el doble submit
+        $("#btnAddContactoUsuario").on('click', function() {
+            $("#btnAddContactoUsuario").css('visibility', 'hidden');
+            setTimeout(function() {
+                $("#btnAddContactoUsuario").css('visibility', 'visible');
+            }, 300000);
+        });
+    </script>
+
 </body>
 
 </html>

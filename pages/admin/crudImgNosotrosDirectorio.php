@@ -202,7 +202,7 @@ require '../componentsAdmin/head-dataTables.php'
                     data: $('#formDeleteImgDirectorio').serialize(),
                 })
                 .done(function(res) {
-                    $('#respuestaNuevoDirectorio').html(res)
+                    $('#respuestaDeleteImgDirectorio').html(res)
                 })
         });
     });

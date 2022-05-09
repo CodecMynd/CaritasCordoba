@@ -1,3 +1,17 @@
+<?php
+require '../../config/functions.php';
+conectar();
+
+// query Imagen Carrusel Principal carrusel1
+$query1 = "SELECT * FROM servicios WHERE modulo = 'Servicio Consulta Psicológica'";
+$respuesta1 = mysqli_query($conexion, $query1);
+$row1 = $respuesta1->fetch_assoc();
+
+// query Galeria de Imagenes
+$query2 = "SELECT file, descripcion, mes_anio FROM galeriaservicios WHERE modulo = 'Servicio Consulta Psicológica'";
+$respuesta2 = mysqli_query($conexion, $query2);
+
+?>
 <!doctype html>
 <html lang="es">
 
@@ -8,7 +22,7 @@
     include '../components/head.php';
     ?>
     <!-- Titulo de la pagina -->
-    <title>Servicio: Consultas psicológicas | Cáritas Córdoba A.C.</title>
+    <title>Servicio: <?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?> | Cáritas Córdoba A.C.</title>
 </head>
 
 <body>
@@ -17,16 +31,16 @@
     include '../components/header.php';
     ?>
     <!-- banner -->
-    <section class="page-title overlay" style="background-image: url(../../src/img/banner/banner.jpg);">
+    <section class="page-title overlay" style="background-image: url(../../src/img/servicios/consultapsicologica/<?php echo $row1['imgBanner'] ?>);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="text-white font-weight-bold">Consultas psicológicas</h2>
+                    <h2 class="text-white font-weight-bold"><?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?></h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="../../index.php"><i class="fas fa-arrow-left"></i> Inicio</a>
                         </li>
-                        <li>Consultas psicológicas</li>
+                        <li><?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?></li>
                     </ol>
                 </div>
             </div>
@@ -38,16 +52,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 px-0 pl-0">
-                    <div class="p-sm-5 pl-5 py-5 div-info-video">Consultas psicológicas.</h3>
+                    <div class="p-sm-5 pl-5 py-5 div-info-video">
+                    <h3 class="section-title section-title-border-half text-white">Servicio: <?php echo $titulo = (empty($row1['titulo'])) ? 'Sin Registro' :  $row1['titulo']; ?></h3>
+                        <h4 class="text-white pb-2"><?php echo $subtitulo = (empty($row1['subtitulo'])) ? 'Sin Registro' :  $row1['subtitulo']; ?></h4>
                         <div>
                             <ul class="pl-3 d-inline-block float-sm-left mr-sm-5">
                                 <li class="font-secondary mb-10 text-white text-justify">
                                     <i class="text-primary mr-2 ti-arrow-circle-right"></i>
-                                    Realizado por profesionistas capacitados que desean donar un poco de su tiempo y de su experiencia al más pobre y necesitado, este servicio es para personas que están viviendo una situación mental o emocional difícil que les causa problemas y que, para manejarlos de manera adecuada, necesitan apoyo terapéutico, pero no pueden costear un tratamiento particular.
-                                </li>
-                                <li class="font-secondary mb-10 text-white text-justify">
-                                    <i class="text-primary mr-2 ti-arrow-circle-right"></i>
-                                    Debido a la pandemia se ha incrementado la solicitud de asesoría psicológica, en esta área necesitamos psicólogos voluntarios que nos regalen algunas horas de su tiempo para acompañar proceso de muchas personas que lo solicitan. 
+                                    <?php echo $descripcion = (empty($row1['descripcion'])) ? 'Sin Registro' :  $row1['descripcion']; ?>
                                 </li>
                             </ul>
                         </div>
@@ -56,17 +68,13 @@
                             <a href="contacto.php" class="btn btn-primary" data-aos="zoom-in" data-aos-duration="1500"><i class="fas fa-at"></i> Contáctanos</a>
                         </div>
                         <div style="float:right;">
-                           <a href="consultasMedicas.php" class="prevArrowS" title="Anterior: Consultas médicas"><i class="fas fa-angle-left fa-2x"></i></a>
-                           <a href="despensaAncianos.php" class="nextArrowS" title="Siguiente: Despensas a adultos mayores"><i class="fas fa-angle-right fa-2x"></i></a>
+                            <a href="contraCancer.php" class="prevArrowS" title="Anterior: Luchamos contra el Cáncer"><i class="fas fa-angle-left fa-2x"></i></a>
+                            <a href="consultasMedicas.php" class="nextArrowS" title="Siguiente: Consultas médicas"><i class="fas fa-angle-right fa-2x"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mx-0 align-self-center img-back-div" style="background-image: url(../../src/img/servicios/consultaPsicologica/1-consultaPsicologica.jfif);">
+                <div class="col-lg-6 mx-0 align-self-center img-back-div" style="background-image: url(../../src/img/servicios/consultapsicologica/<?php echo $row1['imgPrincipal'] ?>);">
                     <div class="about-video">
-                        <!-- about-video -->
-                        <a class="popup-youtube play-icon centralized" href="https://www.youtube.com/watch?v=6ZfuNTqbHE8">
-                            <i class="ti-control-play"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -75,7 +83,7 @@
     <!-- /seccion escucha de casos: descripcion -->
 
     <!-- galeria imagenes -->
-    <section class="section text-center"> 
+    <section class="section text-center">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center" data-aos="fade-right" data-aos-duration="2000">
@@ -106,128 +114,7 @@
                 <div class="row filtr-container">
                     <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="febrero">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-1.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="enero, diciembre">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-2.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="junio">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-3.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="enero">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-4.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="marzo">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-5.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="enero, febrero">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-6.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="marzo">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-7.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="abril, junio">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-8.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="febrero marzo">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-9.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="abril, febrero">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-1.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="noviembre">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-5.jpg" alt="project-image">
-                            <div class="project-info">
-                                <a href="project-single.html" class="h4">Finance Consultancy</a>
-                                <p>
-                                    <i class="ti-tag"></i>Ecommerce Advice
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 p-0 filtr-item" data-category="febrero, marzo">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="../../src/img/servicios/escuchaCasos/evidencias/project-2.jpg" alt="project-image">
+                            <img class="img-fluid w-100" src="../../src/img/servicios/consultapsicologica/evidencias/project-1.jpg" alt="project-image">
                             <div class="project-info">
                                 <a href="project-single.html" class="h4">Finance Consultancy</a>
                                 <p>

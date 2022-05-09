@@ -17,13 +17,18 @@
                     <input type="hidden" name="file" id="file" value="<?php echo $row['file']; ?>">
                     
                     <button type="submit" id="btnDeleteImgServicios" class="btn btn-secondary"><i class="fas fa-ban"></i> Eliminar</button>
-                    <a href="javascript:location.reload()" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Salir"><i class="fa-solid fa-circle-xmark"></i> Salir</a>
+                    <button data-dismiss="modal" class="btn btn-secondary btn-inline" data-toggle="tooltip" data-placement="bottom" title="Salir"><i class="fa-solid fa-circle-xmark"></i> Salir</button>
                 </div>
             </form>
-            <div id="respuestaDeleteImgServicios"></div>
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div id="respuestaDeleteImgServicios"></div>
+                </div>
+            </div>
             <div class="pie">
                 <h5>Eliminar Imagen Módulo Servicio</h5>
             </div>
         </div>
     </div>
 </div>
+
